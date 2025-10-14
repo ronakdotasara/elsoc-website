@@ -1,0 +1,563 @@
+/* Team Page Styles */
+.team-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0118 0%, #1a0a2e 50%, #0a0118 100%);
+  color: #fff;
+}
+
+/* Hero Section */
+.team-hero {
+  position: relative;
+  padding: 8rem 1rem 5rem;
+  overflow: hidden;
+}
+
+.hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(139, 0, 255, 0.1), transparent 50%);
+}
+
+.hero-content {
+  max-width: 64rem;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(90deg, #a855f7, #ec4899, #a855f7);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 5s ease infinite;
+  background-size: 200% auto;
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: #d1d5db;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+/* Filter Tabs */
+.filter-tabs {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+  padding: 1rem;
+}
+
+.filter-container {
+  max-width: 64rem;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  background: rgba(31, 41, 55, 0.5);
+  color: #d1d5db;
+}
+
+.filter-btn:hover {
+  background: rgba(55, 65, 81, 0.5);
+}
+
+.filter-btn.active {
+  background: #9333ea;
+  color: white;
+  box-shadow: 0 10px 25px rgba(147, 51, 234, 0.5);
+}
+
+/* Team Container */
+.team-container {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+/* Section Headers */
+.team-section {
+  margin-bottom: 6rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  font-size: 1.125rem;
+  color: #9ca3af;
+}
+
+/* Faculty Cards */
+.faculty-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.faculty-card {
+  background: linear-gradient(135deg, rgba(31, 41, 55, 0.5), rgba(17, 24, 39, 0.5));
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  transition: all 0.3s ease;
+}
+
+.faculty-card:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  transform: translateY(-10px);
+}
+
+.faculty-image-wrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  height: 12rem;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.faculty-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border-radius: 1rem;
+  border: 4px solid rgba(168, 85, 247, 0.3);
+  object-fit: cover;
+}
+
+.position-badge {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #9333ea;
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  white-space: nowrap;
+}
+
+.faculty-info {
+  text-align: center;
+}
+
+.faculty-info h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.faculty-info .department {
+  color: #a855f7;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.faculty-info .bio {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.faculty-info .email {
+  display: block;
+  text-align: center;
+  color: #a855f7;
+  font-size: 0.875rem;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.faculty-info .email:hover {
+  color: #c084fc;
+}
+
+/* Core Team Cards */
+.core-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+.core-card {
+  background: linear-gradient(135deg, rgba(88, 28, 135, 0.3), rgba(17, 24, 39, 0.5));
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  transition: all 0.3s ease;
+}
+
+.core-card:hover {
+  border-color: rgba(168, 85, 247, 0.6);
+  transform: translateY(-8px) scale(1.02);
+}
+
+.core-image-wrapper {
+  position: relative;
+  height: 16rem;
+  overflow: hidden;
+}
+
+.core-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.core-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(17, 24, 39, 0.95), rgba(17, 24, 39, 0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.core-card:hover .core-overlay {
+  opacity: 1;
+}
+
+.core-details {
+  padding: 1.5rem;
+}
+
+.core-details h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.5rem;
+}
+
+.core-details .position {
+  color: #a855f7;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.core-details .year {
+  color: #6b7280;
+  font-size: 0.875rem;
+  margin-bottom: 0.75rem;
+}
+
+.core-details .bio {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Third Year Members */
+.third-year-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.member-card {
+  background: rgba(31, 41, 55, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(107, 114, 128, 0.5);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.member-card:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  transform: translateY(-5px) scale(1.05);
+}
+
+.member-image {
+  width: 100%;
+  height: 10rem;
+  margin: 0 auto 1rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 2px solid rgba(168, 85, 247, 0.3);
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.member-info h4 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.member-info .position {
+  color: #a855f7;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.member-info .specialization {
+  color: #6b7280;
+  font-size: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Executive Members */
+.executive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.executive-card {
+  background: rgba(31, 41, 55, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(107, 114, 128, 0.5);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.executive-card:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  transform: translateY(-5px) scale(1.05);
+}
+
+.executive-image {
+  width: 100%;
+  height: 10rem;
+  margin: 0 auto 0.75rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 2px solid rgba(168, 85, 247, 0.3);
+}
+
+.executive-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.executive-card h5 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.25rem;
+}
+
+.executive-card .year {
+  font-size: 0.875rem;
+  color: #a855f7;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.social-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.social-icon.linkedin {
+  background: rgba(0, 119, 181, 0.2);
+  color: #0077b5;
+}
+
+.social-icon.linkedin:hover {
+  background: #0077b5;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.social-icon.github {
+  background: rgba(51, 51, 51, 0.2);
+  color: #d1d5db;
+}
+
+.social-icon.github:hover {
+  background: #333;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* CTA Section */
+.team-cta {
+  padding: 5rem 1rem;
+}
+
+.cta-content {
+  max-width: 64rem;
+  margin: 0 auto;
+  text-align: center;
+  background: linear-gradient(135deg, rgba(88, 28, 135, 0.3), rgba(219, 39, 119, 0.3), rgba(88, 28, 135, 0.3));
+  backdrop-filter: blur(10px);
+  border-radius: 2rem;
+  padding: 3rem;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  font-size: 1.125rem;
+  color: #d1d5db;
+  max-width: 42rem;
+  margin: 0 auto 2rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #9333ea;
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px rgba(147, 51, 234, 0.5);
+}
+
+.cta-btn:hover {
+  background: #7e22ce;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .team-hero {
+    padding: 6rem 1rem 3rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .faculty-grid,
+  .core-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .third-year-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .executive-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .cta-content {
+    padding: 2rem;
+  }
+
+  .cta-content h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-container {
+    gap: 0.25rem;
+  }
+
+  .filter-btn {
+    padding: 0.4rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .third-year-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .executive-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .social-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .social-icon svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
