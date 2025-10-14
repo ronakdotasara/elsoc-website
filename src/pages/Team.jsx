@@ -58,7 +58,7 @@ const Team = () => {
       },
       {
         name: 'Vikash Kumar Jakhar',
-        position: 'Vice-President',
+        position: 'Vice-President and finance secretary',
         year: 'Final Year',
         image: 'src/img/IMG-20250703-WA0002 - VIKASH KUMAR JAKHAR.jpg',
         bio: 'Driving technical initiatives and fostering collaborative learning.',
@@ -119,7 +119,7 @@ const Team = () => {
       {
         name: 'Kriti Benjwal',
         position: 'Media and Marketing Head',
-        image: 'src/img/IMG_20250524_175529 - KRITI BENJWAL.jpg',
+        image: 'src/img/WhatsApp Image 2025-10-14 at 22.32.14.jpeg',
         social: {
           linkedin: 'https://www.linkedin.com/in/kriti-benjwal-b82864290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: '#'
