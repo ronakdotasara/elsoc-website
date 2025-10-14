@@ -44,14 +44,18 @@ const Home = () => {
   ];
 
   const galleryImages = [
-    'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1488590028505-98d2b5aba04b?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-    'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop'
+    'src/img/3.jpeg',
+    'src/img/4.jpeg',
+    'src/img/5.jpeg',
+    'src/img/6.jpeg',
+    'src/img/7.jpeg',
+    'src/img/11.jpeg',
+    'src/img/14.jpeg',
+    'src/img/15.jpeg',
+    'src/img/16.webp',
+    'src/img/17.webp',
+    'src/img/18.webp',      
+    'src/img/19.webp',
   ];
 
   const upcomingEvents = [
