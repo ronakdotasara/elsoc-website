@@ -734,3 +734,120 @@ body.light-theme .social-link:hover {
   50% { transform: translate(-20px, 20px); }
   75% { transform: translate(30px, -20px); }
 }
+/* ==================== */
+/* MOBILE FIXES - ADDED */
+/* ==================== */
+
+/* Android blur fallback for footer elements */
+@supports not ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+  .footer-stats,
+  .newsletter-box,
+  .social-link,
+  .info-icon,
+  .social-tooltip {
+    background: linear-gradient(135deg, rgba(26, 11, 46, 0.98), rgba(10, 1, 24, 0.98)) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  }
+  
+  body.light-theme .footer-stats,
+  body.light-theme .newsletter-box,
+  body.light-theme .social-link,
+  body.light-theme .info-icon,
+  body.light-theme .social-tooltip {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.98)) !important;
+    border: 1px solid rgba(0, 82, 255, 0.2) !important;
+  }
+}
+
+/* Mobile spacing improvements */
+@media (max-width: 768px) {
+  /* Add extra padding at top so content doesn't hide under navbar */
+  .footer {
+    margin-top: 6rem;
+    padding-top: 2rem;
+  }
+  
+  /* Better touch targets */
+  .footer-link,
+  .social-link,
+  .newsletter-btn,
+  .bottom-link {
+    min-height: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    touch-action: manipulation;
+  }
+  
+  /* Better mobile layout */
+  .footer-container {
+    padding: 4rem 1.5rem 3rem;
+  }
+  
+  /* Improve social links spacing */
+  .social-links {
+    gap: 1rem;
+  }
+  
+  .social-link {
+    width: 52px;
+    height: 52px;
+  }
+  
+  /* Better footer bottom spacing */
+  .footer-bottom {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+  }
+  
+  /* Hide tooltip on mobile (not needed) */
+  .social-tooltip {
+    display: none;
+  }
+}
+
+/* Extra small mobile fixes */
+@media (max-width: 480px) {
+  .footer {
+    margin-top: 4rem;
+  }
+  
+  .footer-container {
+    padding: 3rem 1rem 2rem;
+  }
+  
+  /* Larger touch targets on small phones */
+  .social-link {
+    width: 54px;
+    height: 54px;
+  }
+  
+  .social-icon {
+    font-size: 1.4rem;
+  }
+  
+  /* Better newsletter button */
+  .newsletter-btn {
+    width: 100%;
+    height: 50px;
+    border-radius: 12px;
+  }
+  
+  /* Stack footer bottom content better */
+  .footer-bottom-content {
+    gap: 1.5rem;
+  }
+  
+  .footer-bottom {
+    padding-bottom: 2.5rem;
+  }
+}
+
+/* Prevent footer overlap on all screen sizes */
+.footer {
+  position: relative;
+  z-index: 1;
+}

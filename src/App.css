@@ -1862,3 +1862,101 @@ body.light-theme .quick-question:focus-visible {
   transform: translateZ(0);
   backface-visibility: hidden;
 }
+/* ==================== */
+/* ANDROID MOBILE FIXES - CRITICAL */
+/* ==================== */
+
+/* Android Blur Fallback - Only for devices that don't support backdrop-filter */
+@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+  .glass-morphism,
+  .chatbot-container,
+  .chatbot-header,
+  .navbar,
+  .footer-stats,
+  .newsletter-box,
+  .social-link,
+  .info-icon,
+  .stat-pill,
+  .hero-badge {
+    background: linear-gradient(135deg, rgba(26, 11, 46, 0.98), rgba(10, 1, 24, 0.98)) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  }
+  
+  body.light-theme .glass-morphism,
+  body.light-theme .chatbot-container,
+  body.light-theme .chatbot-header,
+  body.light-theme .navbar,
+  body.light-theme .footer-stats,
+  body.light-theme .newsletter-box,
+  body.light-theme .social-link,
+  body.light-theme .info-icon,
+  body.light-theme .stat-pill,
+  body.light-theme .hero-badge {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.98)) !important;
+    border: 1px solid rgba(0, 82, 255, 0.2) !important;
+  }
+}
+
+/* Mobile-only: Prevent footer overlap with content */
+@media (max-width: 768px) {
+  /* Add bottom padding to all pages */
+  .home-page,
+  .about-page,
+  .events-page,
+  .projects-page,
+  .team-page,
+  .contact-page {
+    padding-bottom: 150px !important;
+    min-height: 100vh;
+  }
+  
+  .main-content {
+    padding-bottom: 120px;
+  }
+  
+  /* Better touch targets on mobile */
+  button,
+  .btn-primary,
+  .btn-secondary,
+  .nav-link,
+  .social-link,
+  .theme-toggle {
+    min-height: 48px !important;
+    min-width: 48px !important;
+    touch-action: manipulation;
+  }
+  
+  /* Prevent button text overflow on mobile */
+  .btn-primary,
+  .btn-secondary {
+    padding: 14px 24px !important;
+    font-size: 0.95rem !important;
+  }
+  
+  /* Fix button spacing on mobile */
+  .hero-buttons,
+  .cta-buttons {
+    gap: 1rem !important;
+  }
+}
+
+/* Extra small mobile fixes */
+@media (max-width: 480px) {
+  .home-page,
+  .about-page,
+  .events-page,
+  .projects-page,
+  .team-page,
+  .contact-page {
+    padding-bottom: 180px !important;
+  }
+  
+  /* Even larger touch targets on small phones */
+  button,
+  .btn-primary,
+  .btn-secondary {
+    min-height: 52px !important;
+  }
+}

@@ -1474,3 +1474,251 @@ body.light-theme .hero-badge {
     line-height: 1.7 !important;
   }
 }
+/* ==================== */
+/* MOBILE FIXES - ADDED */
+/* ==================== */
+
+/* Android blur fallback for all glass elements */
+@supports not ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+  .glass-morphism,
+  .hero-badge,
+  .stat-pill,
+  .faculty-card,
+  .domain-card,
+  .event-card,
+  .stat-item,
+  .cta-content {
+    background: linear-gradient(135deg, rgba(26, 11, 46, 0.98), rgba(10, 1, 24, 0.98)) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid rgba(139, 92, 246, 0.3) !important;
+  }
+  
+  body.light-theme .glass-morphism,
+  body.light-theme .hero-badge,
+  body.light-theme .stat-pill,
+  body.light-theme .faculty-card,
+  body.light-theme .domain-card,
+  body.light-theme .event-card,
+  body.light-theme .stat-item,
+  body.light-theme .cta-content {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(248, 249, 250, 0.98)) !important;
+    border: 1px solid rgba(0, 82, 255, 0.2) !important;
+  }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+  /* Prevent content hiding under footer */
+  .home-page {
+    padding-bottom: 150px !important;
+  }
+  
+  /* Hero section adjustments */
+  .hero-section {
+    min-height: 90vh;
+    padding: 100px 1.5rem 2rem;
+  }
+  
+  .hero-scroll-indicator {
+    bottom: 2rem;
+  }
+  
+  /* Better button spacing */
+  .hero-buttons,
+  .cta-buttons {
+    gap: 1rem !important;
+    width: 100%;
+  }
+  
+  .btn-primary,
+  .btn-secondary,
+  .btn-view-team,
+  .btn-view-all,
+  .event-register-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 16px 24px !important;
+    min-height: 54px !important;
+    font-size: 1rem !important;
+  }
+  
+  /* Hero stats better layout */
+  .hero-stats {
+    flex-direction: column;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .stat-pill {
+    width: 100%;
+    justify-content: center;
+    padding: 12px 20px;
+    min-height: 50px;
+  }
+  
+  /* Section spacing */
+  section {
+    padding: 5rem 0;
+  }
+  
+  .section-header {
+    margin-bottom: 3rem;
+  }
+  
+  /* Faculty grid */
+  .faculty-grid {
+    gap: 2rem;
+  }
+  
+  .faculty-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  /* Events grid */
+  .events-grid {
+    gap: 2rem;
+  }
+  
+  .event-card {
+    padding: 0;
+  }
+  
+  .event-content {
+    padding: 1.5rem 1.25rem;
+  }
+  
+  /* Gallery items */
+  .gallery-item {
+    width: 320px;
+    height: 240px;
+  }
+  
+  /* Better touch targets */
+  .domain-card,
+  .faculty-card,
+  .event-card,
+  .stat-item {
+    cursor: pointer;
+    min-height: 200px;
+  }
+  
+  /* Stats grid */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .stat-item {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+/* Extra small mobile (phones) */
+@media (max-width: 480px) {
+  .home-page {
+    padding-bottom: 180px !important;
+  }
+  
+  /* Hero adjustments */
+  .hero-section {
+    padding: 90px 1rem 2rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+  
+  .hero-mission {
+    font-size: 0.95rem !important;
+    padding: 0 0.5rem !important;
+  }
+  
+  /* Buttons */
+  .btn-primary,
+  .btn-secondary,
+  .btn-view-team,
+  .btn-view-all {
+    padding: 14px 20px !important;
+    font-size: 0.95rem !important;
+    min-height: 52px !important;
+  }
+  
+  /* Section titles */
+  .section-title {
+    font-size: 2rem !important;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem !important;
+  }
+  
+  /* Faculty cards */
+  .faculty-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .faculty-image {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .faculty-name {
+    font-size: 1.2rem;
+  }
+  
+  /* Stats full width */
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-item {
+    padding: 2rem 1rem;
+  }
+  
+  .stat-number {
+    font-size: 2.8rem;
+  }
+  
+  /* Gallery */
+  .gallery-item {
+    width: 280px;
+    height: 210px;
+  }
+  
+  /* Event cards */
+  .event-image-wrapper {
+    height: 200px;
+  }
+  
+  .event-content {
+    padding: 1.25rem 1rem;
+  }
+  
+  .event-meta {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  
+  /* CTA section */
+  .cta-content {
+    padding: 3rem 1.5rem;
+  }
+  
+  .cta-title {
+    font-size: 2rem !important;
+  }
+}
+
+/* Landscape mobile fix */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto;
+    padding: 120px 1.5rem 3rem;
+  }
+  
+  .hero-scroll-indicator {
+    display: none;
+  }
+}
