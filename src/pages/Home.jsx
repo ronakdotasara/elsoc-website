@@ -52,12 +52,12 @@ const Home = () => {
     '/img/6.jpeg',
     '/img/7.jpeg',
     'img/11.jpeg',
-    'src/img/14.jpeg',
-    'src/img/15.jpeg',
-    'src/img/16.webp',
-    'src/img/17.webp',
-    'src/img/18.webp',      
-    'src/img/19.webp',
+    'img/14.jpeg',
+    'img/15.jpeg',
+    'img/16.webp',
+    'img/17.webp',
+    'img/18.webp',      
+    'img/19.webp',
   ];
 
   const upcomingEvents = [

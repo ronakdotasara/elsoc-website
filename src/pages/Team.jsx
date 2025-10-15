@@ -49,7 +49,7 @@ const Team = () => {
         name: 'Rinku',
         position: 'President',
         year: 'Final Year',
-        image: 'src/img/beee26bc-fde7-40bf-8bda-f10662152132 - Rinku Kumar.jpeg',
+        image: 'img/beee26bc-fde7-40bf-8bda-f10662152132 - Rinku Kumar.jpeg',
         bio: 'Leading ELSOC with a vision for innovation and technical excellence.',
         social: {
           linkedin: 'https://www.linkedin.com/in/rinku-kumar-12b11b24b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
@@ -60,7 +60,7 @@ const Team = () => {
         name: 'Vikash Kumar Jakhar',
         position: 'Vice-President and Finance Secretary',
         year: 'Final Year',
-        image: 'src/img/IMG-20250703-WA0002 - VIKASH KUMAR JAKHAR.jpg',
+        image: 'img/IMG-20250703-WA0002 - VIKASH KUMAR JAKHAR.jpg',
         bio: 'Driving technical initiatives and fostering collaborative learning.',
         social: {
           linkedin: 'https://www.linkedin.com/in/vikash-kumar-jakhar-81ab60258',
@@ -71,7 +71,7 @@ const Team = () => {
         name: 'Tanvi',
         position: 'Content and Technical head',
         year: 'Final Year',
-        image: 'src/img/Tanvi maam-2.jpg',
+        image: 'img/Tanvi maam-2.jpg',
         bio: 'Organizing and managing the society\'s functions and communications.',
         social: {
           linkedin: 'https://www.linkedin.com/in/tanvi-batta-a85aa726a/',
@@ -84,7 +84,7 @@ const Team = () => {
         name: 'Pratibha Bajia',
         position: 'General Secretary',
         year: '3rd Year',
-        image: 'src/img/Pratibha Bajia~2 - PRATIBHA BAJIA-2.jpg',
+        image: 'img/Pratibha Bajia~2 - PRATIBHA BAJIA-2.jpg',
         social: {
           linkedin: 'https://www.linkedin.com/in/pratibha-bajia-62b3a12b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: 'https://github.com/Pratibha100'
@@ -94,7 +94,7 @@ const Team = () => {
         name: 'NITIN',
         position: 'Joint Secretary',
         year: '3rd Year',
-        image: 'src/img/IMG_5164 - NITIN K-2.jpg',
+        image: 'img/IMG_5164 - NITIN K-2.jpg',
         social: {
           linkedin: 'https://www.linkedin.com/in/nitin-21767a2a7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
           github: '#'
@@ -104,7 +104,7 @@ const Team = () => {
         name: 'Suhani Dhiman',
         position: 'Coordinator- Event Organisation',
         year: '3rd Year',
-        image: 'src/img/IMG-20250913-WA0009 - SUHANI DHIMAN.jpg',
+        image: 'img/IMG-20250913-WA0009 - SUHANI DHIMAN.jpg',
         social: {
           linkedin: 'https://www.linkedin.com/in/suhani-dhiman-036b9a291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: '#'
@@ -114,7 +114,7 @@ const Team = () => {
         name: 'Sahil Dhiman',
         position: 'Technical Coordinator',
         year: '3rd Year',
-        image: 'src/img/IMG-20241110-WA0114 - SAHIL DHIMAN.jpg',
+        image: 'img/IMG-20241110-WA0114 - SAHIL DHIMAN.jpg',
         social: {
           linkedin: 'https://www.linkedin.com/in/sahil-dhiman-1a6b922aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: '#'
@@ -124,7 +124,7 @@ const Team = () => {
         name: 'SAHIL JASWAL',
         position: 'Content Coordinator',
         year: '3rd Year',
-        image: 'src/img/Screenshot_20230309-002153~5 - SAHIL JASWAL.png',
+        image: 'img/Screenshot_20230309-002153~5 - SAHIL JASWAL.png',
         social: {
           linkedin: 'https://www.linkedin.com/in/sahil-jaswal-250a51318?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: 'https://github.com/SahilJaswal709'
@@ -134,7 +134,7 @@ const Team = () => {
         name: 'Kriti Benjwal',
         position: 'Media and Marketing Head',
         year: '3rd Year',
-        image: 'src/img/WhatsApp Image 2025-10-14 at 22.32.14.jpeg',
+        image: 'img/WhatsApp Image 2025-10-14 at 22.32.14.jpeg',
         social: {
           linkedin: 'https://www.linkedin.com/in/kriti-benjwal-b82864290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: '#'
@@ -144,7 +144,7 @@ const Team = () => {
         name: 'Vaani Chona',
         position: 'Project and Design Coordinator',
         year: '3rd Year',
-        image: 'src/img/IMG_20250913_105245 - VAANI CHONA.jpg',
+        image: 'img/IMG_20250913_105245 - VAANI CHONA.jpg',
         social: {
           linkedin: 'https://www.linkedin.com/in/vaani-chona-6b69322b3',
           github: '#'
@@ -154,7 +154,7 @@ const Team = () => {
         name: 'Mohit Kumar',
         position: 'Finance Coordinator',
         year: '3rd Year',
-        image: 'src/img/IMG-20250912-WA0017 - MOHIT KUMAR.jpg',
+        image: 'img/IMG-20250912-WA0017 - MOHIT KUMAR.jpg',
         social: {
           linkedin: 'https://www.linkedin.com/public-profile/settings',
           github: '#'
@@ -165,7 +165,7 @@ const Team = () => {
       {
         name: 'Ronak Dotasara',
         year: 'Second Year',
-        image: 'src/img/ronak.webp',
+        image: 'img/ronak.webp',
         social: {
           linkedin: '#',
           github: '#'
@@ -174,7 +174,7 @@ const Team = () => {
       {
         name: 'Aryan Dhaka',
         year: 'Second Year',
-        image: 'src/img/IMG_5294 - ARYAN DHAKA.jpg',
+        image: 'img/IMG_5294 - ARYAN DHAKA.jpg',
         social: {
           linkedin: 'https://www.linkedin.com/in/aryan-dhaka-20635b324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: '#'
@@ -183,7 +183,7 @@ const Team = () => {
       {
         name: 'Sanyam Vats',
         year: 'Second Year',
-        image: 'src/img/image - SANYAM VATS(1).jpg',
+        image: 'img/image - SANYAM VATS(1).jpg',
         social: {
           linkedin: 'https://www.linkedin.com/in/sanyam-vats-5899b4270?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: 'https://github.com/sanyamvats'
@@ -192,7 +192,7 @@ const Team = () => {
       {
         name: 'Ritesh Maurya',
         year: 'Second Year',
-        image: 'src/img/IMG_20250923_104509 - RITESH MAURYA-2.jpg',
+        image: 'img/IMG_20250923_104509 - RITESH MAURYA-2.jpg',
         social: {
           linkedin: 'https://www.linkedin.com/in/ritesh-maurya-953385335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: '#'
@@ -201,7 +201,7 @@ const Team = () => {
       {
         name: 'Skandh Nagar',
         year: 'Second Year',
-        image: 'src/img/IMG_20251014_135252 - SKANDH NAGAR.jpg',
+        image: 'img/IMG_20251014_135252 - SKANDH NAGAR.jpg',
         social: {
           linkedin: 'https://www.linkedin.com/in/skandh-nagar-73b18a312/',
           github: '#'
@@ -210,7 +210,7 @@ const Team = () => {
       {
         name: 'Riya Choudhary',
         year: 'Second Year',
-        image: 'src/img/DSC03412 - RIYA CHOUDHARY.jpg',
+        image: 'img/DSC03412 - RIYA CHOUDHARY.jpg',
         social: {
           linkedin: 'https://www.linkedin.com/in/riya-choudhary-0882a230b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: 'https://github.com/riyachoudhary06'
@@ -219,7 +219,7 @@ const Team = () => {
       {
         name: 'Vikalp chaudhary ',
         year: 'Second Year',
-        image: 'src/img/vikalp.jpg',
+        image: 'img/vikalp.jpg',
         social: {
           linkedin: 'https://www.linkedin.com/in/vikalp-chaudhary-581287345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: '#'
@@ -228,7 +228,7 @@ const Team = () => {
       {
         name: 'Priya',
         year: 'Second Year',
-        image: 'src/img/priya.png',
+        image: 'img/priya.png',
         social: {
           linkedin: 'https://www.linkedin.com/in/priya-ghangas-54a95338a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: '#'

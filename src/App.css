@@ -2070,3 +2070,117 @@ body.light-theme .quick-question:focus-visible {
     font-size: 0.75rem !important;
   }
 }
+/* ==================== */
+/* LIGHT THEME SKY BLUE GRADIENT */
+/* ==================== */
+
+body.light-theme {
+  background: linear-gradient(180deg, 
+    #e0f2fe 0%,      /* Light sky blue top */
+    #f0f9ff 25%,     /* Very light blue */
+    #ffffff 50%,     /* White middle */
+    #f0f9ff 75%,     /* Very light blue */
+    #e0f2fe 100%     /* Light sky blue bottom */
+  );
+  background-attachment: fixed;
+}
+
+/* Update light theme variables for better sky blue feel */
+body.light-theme {
+  --deep-indigo: #e0f2fe;
+  --dark-purple: #f0f9ff;
+  --mid-purple: #dbeafe;
+  --bright-purple: #0052ff;
+  --aurora-pink: #0052ff;
+  --aurora-purple: #0284c7;
+  --aurora-blue: #0ea5e9;
+  --glass-white: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(14, 165, 233, 0.15);
+  --text-primary: #0c4a6e;
+  --text-secondary: #075985;
+  --text-tertiary: #0284c7;
+  
+  --bg-primary: #f0f9ff;
+  --bg-secondary: #ffffff;
+  --bg-aurora-gradient-start: #e0f2fe;
+  --bg-aurora-gradient-end: #f0f9ff;
+  
+  --shadow-color: rgba(14, 165, 233, 0.1);
+  --shadow-color-strong: rgba(14, 165, 233, 0.2);
+  
+  --scroll-gradient-1: #0284c7;
+  --scroll-gradient-2: #0ea5e9;
+}
+
+/* Sky blue aurora background */
+body.light-theme .app-aurora-bg {
+  background: radial-gradient(ellipse at top, 
+    #e0f2fe 0%, 
+    #f0f9ff 30%,
+    #ffffff 60%
+  );
+}
+
+/* Adjust aurora blobs for sky blue theme */
+body.light-theme .aurora-blob-1 {
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+}
+
+body.light-theme .aurora-blob-2 {
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.2) 0%, transparent 70%);
+}
+
+body.light-theme .aurora-blob-3 {
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.2) 0%, transparent 70%);
+}
+
+/* Update navbar for sky blue theme */
+body.light-theme .navbar {
+  background: rgba(240, 249, 255, 0.8);
+  border-bottom: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+/* Update glass elements for sky blue theme */
+body.light-theme .glass-morphism {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(14, 165, 233, 0.15);
+  box-shadow: 0 8px 32px rgba(14, 165, 233, 0.1);
+}
+
+/* Update footer for sky blue theme */
+body.light-theme .footer {
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    rgba(224, 242, 254, 0.5) 100%
+  );
+}
+
+/* Sky blue glow effects */
+body.light-theme .cursor-glow {
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, transparent 70%);
+}
+
+body.light-theme .hero-badge {
+  background: rgba(240, 249, 255, 0.9);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+body.light-theme .stat-pill {
+  background: rgba(240, 249, 255, 0.9);
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}
+
+/* Scrollbar for sky blue theme */
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0284c7, #0ea5e9);
+}
+
+body.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+
+/* Selection color for sky blue theme */
+body.light-theme ::selection {
+  background: rgba(14, 165, 233, 0.3);
+  color: #0c4a6e;
+}
