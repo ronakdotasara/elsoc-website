@@ -851,3 +851,273 @@ body.light-theme .social-link:hover {
   position: relative;
   z-index: 1;
 }
+/* ==================== */
+/* COMPACT MOBILE FOOTER - CRITICAL */
+/* ==================== */
+
+@media (max-width: 768px) {
+  /* Compact footer structure for mobile */
+  .footer {
+    margin-top: 4rem;
+    padding-top: 0;
+  }
+  
+  .footer-wave svg {
+    height: 50px;
+  }
+  
+  .footer-container {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+  
+  /* Hide unnecessary sections on mobile */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Keep only brand and contact on mobile */
+  .footer-section:nth-child(2),  /* Quick Links */
+  .footer-section:nth-child(3)   /* Resources */
+  {
+    display: none;
+  }
+  
+  /* Compact brand section */
+  .footer-brand {
+    padding: 0;
+    text-align: center;
+  }
+  
+  .footer-logo-wrapper {
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footer-logo-icon {
+    font-size: 2rem;
+  }
+  
+  .footer-logo {
+    font-size: 1.5rem;
+  }
+  
+  .footer-tagline {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-description {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Compact stats */
+  .footer-stats {
+    flex-direction: row;
+    gap: 0.5rem;
+    padding: 1rem;
+    max-width: 100%;
+  }
+  
+  .stat-item {
+    flex: 1;
+  }
+  
+  .stat-number {
+    font-size: 1.25rem;
+  }
+  
+  .stat-label {
+    font-size: 0.7rem;
+  }
+  
+  .stat-divider {
+    height: 30px;
+  }
+  
+  /* Compact contact section */
+  .footer-section {
+    text-align: center;
+  }
+  
+  .footer-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+  }
+  
+  .footer-info {
+    gap: 0.75rem;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.5rem;
+  }
+  
+  .info-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+  
+  .info-label {
+    font-size: 0.7rem;
+  }
+  
+  .info-text {
+    font-size: 0.85rem;
+  }
+  
+  /* Hide newsletter on mobile */
+  .newsletter-box {
+    display: none;
+  }
+  
+  /* Compact social section */
+  .footer-social-section {
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .social-title {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .social-links {
+    gap: 0.75rem;
+    justify-content: center;
+  }
+  
+  .social-link {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .social-icon {
+    font-size: 1.3rem;
+  }
+  
+  .social-tooltip {
+    display: none;
+  }
+  
+  /* Compact footer bottom */
+  .footer-bottom {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+  }
+  
+  .footer-bottom-content {
+    gap: 1rem;
+  }
+  
+  .copyright-section {
+    gap: 0.25rem;
+  }
+  
+  .copyright {
+    font-size: 0.85rem;
+  }
+  
+  .rights {
+    font-size: 0.75rem;
+  }
+  
+  /* Hide some footer links on mobile */
+  .footer-bottom-links {
+    display: none;
+  }
+  
+  .credits-section {
+    margin-top: 0.5rem;
+  }
+  
+  .credits {
+    font-size: 0.85rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Reduce glow effects on mobile */
+  .footer-glow {
+    width: 300px;
+    height: 300px;
+    opacity: 0.2;
+  }
+}
+
+/* Extra small mobile - even more compact */
+@media (max-width: 480px) {
+  .footer-container {
+    padding: 2.5rem 1rem 1.5rem;
+  }
+  
+  .footer-description {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-stats {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem 0.75rem;
+  }
+  
+  .stat-divider {
+    width: 100%;
+    height: 1px;
+  }
+  
+  .stat-number {
+    font-size: 1.5rem;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+  }
+  
+  .footer-info {
+    gap: 1rem;
+  }
+  
+  .info-text {
+    font-size: 0.8rem;
+  }
+  
+  .social-links {
+    gap: 0.5rem;
+  }
+  
+  .social-link {
+    width: 46px;
+    height: 46px;
+  }
+  
+  .social-icon {
+    font-size: 1.2rem;
+  }
+  
+  .footer-bottom {
+    padding-bottom: 2.5rem;
+  }
+  
+  .copyright {
+    font-size: 0.8rem;
+  }
+  
+  .rights {
+    font-size: 0.7rem;
+  }
+  
+  .credits {
+    font-size: 0.8rem;
+  }
+}

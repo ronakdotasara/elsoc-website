@@ -1960,3 +1960,113 @@ body.light-theme .quick-question:focus-visible {
     min-height: 52px !important;
   }
 }
+/* ==================== */
+/* MOBILE CHATBOT FIXES - CRITICAL */
+/* ==================== */
+
+/* ChatBot Overlay (Mobile Only) */
+@media (max-width: 768px) {
+  .chatbot-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 99999;
+  }
+  
+  /* Solid background for chatbot on mobile (no blur issues) */
+  .chatbot-container {
+    bottom: 20px !important;
+    left: 20px !important;
+    right: 20px !important;
+    width: auto !important;
+    height: 70vh !important;
+    max-height: 600px !important;
+    background: rgba(10, 1, 24, 0.98) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: 1px solid rgba(139, 92, 246, 0.4) !important;
+    border-radius: 20px !important;
+    z-index: 100000 !important;
+  }
+  
+  body.light-theme .chatbot-container {
+    background: rgba(255, 255, 255, 0.98) !important;
+    border: 1px solid rgba(0, 82, 255, 0.3) !important;
+  }
+  
+  /* Smaller chatbot toggle button on mobile */
+  .chatbot-toggle {
+    bottom: 16px !important;
+    left: 16px !important;
+    width: 56px !important;
+    height: 56px !important;
+    font-size: 1.5rem !important;
+    z-index: 9998 !important;
+  }
+  
+  /* Smaller notification badge */
+  .notification-badge {
+    width: 20px !important;
+    height: 20px !important;
+    font-size: 0.7rem !important;
+    top: -6px !important;
+    right: -6px !important;
+  }
+  
+  /* Smaller action buttons in chatbot header */
+  .chatbot-actions .action-btn {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 1rem !important;
+  }
+  
+  .chatbot-actions .close-btn {
+    font-size: 1.2rem !important;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+  .chatbot-container {
+    bottom: 10px !important;
+    left: 10px !important;
+    right: 10px !important;
+    height: 75vh !important;
+    max-height: 650px !important;
+  }
+  
+  .chatbot-toggle {
+    bottom: 12px !important;
+    left: 12px !important;
+    width: 52px !important;
+    height: 52px !important;
+    font-size: 1.4rem !important;
+  }
+  
+  .chatbot-header {
+    padding: 1rem 1.2rem !important;
+  }
+  
+  .chatbot-avatar {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  .chatbot-icon {
+    font-size: 1.3rem !important;
+  }
+  
+  .chatbot-title {
+    font-size: 1rem !important;
+  }
+  
+  .chatbot-status {
+    font-size: 0.75rem !important;
+  }
+}

@@ -46,12 +46,12 @@ const Home = () => {
   ];
 
   const galleryImages = [
-    'src/img/3.jpeg',
-    'src/img/4.jpeg',
-    'src/img/5.jpeg',
-    'src/img/6.jpeg',
-    'src/img/7.jpeg',
-    'src/img/11.jpeg',
+    '/img/3.jpeg',
+    '/img/4.jpeg',
+    '/img/5.jpeg',
+    '/img/6.jpeg',
+    '/img/7.jpeg',
+    'img/11.jpeg',
     'src/img/14.jpeg',
     'src/img/15.jpeg',
     'src/img/16.webp',
