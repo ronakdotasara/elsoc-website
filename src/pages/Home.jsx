@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { useNavigate } from 'react-router-dom'; // ADD THIS IMPORT
 import './Home.css';
 
 const Home = () => {
+  const navigate = useNavigate(); // ADD THIS LINE
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.8]);
@@ -179,11 +181,7 @@ const Home = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
             >
-              ELSOC, the Departmental Society of Electrical Engineering at NIT Hamirpur, stands as a beacon of innovation and excellence, cultivating intellectual curiosity and analytical rigor among aspiring engineers. It provides a platform where theoretical knowledge converges with inventive exploration, inspiring students to excel in the ever-evolving domain of electrical engineering.
-
-Over the course of the year, ELSOC curates an array of workshops, expert lectures, and innovative projects and  experiments, enabling members to translate conceptual understanding into tangible solutions. Students engage with advanced simulation frameworks, microcontroller-driven projects, and empirical investigations of intricate electrical phenomena.
-
-By fostering creativity, technical acumen, and a relentless spirit of inquiry, ELSOC molds engineers capable of transcending conventional paradigms, devising pioneering solutions, and effecting transformative contributions to the rapidly advancing technological landscape.
+              ELSOC, the Departmental Society of Electrical Engineering at NIT Hamirpur, empowers aspiring engineers through innovation, collaboration, and excellence. We bridge theoretical knowledge with practical application through hands-on workshops, expert lectures, cutting-edge projects, and industry collaborations. Our community fosters creativity, technical expertise, and problem-solving skills, preparing students to lead in the rapidly evolving field of electrical engineering and make meaningful contributions to technology and society.
             </motion.p>
             
             <motion.div 
@@ -192,11 +190,17 @@ By fostering creativity, technical acumen, and a relentless spirit of inquiry, E
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
             >
-              <button className="btn-primary glass-morphism">
+              <button 
+                className="btn-primary glass-morphism"
+                onClick={() => navigate('/contact')}
+              >
                 <span>Join Our Community</span>
                 <span className="btn-arrow">→</span>
               </button>
-              <button className="btn-secondary glass-morphism">
+              <button 
+                className="btn-secondary glass-morphism"
+                onClick={() => navigate('/about')}
+              >
                 <span>Explore More</span>
               </button>
             </motion.div>
@@ -289,7 +293,10 @@ By fostering creativity, technical acumen, and a relentless spirit of inquiry, E
             transition={{ delay: 0.8 }}
             className="view-team-container"
           >
-            <button className="btn-view-team glass-morphism">
+            <button 
+              className="btn-view-team glass-morphism"
+              onClick={() => navigate('/team')}
+            >
               <span className="team-icon">👥</span>
               <span>View ELSOC Team</span>
               <span className="btn-arrow">→</span>
@@ -460,7 +467,10 @@ By fostering creativity, technical acumen, and a relentless spirit of inquiry, E
             viewport={{ once: true }}
             transition={{ delay: 0.8 }}
           >
-            <button className="btn-view-all glass-morphism">
+            <button 
+              className="btn-view-all glass-morphism"
+              onClick={() => navigate('/events')}
+            >
               <span>View All Events</span>
               <span className="btn-arrow">→</span>
             </button>
@@ -520,11 +530,17 @@ By fostering creativity, technical acumen, and a relentless spirit of inquiry, E
               Access exclusive workshops, collaborate on cutting-edge projects, and network with industry leaders.
             </p>
             <div className="cta-buttons">
-              <button className="btn-primary glass-morphism">
+              <button 
+                className="btn-primary glass-morphism"
+                onClick={() => navigate('/contact')}
+              >
                 <span>Become a Member</span>
                 <span className="btn-arrow">→</span>
               </button>
-              <button className="btn-secondary glass-morphism">
+              <button 
+                className="btn-secondary glass-morphism"
+                onClick={() => navigate('/contact')}
+              >
                 <span>Contact Us</span>
               </button>
             </div>

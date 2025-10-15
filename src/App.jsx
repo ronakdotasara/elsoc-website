@@ -401,10 +401,14 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Apply theme to document
-    document.documentElement.setAttribute('data-theme', theme);
+    // Apply theme class to body element
+    if (theme === 'light') {
+      document.body.classList.add('light-theme');
+    } else {
+      document.body.classList.remove('light-theme');
+    }
     
-    // Save theme preference
+    // Save theme preference to localStorage
     localStorage.setItem('theme', theme);
     
     // Add smooth scroll behavior
@@ -415,7 +419,7 @@ function App() {
     if (metaThemeColor) {
       metaThemeColor.setAttribute(
         'content', 
-        theme === 'dark' ? '#0f1419' : '#ffffff'
+        theme === 'dark' ? '#0a0118' : '#f8f9fa'
       );
     }
   }, [theme]);
@@ -434,7 +438,7 @@ function App() {
 
   return (
     <Router>
-      <div className="App" data-theme={theme}>
+      <div className="App">
         {/* Aurora Background */}
         <div className="app-aurora-bg">
           <motion.div 
