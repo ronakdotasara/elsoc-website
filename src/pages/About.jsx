@@ -83,10 +83,16 @@ const About = () => {
           >
             <h2 className="gradient-heading">Who We Are</h2>
             <p className="intro-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. ELSOC (Electrical Society) is a government-recognized technical society at National Institute of Technology Hamirpur. Founded in 2015, we have been at the forefront of fostering innovation, technical excellence, and leadership among students in the field of electrical engineering and related disciplines.
+             ELSOC, the Departmental Society of Electrical Engineering at NIT Hamirpur, stands as a beacon of innovation and excellence, cultivating intellectual curiosity and analytical rigor among aspiring engineers. It provides a platform where theoretical knowledge converges with inventive exploration, inspiring students to excel in the ever-evolving domain of electrical engineering.
+
             </p>
             <p className="intro-text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our society serves as a platform for students to enhance their technical skills, work on cutting-edge projects, participate in competitions, and connect with industry professionals. We believe in learning by doing and provide numerous opportunities for hands-on experience.
+              Over the course of the year, ELSOC curates an array of workshops, expert lectures, and innovative projects and  experiments, enabling members to translate conceptual understanding into tangible solutions. Students engage with advanced simulation frameworks, microcontroller-driven projects, and empirical investigations of intricate electrical phenomena.
+
+            </p>
+
+            <p className="intro-text">
+             By fostering creativity, technical acumen, and a relentless spirit of inquiry, ELSOC molds engineers capable of transcending conventional paradigms, devising pioneering solutions, and effecting transformative contributions to the rapidly advancing technological landscape.
             </p>
           </motion.div>
         </div>

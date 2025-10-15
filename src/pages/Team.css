@@ -294,10 +294,56 @@
 }
 
 /* Third Year Members */
+.third-year-top-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  max-width: 600px;
+  margin: 0 auto 3rem;
+  justify-content: center;
+}
+
+.third-year-top-row .member-card {
+  background: rgba(31, 41, 55, 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(107, 114, 128, 0.5);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.third-year-top-row .member-card:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  transform: translateY(-5px) scale(1.05);
+}
+
+.third-year-top-row .member-image {
+  width: 100%;
+  height: 12rem;
+  margin: 0 auto 1rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 2px solid rgba(168, 85, 247, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(17, 24, 39, 0.5);
+}
+
+.third-year-top-row .member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .third-year-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .member-card {
@@ -328,6 +374,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .member-info h4 {
@@ -516,6 +563,11 @@
     grid-template-columns: 1fr;
   }
 
+  .third-year-top-row {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+  }
+
   .third-year-grid {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   }
@@ -541,6 +593,10 @@
   .filter-btn {
     padding: 0.4rem 1rem;
     font-size: 0.875rem;
+  }
+
+  .third-year-top-row {
+    max-width: 100%;
   }
 
   .third-year-grid {

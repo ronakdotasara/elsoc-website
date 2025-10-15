@@ -179,9 +179,11 @@ const Home = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.7 }}
             >
-              Pioneering innovation in electrical engineering through cutting-edge projects, 
-              collaborative learning, and industry partnerships. Join us in shaping the future 
-              of sustainable technology and smart systems.
+              ELSOC, the Departmental Society of Electrical Engineering at NIT Hamirpur, stands as a beacon of innovation and excellence, cultivating intellectual curiosity and analytical rigor among aspiring engineers. It provides a platform where theoretical knowledge converges with inventive exploration, inspiring students to excel in the ever-evolving domain of electrical engineering.
+
+Over the course of the year, ELSOC curates an array of workshops, expert lectures, and innovative projects and  experiments, enabling members to translate conceptual understanding into tangible solutions. Students engage with advanced simulation frameworks, microcontroller-driven projects, and empirical investigations of intricate electrical phenomena.
+
+By fostering creativity, technical acumen, and a relentless spirit of inquiry, ELSOC molds engineers capable of transcending conventional paradigms, devising pioneering solutions, and effecting transformative contributions to the rapidly advancing technological landscape.
             </motion.p>
             
             <motion.div 
