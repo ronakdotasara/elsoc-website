@@ -386,13 +386,15 @@ const CursorGlow = () => {
 function App() {
   const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState(() => {
-    // Check for saved theme preference or default to 'dark'
     const savedTheme = localStorage.getItem('theme');
     return savedTheme || 'dark';
   });
+  
+  // ✨ NEW: State management to prevent sidebar/chatbot overlap
+  const [isChatBotOpen, setIsChatBotOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    // Loader duration: 2 seconds
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
@@ -401,20 +403,15 @@ function App() {
   }, []);
 
   useEffect(() => {
-    // Apply theme class to body element
     if (theme === 'light') {
       document.body.classList.add('light-theme');
     } else {
       document.body.classList.remove('light-theme');
     }
     
-    // Save theme preference to localStorage
     localStorage.setItem('theme', theme);
-    
-    // Add smooth scroll behavior
     document.documentElement.style.scrollBehavior = 'smooth';
     
-    // Update meta theme-color for mobile browsers
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (metaThemeColor) {
       metaThemeColor.setAttribute(
@@ -423,6 +420,19 @@ function App() {
       );
     }
   }, [theme]);
+
+  // ✨ NEW: Close one when other opens (prevent overlap)
+  useEffect(() => {
+    if (isChatBotOpen && isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  }, [isChatBotOpen]);
+
+  useEffect(() => {
+    if (isMobileMenuOpen && isChatBotOpen) {
+      setIsChatBotOpen(false);
+    }
+  }, [isMobileMenuOpen]);
 
   const toggleTheme = () => {
     setTheme(prevTheme => prevTheme === 'dark' ? 'light' : 'dark');
@@ -439,7 +449,6 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* Aurora Background */}
         <div className="app-aurora-bg">
           <motion.div 
             className="aurora-blob aurora-blob-1"
@@ -481,20 +490,29 @@ function App() {
           />
         </div>
 
-        {/* Cursor Glow Effect */}
         <CursorGlow />
-
-        {/* Scroll Progress Indicator */}
         <ScrollProgress />
 
-        <Navbar theme={theme} toggleTheme={toggleTheme} />
+        {/* ✨ UPDATED: Pass state management props */}
+        <Navbar 
+          theme={theme} 
+          toggleTheme={toggleTheme}
+          isMobileMenuOpen={isMobileMenuOpen}
+          setIsMobileMenuOpen={setIsMobileMenuOpen}
+        />
         
         <main className="main-content">
           <AnimatedRoutes />
         </main>
         
         <Footer />
-        <ChatBot />
+        
+        {/* ✨ UPDATED: Pass state management props */}
+        <ChatBot 
+          isOpen={isChatBotOpen}
+          setIsOpen={setIsChatBotOpen}
+        />
+        
         <BackToTop />
       </div>
     </Router>
