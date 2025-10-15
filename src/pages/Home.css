@@ -1900,3 +1900,78 @@ body.light-theme .hero-badge {
     padding: 120px 1rem 80px;
   }
 }
+/* ==================== */
+/* HERO ICON - ALWAYS VISIBLE + SELECTION FIX */
+/* ==================== */
+
+/* Make icon always visible */
+.hero-icon {
+  display: inline-block !important;
+  font-size: clamp(3rem, 7vw, 6rem) !important;
+  margin-right: 1rem !important;
+  color: #ffffff !important;  /* ← THIS MAKES IT VISIBLE */
+  opacity: 1 !important;
+  visibility: visible !important;
+  
+  /* Add glow so it's always visible */
+  filter: 
+    brightness(2) 
+    drop-shadow(0 0 40px #8b5cf6) 
+    drop-shadow(0 0 60px #ec4899) !important;
+  
+  text-shadow:
+    0 0 20px rgba(255, 255, 255, 0.8),
+    0 0 40px rgba(139, 92, 246, 0.6),
+    0 0 60px rgba(236, 72, 153, 0.4);
+  
+  animation: iconPulse 3s ease-in-out infinite;
+}
+
+/* Selection style for icon */
+.hero-icon::selection {
+  background: rgba(236, 72, 153, 0.6) !important;
+  color: #ffffff !important;
+  text-shadow: 0 0 20px #ff00ff !important;
+}
+
+.hero-icon::-moz-selection {
+  background: rgba(236, 72, 153, 0.6) !important;
+  color: #ffffff !important;
+  text-shadow: 0 0 20px #ff00ff !important;
+}
+
+/* Light theme icon visibility */
+body.light-theme .hero-icon {
+  color: #0284c7 !important;
+  filter: 
+    brightness(1.5) 
+    drop-shadow(0 0 30px #0284c7) 
+    drop-shadow(0 0 50px #0ea5e9) !important;
+  
+  text-shadow:
+    0 0 15px rgba(2, 132, 199, 0.8),
+    0 0 30px rgba(14, 165, 233, 0.6);
+}
+
+body.light-theme .hero-icon::selection {
+  background: rgba(14, 165, 233, 0.5) !important;
+  color: #0c4a6e !important;
+  text-shadow: 0 0 10px #0284c7 !important;
+}
+
+@keyframes iconPulse {
+  0%, 100% {
+    filter: brightness(2) drop-shadow(0 0 40px #8b5cf6);
+    transform: scale(1);
+  }
+  50% {
+    filter: brightness(3) drop-shadow(0 0 60px #ec4899);
+    transform: scale(1.05);
+  }
+}
+
+/* Prevent icon from being transparent/invisible */
+.hero-title .hero-icon {
+  background: transparent !important;
+  -webkit-text-fill-color: currentColor !important;
+}

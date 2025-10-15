@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
@@ -16,48 +17,30 @@ const Footer = () => {
   ];
 
   const resources = [
-    { path: '#', label: 'Documentation', icon: '📄' },
-    { path: '#', label: 'Newsletters', icon: '📰' },
-    { path: '#', label: 'Gallery', icon: '📸' },
-    { path: '#', label: 'Achievements', icon: '🏆' }
+    { path: '/events', label: 'Workshops', icon: '🛠️' },
+    { path: '/events', label: 'Hackathons', icon: '💻' },
+    { path: '/projects', label: 'Projects', icon: '📸' },
+    { path: '/team', label: 'Our Team', icon: '🏆' }
   ];
 
   const socialLinks = [
     { 
-      icon: '📘', 
+      Icon: FaFacebook,
       label: 'Facebook', 
-      url: 'https://facebook.com/elsoc',
+      url: 'https://www.facebook.com/elsoc.nith/',
       color: '#1877f2'
     },
     { 
-      icon: '🐦', 
-      label: 'Twitter', 
-      url: 'https://twitter.com/elsoc',
-      color: '#1da1f2'
-    },
-    { 
-      icon: '📷', 
+      Icon: FaInstagram,
       label: 'Instagram', 
-      url: 'https://instagram.com/elsoc',
+      url: 'https://www.instagram.com/elsoc_nith/',
       color: '#e4405f'
     },
     { 
-      icon: '💼', 
+      Icon: FaLinkedin,
       label: 'LinkedIn', 
-      url: 'https://linkedin.com/company/elsoc',
-      color: '#0a66c2'
-    },
-    { 
-      icon: '▶️', 
-      label: 'YouTube', 
-      url: 'https://youtube.com/@elsoc',
-      color: '#ff0000'
-    },
-    { 
-      icon: '💬', 
-      label: 'Discord', 
-      url: '#',
-      color: '#5865f2'
+      url: 'https://in.linkedin.com/company/elsoc-nit-hamirpur',
+      color: '#0077b5'
     }
   ];
 
@@ -120,25 +103,24 @@ const Footer = () => {
             <p className="footer-tagline">Electrical Society</p>
             
             <p className="footer-description">
-              A government-recognized technical society at NIT Hamirpur fostering 
-              innovation, excellence, and leadership in electrical engineering and technology.
+              The Departmental Society of Electrical Engineering at NIT Hamirpur, empowering aspiring engineers through innovation, collaboration, and excellence.
             </p>
 
             {/* Stats */}
             <div className="footer-stats">
               <div className="stat-item">
-                <span className="stat-number gradient-text">800+</span>
-                <span className="stat-label">Members</span>
+                <span className="stat-number gradient-text">35+</span>
+                <span className="stat-label">Projects</span>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
-                <span className="stat-number gradient-text">75+</span>
-                <span className="stat-label">Events</span>
+                <span className="stat-number gradient-text">10+</span>
+                <span className="stat-label">Events/Year</span>
               </div>
               <div className="stat-divider"></div>
               <div className="stat-item">
-                <span className="stat-number gradient-text">12+</span>
-                <span className="stat-label">Years</span>
+                <span className="stat-number gradient-text">33</span>
+                <span className="stat-label">Team Members</span>
               </div>
             </div>
           </motion.div>
@@ -170,7 +152,7 @@ const Footer = () => {
           <motion.div className="footer-section" variants={itemVariants}>
             <h4 className="footer-title">
               <span className="title-icon">📚</span>
-              Resources
+              Explore
             </h4>
             <ul className="footer-links">
               {resources.map((link, index) => (
@@ -179,11 +161,11 @@ const Footer = () => {
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <a href={link.path} className="footer-link">
+                  <Link to={link.path} className="footer-link">
                     <span className="link-icon">{link.icon}</span>
                     <span>{link.label}</span>
                     <span className="link-arrow">→</span>
-                  </a>
+                  </Link>
                 </motion.li>
               ))}
             </ul>
@@ -261,6 +243,7 @@ const Footer = () => {
                 href={social.url}
                 className="social-link glass-morphism"
                 aria-label={social.label}
+                style={{ color: social.color }}
                 whileHover={{ 
                   scale: 1.15, 
                   y: -5,
@@ -268,8 +251,10 @@ const Footer = () => {
                 }}
                 whileTap={{ scale: 0.9 }}
                 transition={{ duration: 0.2 }}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <span className="social-icon">{social.icon}</span>
+                <social.Icon className="social-icon" size={28} />
                 <span className="social-tooltip">{social.label}</span>
               </motion.a>
             ))}
@@ -293,22 +278,22 @@ const Footer = () => {
             </div>
             
             <div className="footer-bottom-links">
-              <a href="#" className="bottom-link">Privacy Policy</a>
+              <Link to="/about" className="bottom-link">About Us</Link>
               <span className="divider">•</span>
-              <a href="#" className="bottom-link">Terms of Service</a>
+              <Link to="/events" className="bottom-link">Events</Link>
               <span className="divider">•</span>
-              <a href="#" className="bottom-link">Sitemap</a>
+              <Link to="/contact" className="bottom-link">Contact</Link>
             </div>
             
             <div className="credits-section">
               <p className="credits">
-                Crafted with <motion.span 
+                Maintained with <motion.span 
                   className="heart"
                   animate={{ scale: [1, 1.2, 1] }}
                   transition={{ duration: 1, repeat: Infinity }}
                 >
                   ⚡
-                </motion.span> by <span className="gradient-text">ELSOC Tech Team</span>
+                </motion.span> by <span className="gradient-text">ELSOC Web Dev Team</span>
               </p>
             </div>
           </div>

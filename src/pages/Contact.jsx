@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import './Contact.css';
 
 const Contact = () => {
@@ -63,29 +64,42 @@ const Contact = () => {
   ];
 
   const socialLinks = [
-    { platform: 'Facebook', icon: '📘', url: '#', color: '#1877f2' },
-    { platform: 'Twitter', icon: '🐦', url: '#', color: '#1da1f2' },
-    { platform: 'Instagram', icon: '📷', url: '#', color: '#e4405f' },
-    { platform: 'LinkedIn', icon: '💼', url: '#', color: '#0077b5' },
-    { platform: 'YouTube', icon: '📺', url: '#', color: '#ff0000' }
+    { 
+      platform: 'Facebook', 
+      Icon: FaFacebook, 
+      url: 'https://www.facebook.com/elsoc.nith/', 
+      color: '#1877f2' 
+    },
+    { 
+      platform: 'Instagram', 
+      Icon: FaInstagram, 
+      url: 'https://www.instagram.com/elsoc_nith/', 
+      color: '#e4405f' 
+    },
+    { 
+      platform: 'LinkedIn', 
+      Icon: FaLinkedin, 
+      url: 'https://in.linkedin.com/company/elsoc-nit-hamirpur', 
+      color: '#0077b5' 
+    }
   ];
 
   const faqs = [
     {
       question: 'How can I become a member of ELSOC?',
-      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Membership applications are open at the beginning of each semester. Fill out the form on this page or contact us directly.'
+      answer: 'ELSOC conducts interviews for first-year and second-year students during the recruitment drive at the beginning of each academic year. Students from all branches are welcome to apply through our official recruitment process.'
     },
     {
       question: 'Do I need to be from Electrical Engineering to join?',
-      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. No! ELSOC welcomes students from all branches who have an interest in electrical engineering and related technologies.'
+      answer: 'No! ELSOC welcomes students from all branches of engineering who have a genuine interest in electrical engineering, technology, and innovation. We believe in diversity and cross-disciplinary collaboration.'
     },
     {
       question: 'What kind of events does ELSOC organize?',
-      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. We organize workshops, hackathons, guest lectures, competitions, project exhibitions, and technical seminars throughout the year.'
+      answer: 'ELSOC organizes a wide variety of events including technical workshops, hackathons, guest lectures by industry experts, coding competitions, project exhibitions, and hands-on training sessions throughout the year.'
     },
     {
       question: 'Is there any membership fee?',
-      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Membership is free for all NIT Hamirpur students. Some specific workshops or events may have nominal registration fees.'
+      answer: 'No, membership in ELSOC is completely free for all NIT Hamirpur students. There are no fees to join or participate in most of our activities, ensuring accessibility for everyone interested.'
     }
   ];
 
@@ -111,7 +125,7 @@ const Contact = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. We'd love to hear from you
+            Have questions or want to collaborate? We'd love to hear from you and help you explore the world of electrical engineering.
           </motion.p>
         </div>
       </section>
@@ -156,7 +170,7 @@ const Contact = () => {
             >
               <h2 className="form-title">Send Us a Message</h2>
               <p className="form-subtitle">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fill out the form below and we'll get back to you.
+                Whether you have a question about events, membership, or anything else, our team is ready to answer all your questions.
               </p>
 
               {formStatus.message && (
@@ -270,19 +284,20 @@ const Contact = () => {
 
               <div className="social-section">
                 <h3>Connect With Us</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Follow us on social media</p>
+                <p>Follow us on social media for updates on events, workshops, and exciting projects!</p>
                 <div className="social-grid">
                   {socialLinks.map((social, index) => (
                     <motion.a
                       key={index}
                       href={social.url}
                       className="social-card"
+                      style={{ color: social.color }}
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       whileTap={{ scale: 0.9 }}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span className="social-card-icon">{social.icon}</span>
+                      <social.Icon className="social-card-icon" size={32} />
                       <span className="social-card-name">{social.platform}</span>
                     </motion.a>
                   ))}
@@ -304,7 +319,7 @@ const Contact = () => {
           >
             <h2 className="section-title">Frequently Asked Questions</h2>
             <p className="section-subtitle">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quick answers to common questions
+              Quick answers to common questions about ELSOC membership, events, and activities
             </p>
           </motion.div>
 

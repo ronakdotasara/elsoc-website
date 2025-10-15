@@ -9,103 +9,136 @@ const Events = () => {
   const eventsData = {
     upcoming: [
       {
-        title: 'IoT Workshop 2025',
-        date: 'November 15, 2025',
+        title: 'Workshop #1 - MATLAB Basics',
+        date: 'September 27, 2025 (Tentative)',
         time: '10:00 AM - 4:00 PM',
-        location: 'Main Auditorium, NIT Hamirpur',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Comprehensive hands-on workshop on Internet of Things, covering sensor integration, microcontrollers, and cloud connectivity.',
+        location: 'Main Lab, EE Department',
+        description: 'Comprehensive hands-on workshop covering MATLAB fundamentals, electrical project simulations, and practical applications for engineering students.',
         category: 'Workshop',
-        image: 'https://via.placeholder.com/400x250/5b00b7/ffffff?text=IoT+Workshop',
+        image: 'public/img/16.webp',
         status: 'upcoming',
         registrationLink: '#'
       },
       {
-        title: 'Circuit Design Hackathon',
-        date: 'December 5, 2025',
-        time: '9:00 AM - 6:00 PM',
-        location: 'Electronics Lab, NIT Hamirpur',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. 24-hour intensive hackathon focused on innovative circuit design and PCB development challenges.',
-        category: 'Competition',
-        image: 'https://via.placeholder.com/400x250/8b00ff/ffffff?text=Hackathon',
-        status: 'upcoming',
-        registrationLink: '#'
-      },
-      {
-        title: 'Industry Expert Talk',
-        date: 'October 25, 2025',
+        title: 'Guest Lecture / Tech Talk',
+        date: 'November 10-16, 2025 (Tentative)',
         time: '2:00 PM - 4:00 PM',
         location: 'Seminar Hall, NIT Hamirpur',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Interactive session with industry professionals discussing emerging technologies and career opportunities.',
+        description: 'Interactive session with industry professionals and alumni discussing emerging technologies, research opportunities, and career guidance in electrical engineering.',
         category: 'Seminar',
-        image: 'https://via.placeholder.com/400x250/a855f7/ffffff?text=Expert+Talk',
+        image: 'public/img/guestlec.jpg',
         status: 'upcoming',
         registrationLink: '#'
       },
       {
-        title: 'Robotics Competition 2025',
-        date: 'November 30, 2025',
+        title: 'Workshop - Power Systems & Labs',
+        date: 'January 12-26, 2026 (Tentative)',
+        time: '10:00 AM - 4:00 PM',
+        location: 'Power Systems Lab, NIT Hamirpur',
+        description: 'Advanced workshop on power systems engineering, including hands-on experience with transformers, circuit breakers, and smart grid technologies.',
+        category: 'Workshop',
+        image: 'public/img/6.jpeg',
+        status: 'upcoming',
+        registrationLink: '#'
+      },
+      {
+        title: 'Circuit Debugging Challenge',
+        date: 'February 9, 2026 (Tentative)',
+        time: '9:00 AM - 5:00 PM',
+        location: 'Electronics Lab, NIT Hamirpur',
+        description: 'Technical collaboration event featuring circuit debugging challenges, team problem-solving, and exciting prizes for winners.',
+        category: 'Competition',
+        image: 'public/img/circuit.png',
+        status: 'upcoming',
+        registrationLink: '#'
+      },
+      {
+        title: 'Project Showcase',
+        date: 'March 9-16, 2026 (Tentative)',
         time: '10:00 AM - 5:00 PM',
         location: 'Tech Arena, NIT Hamirpur',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Inter-college robotics competition featuring autonomous bots and line-following challenges.',
-        category: 'Competition',
-        image: 'https://via.placeholder.com/400x250/5b00b7/ffffff?text=Robotics',
-        status: 'upcoming',
-        registrationLink: '#'
-      },
-      {
-        title: 'PCB Design Masterclass',
-        date: 'December 15, 2025',
-        time: '11:00 AM - 3:00 PM',
-        location: 'Lab 3, EE Department',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Advanced workshop on PCB design using industry-standard tools like Altium and Eagle.',
-        category: 'Workshop',
-        image: 'https://via.placeholder.com/400x250/8b00ff/ffffff?text=PCB+Design',
+        description: 'Final project presentations and showcase featuring student innovations in electrical engineering, IoT, robotics, and embedded systems.',
+        category: 'Exhibition',
+        image: 'public/img/DSC03741 (1).jpg',
         status: 'upcoming',
         registrationLink: '#'
       }
     ],
     past: [
       {
-        title: 'Arduino Workshop 2024',
-        date: 'September 20, 2024',
-        time: '10:00 AM - 4:00 PM',
-        location: 'Main Auditorium, NIT Hamirpur',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Beginner-friendly workshop introducing Arduino programming and electronics prototyping.',
+        title: 'Blockchain Workshop',
+        date: 'February 4, 2022',
+        time: '3:00 PM',
+        location: 'YouTube Live',
+        description: 'Interactive online workshop on blockchain technology and cryptocurrency fundamentals, featuring a live quiz competition with exciting prizes for participants.',
         category: 'Workshop',
-        image: 'https://via.placeholder.com/400x250/5b00b7/ffffff?text=Arduino',
+        image: 'https://via.placeholder.com/400x250/5b00b7/ffffff?text=Blockchain',
         status: 'completed',
         registrationLink: '#'
       },
       {
-        title: 'Technical Symposium 2024',
-        date: 'August 10, 2024',
-        time: '9:00 AM - 6:00 PM',
-        location: 'Convention Center, NIT Hamirpur',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Annual flagship event featuring paper presentations, project exhibitions, and technical competitions.',
-        category: 'Seminar',
-        image: 'https://via.placeholder.com/400x250/8b00ff/ffffff?text=Symposium',
-        status: 'completed',
-        registrationLink: '#'
-      },
-      {
-        title: 'Smart Grid Technology Seminar',
-        date: 'July 15, 2024',
-        time: '2:00 PM - 5:00 PM',
+        title: 'Intern Talk - Research Internships',
+        date: 'August 29, 2022',
+        time: '6:00 PM',
         location: 'Auditorium, NIT Hamirpur',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Expert session on modern smart grid technologies and sustainable energy solutions.',
+        description: 'Inspiring session with ELSOC members sharing their research internship experiences at DRDO, RWTH Aachen Germany, NTU Singapore, TU Darmstadt, and IISc Bangalore.',
         category: 'Seminar',
-        image: 'https://via.placeholder.com/400x250/a855f7/ffffff?text=Smart+Grid',
+        image: 'https://via.placeholder.com/400x250/8b00ff/ffffff?text=Intern+Talk',
         status: 'completed',
         registrationLink: '#'
       },
       {
-        title: 'MATLAB Programming Workshop',
-        date: 'June 5, 2024',
-        time: '10:00 AM - 4:00 PM',
-        location: 'Computer Lab, NIT Hamirpur',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Intensive workshop covering MATLAB fundamentals and simulation techniques.',
+        title: 'MATLAB Workshop',
+        date: 'October 21, 2022',
+        time: '4:00 PM - 6:00 PM',
+        location: 'NEW-LH, NIT Hamirpur',
+        description: 'Programming platform workshop designed for engineers and scientists to analyze systems, design products, and create solutions using MATLAB simulations.',
         category: 'Workshop',
-        image: 'https://via.placeholder.com/400x250/5b00b7/ffffff?text=MATLAB',
+        image: 'public/img/matlab.png',
+        status: 'completed',
+        registrationLink: '#'
+      },
+      {
+        title: 'Lightning Unleashed (ELSOC X OJAS)',
+        date: 'February 10, 2023',
+        time: '5:00 PM',
+        location: 'Electrical Department, NIT Hamirpur',
+        description: 'Collaborative event showcasing high-voltage demonstrations including insulation breakdown, corona discharge, power transformers, earth testing, and 33kV transformer limbs.',
+        category: 'Exhibition',
+        image: 'public/img/corona.jpeg',
+        status: 'completed',
+        registrationLink: '#'
+      },
+      {
+        title: 'KUIZZ-i-THON',
+        date: 'September 1, 2023',
+        time: '5:30 PM',
+        location: 'LH G2, NIT Hamirpur',
+        description: 'Technical quiz competition covering general science, space exploration, history of engineering, and current affairs with exciting prizes for winners.',
+        category: 'Competition',
+        image: 'https://via.placeholder.com/400x250/8b00ff/ffffff?text=Quiz+Competition',
+        status: 'completed',
+        registrationLink: '#'
+      },
+      {
+        title: 'Circuits of Opportunities Workshop',
+        date: 'October 18, 2023',
+        time: '5:00 PM',
+        location: 'LH G2, NIT Hamirpur',
+        description: 'Career guidance workshop exploring diverse opportunities in finance, civil services, IT, core engineering, and defence sectors for electrical engineers.',
+        category: 'Workshop',
+        image: 'https://via.placeholder.com/400x250/5b00b7/ffffff?text=Career+Workshop',
+        status: 'completed',
+        registrationLink: '#'
+      },
+      {
+        title: 'TECHLETICS (OJAS X ELSOC)',
+        date: 'April 10, 2024',
+        time: '5:00 PM',
+        location: 'SAC, NIT Hamirpur',
+        description: 'Thrilling fusion of innovation and competition featuring technical challenges, robotics demonstrations, and collaborative engineering projects.',
+        category: 'Competition',
+        image: 'https://via.placeholder.com/400x250/a855f7/ffffff?text=Techletics',
         status: 'completed',
         registrationLink: '#'
       }
@@ -136,7 +169,7 @@ const Events = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Explore our technical events and learning opportunities
+            Discover ELSOC's technical events, workshops, and learning opportunities designed to empower aspiring electrical engineers
           </motion.p>
         </div>
       </section>
@@ -180,7 +213,7 @@ const Events = () => {
                 <div className="no-events">
                   <span className="no-events-icon">📭</span>
                   <h3>No Events Found</h3>
-                  <p>Check back later for updates!</p>
+                  <p>Check back later for exciting updates!</p>
                 </div>
               )}
             </motion.div>

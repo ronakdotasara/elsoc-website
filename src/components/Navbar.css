@@ -330,3 +330,76 @@
     height: 2px;
   }
 }
+/* ==================== */
+/* NAVBAR BLUR FIX - FORCE BLUR */
+/* ==================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(10, 1, 24, 0.7) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.light-theme .navbar {
+  background: rgba(255, 255, 255, 0.7) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(0, 82, 255, 0.15);
+}
+
+.navbar.scrolled {
+  background: rgba(10, 1, 24, 0.85) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+body.light-theme .navbar.scrolled {
+  background: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(30px) !important;
+  -webkit-backdrop-filter: blur(30px) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure blur works on all browsers */
+@supports (backdrop-filter: blur(20px)) {
+  .navbar {
+    background: rgba(10, 1, 24, 0.7) !important;
+    backdrop-filter: blur(20px) !important;
+  }
+  
+  body.light-theme .navbar {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(20px) !important;
+  }
+}
+
+@supports (-webkit-backdrop-filter: blur(20px)) {
+  .navbar {
+    background: rgba(10, 1, 24, 0.7) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+  }
+  
+  body.light-theme .navbar {
+    background: rgba(255, 255, 255, 0.7) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+  }
+}
+
+/* Fallback for browsers without blur support */
+@supports not ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+  .navbar {
+    background: rgba(10, 1, 24, 0.95) !important;
+  }
+  
+  body.light-theme .navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+  }
+}

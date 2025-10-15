@@ -2184,3 +2184,191 @@ body.light-theme ::selection {
   background: rgba(14, 165, 233, 0.3);
   color: #0c4a6e;
 }
+/* ==================== */
+/* LIGHT THEME - COOL BLUE AURORA EFFECT */
+/* ==================== */
+
+/* Light theme background gradient - Cool blues */
+body.light-theme {
+  background: linear-gradient(180deg, 
+    #dbeafe 0%,      /* Light blue */
+    #bfdbfe 15%,     /* Soft blue */
+    #e0f2fe 30%,     /* Sky blue */
+    #f0f9ff 50%,     /* Very light blue */
+    #e0f2fe 70%,     /* Sky blue */
+    #bfdbfe 85%,     /* Soft blue */
+    #dbeafe 100%     /* Light blue */
+  );
+  background-attachment: fixed;
+}
+
+/* Cool blue aurora background */
+body.light-theme .app-aurora-bg {
+  background: radial-gradient(ellipse at top, 
+    #bfdbfe 0%,      /* Soft blue */
+    #dbeafe 20%,     /* Light blue */
+    #e0f2fe 40%,     /* Sky blue */
+    #f0f9ff 70%      /* Very light blue */
+  );
+}
+
+/* Aurora blobs - Cool blue & cyan colors */
+body.light-theme .aurora-blob-1 {
+  background: radial-gradient(circle, 
+    rgba(56, 189, 248, 0.4) 0%,     /* Bright cyan */
+    rgba(14, 165, 233, 0.3) 30%,    /* Sky blue */
+    transparent 70%
+  );
+  filter: blur(120px);
+}
+
+body.light-theme .aurora-blob-2 {
+  background: radial-gradient(circle, 
+    rgba(14, 165, 233, 0.4) 0%,     /* Sky blue */
+    rgba(59, 130, 246, 0.3) 30%,    /* Blue */
+    transparent 70%
+  );
+  filter: blur(150px);
+}
+
+body.light-theme .aurora-blob-3 {
+  background: radial-gradient(circle, 
+    rgba(96, 165, 250, 0.4) 0%,     /* Light blue */
+    rgba(56, 189, 248, 0.3) 30%,    /* Cyan */
+    transparent 70%
+  );
+  filter: blur(140px);
+}
+
+/* Update color variables for cool blue theme */
+body.light-theme {
+  --bright-purple: #0ea5e9;          /* Sky blue */
+  --aurora-pink: #38bdf8;            /* Cyan blue */
+  --aurora-purple: #0284c7;          /* Blue */
+  --aurora-blue: #0ea5e9;            /* Sky blue */
+  
+  --glass-white: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(56, 189, 248, 0.2);
+  
+  --text-primary: #0c4a6e;           /* Dark blue */
+  --text-secondary: #075985;         /* Medium blue */
+  --text-tertiary: #0284c7;          /* Blue */
+  
+  --bg-primary: #f0f9ff;             /* Very light blue */
+  --bg-secondary: #e0f2fe;           /* Light sky blue */
+  
+  --shadow-color: rgba(56, 189, 248, 0.15);
+}
+
+/* Cool blue cursor glow */
+body.light-theme .cursor-glow {
+  background: radial-gradient(circle, 
+    rgba(56, 189, 248, 0.2) 0%, 
+    rgba(14, 165, 233, 0.1) 40%,
+    transparent 70%
+  );
+  filter: blur(100px);
+}
+
+/* Glass elements with cool blue tint */
+body.light-theme .glass-morphism {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  box-shadow: 0 8px 32px rgba(56, 189, 248, 0.15);
+}
+
+/* Navbar with cool blue */
+body.light-theme .navbar {
+  background: rgba(240, 249, 255, 0.8) !important;
+  border-bottom: 1px solid rgba(56, 189, 248, 0.25);
+}
+
+/* Buttons with cool blue gradient */
+body.light-theme .btn-primary,
+body.light-theme .btn-view-team,
+body.light-theme .btn-view-all,
+body.light-theme .event-register-btn {
+  background: linear-gradient(135deg, 
+    #0ea5e9 0%,      /* Sky blue */
+    #0284c7 100%     /* Blue */
+  ) !important;
+  box-shadow: 0 10px 40px rgba(14, 165, 233, 0.35);
+}
+
+body.light-theme .btn-primary:hover,
+body.light-theme .btn-view-team:hover,
+body.light-theme .btn-view-all:hover {
+  box-shadow: 0 15px 50px rgba(14, 165, 233, 0.5);
+}
+
+/* Secondary button with cyan */
+body.light-theme .btn-secondary {
+  background: linear-gradient(135deg, 
+    #38bdf8 0%,      /* Cyan */
+    #0ea5e9 100%     /* Sky blue */
+  ) !important;
+  border: 1px solid rgba(56, 189, 248, 0.4) !important;
+  box-shadow: 0 10px 40px rgba(56, 189, 248, 0.3);
+}
+
+body.light-theme .btn-secondary:hover {
+  box-shadow: 0 15px 50px rgba(56, 189, 248, 0.5);
+}
+
+/* Gradient text with cool blue */
+body.light-theme .gradient-text {
+  background: linear-gradient(135deg, 
+    #0ea5e9 0%,      /* Sky blue */
+    #0284c7 50%,     /* Blue */
+    #06b6d4 100%     /* Cyan */
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Stats pills with cool blue */
+body.light-theme .stat-pill,
+body.light-theme .hero-badge {
+  background: rgba(240, 249, 255, 0.9);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.1);
+}
+
+/* Footer with blue gradient */
+body.light-theme .footer {
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    rgba(191, 219, 254, 0.6) 100%
+  );
+}
+
+/* Scrollbar with cool blue */
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, 
+    #0ea5e9,         /* Sky blue */
+    #38bdf8          /* Cyan */
+  );
+}
+
+body.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: #0284c7;
+}
+
+/* Selection with cool blue */
+body.light-theme ::selection {
+  background: rgba(56, 189, 248, 0.35);
+  color: #0c4a6e;
+}
+
+/* Hero icon with cool blue glow */
+body.light-theme .hero-icon {
+  color: #0ea5e9 !important;
+  filter: 
+    brightness(1.3) 
+    drop-shadow(0 0 20px rgba(14, 165, 233, 0.6)) !important;
+  
+  text-shadow:
+    0 0 15px rgba(14, 165, 233, 0.5),
+    0 0 25px rgba(56, 189, 248, 0.3);
+}
