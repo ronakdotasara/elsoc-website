@@ -27,23 +27,26 @@ const Home = () => {
     image: '/img/op sir.png'
   },
   {
-    name: 'Dr. Bharti Bakshi Koul',
-    position: 'Faculty Incharge, ELSOC',
-    message: 'Dedicated to nurturing young talent, Dr. Koul mentors ELSOC members with passion, fostering creativity, leadership, and technical excellence in every initiative.',
-    image: '/img/BHarti maam.jpg'
-  },
-  {
-    name: 'Dr. Chandrasekaran S',
-    position: 'Coordinator, ELSOC',
-    message: 'Committed to advancing student learning, Dr. Chandrasekaran encourages innovation and practical application of electrical engineering concepts through hands-on projects.',
-    image: 'img/chandru sir.jpg'
-  },
-  {
-    name: 'Dr. Katam Nishanth',
-    position: 'Coordinator, ELSOC',
-    message: 'With a focus on research and development, Dr. Nishanth guides students in exploring emerging technologies and developing solutions for real-world challenges.',
-    image: 'img/nishant sir.jpg'
-  }
+        name: 'Dr. Bharti Bakshi Koul',
+        position: 'Coordinator, ELSOC',
+        image: '/img/BHarti maam.jpg',
+        message: 'Dedicated to nurturing young talent, Dr. Koul mentors ELSOC members with passion, fostering creativity, leadership, and technical excellence in every initiative.',
+      
+      },
+      {
+        name: 'Dr. Katam Nishanth',
+        position: 'Coordinator, ELSOC',
+        image: '/img/nishant sir.jpg',
+        message: 'With a focus on research and development, Dr. Nishanth guides students in exploring emerging technologies and developing solutions for real-world challenges.',
+        
+      },
+      {
+        name: 'Dr. Chandrasekaran S',
+        position: 'Coordinator, ELSOC',
+        image: '/img/chandru sir.jpg',
+        message: 'Committed to advancing student learning, Dr. Chandrasekaran encourages innovation and practical application of electrical engineering concepts through hands-on projects.',
+        
+      }
 ];
 
 

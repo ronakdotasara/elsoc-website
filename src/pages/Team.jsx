@@ -17,11 +17,19 @@ const Team = () => {
       },
       {
         name: 'Dr. Bharti Bakshi Koul',
-        position: 'Faculty Incharge, ELSOC',
+        position: 'Coordinator, ELSOC',
         department: 'Electrical Engineering Department',
         image: '/img/BHarti maam.jpg',
         bio: 'Dedicated to nurturing young talent, Dr. Koul mentors ELSOC members with passion, fostering creativity, leadership, and technical excellence in every initiative.',
         email: 'bhartibakshi@nith.ac.in'
+      },
+      {
+        name: 'Dr. Katam Nishanth',
+        position: 'Coordinator, ELSOC',
+        department: 'Electrical Engineering Department',
+        image: '/img/nishant sir.jpg',
+        bio: 'With a focus on research and development, Dr. Nishanth guides students in exploring emerging technologies and developing solutions for real-world challenges.',
+        email: 'katam@nith.ac.in'
       },
       {
         name: 'Dr. Chandrasekaran S',
@@ -31,14 +39,6 @@ const Team = () => {
         bio: 'Committed to advancing student learning, Dr. Chandrasekaran encourages innovation and practical application of electrical engineering concepts through hands-on projects.',
         email: 'chandru@nith.ac.in'
       },
-      {
-        name: 'Dr. Katam Nishanth',
-        position: 'Coordinator, ELSOC',
-        department: 'Electrical Engineering Department',
-        image: '/img/nishant sir.jpg',
-        bio: 'With a focus on research and development, Dr. Nishanth guides students in exploring emerging technologies and developing solutions for real-world challenges.',
-        email: 'katam@nith.ac.in'
-      }
     ],
     core: [
       {
