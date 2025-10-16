@@ -10,12 +10,12 @@ const Events = () => {
     upcoming: [
       {
         title: 'Workshop #1 - MATLAB Basics',
-        date: 'September 27, 2025 (Tentative)',
+        date: 'October 30, 2025 (Tentative)',
         time: '10:00 AM - 4:00 PM',
         location: 'Main Lab, EE Department',
         description: 'Comprehensive hands-on workshop covering MATLAB fundamentals, electrical project simulations, and practical applications for engineering students.',
         category: 'Workshop',
-        image: 'public/img/16.webp',
+        image: 'img/16.webp',
         status: 'upcoming',
         registrationLink: '#'
       },
@@ -26,7 +26,7 @@ const Events = () => {
         location: 'Seminar Hall, NIT Hamirpur',
         description: 'Interactive session with industry professionals and alumni discussing emerging technologies, research opportunities, and career guidance in electrical engineering.',
         category: 'Seminar',
-        image: 'public/img/guestlec.jpg',
+        image: 'img/guestlec.jpg',
         status: 'upcoming',
         registrationLink: '#'
       },
@@ -37,7 +37,7 @@ const Events = () => {
         location: 'Power Systems Lab, NIT Hamirpur',
         description: 'Advanced workshop on power systems engineering, including hands-on experience with transformers, circuit breakers, and smart grid technologies.',
         category: 'Workshop',
-        image: 'public/img/6.jpeg',
+        image: 'img/6.jpeg',
         status: 'upcoming',
         registrationLink: '#'
       },
@@ -48,7 +48,7 @@ const Events = () => {
         location: 'Electronics Lab, NIT Hamirpur',
         description: 'Technical collaboration event featuring circuit debugging challenges, team problem-solving, and exciting prizes for winners.',
         category: 'Competition',
-        image: 'public/img/circuit.png',
+        image: 'img/circuit.png',
         status: 'upcoming',
         registrationLink: '#'
       },
@@ -59,7 +59,7 @@ const Events = () => {
         location: 'Tech Arena, NIT Hamirpur',
         description: 'Final project presentations and showcase featuring student innovations in electrical engineering, IoT, robotics, and embedded systems.',
         category: 'Exhibition',
-        image: 'public/img/DSC03741 (1).jpg',
+        image: 'img/DSC03741 (1).jpg',
         status: 'upcoming',
         registrationLink: '#'
       }
@@ -72,7 +72,7 @@ const Events = () => {
         location: 'YouTube Live',
         description: 'Interactive online workshop on blockchain technology and cryptocurrency fundamentals, featuring a live quiz competition with exciting prizes for participants.',
         category: 'Workshop',
-        image: 'https://via.placeholder.com/400x250/5b00b7/ffffff?text=Blockchain',
+        image: 'img/blockchain.png',
         status: 'completed',
         registrationLink: '#'
       },
@@ -94,7 +94,7 @@ const Events = () => {
         location: 'NEW-LH, NIT Hamirpur',
         description: 'Programming platform workshop designed for engineers and scientists to analyze systems, design products, and create solutions using MATLAB simulations.',
         category: 'Workshop',
-        image: 'public/img/matlab.png',
+        image: 'img/15.jpeg',
         status: 'completed',
         registrationLink: '#'
       },
@@ -105,7 +105,7 @@ const Events = () => {
         location: 'Electrical Department, NIT Hamirpur',
         description: 'Collaborative event showcasing high-voltage demonstrations including insulation breakdown, corona discharge, power transformers, earth testing, and 33kV transformer limbs.',
         category: 'Exhibition',
-        image: 'public/img/corona.jpeg',
+        image: 'img/corona.jpeg',
         status: 'completed',
         registrationLink: '#'
       },
@@ -116,7 +116,7 @@ const Events = () => {
         location: 'LH G2, NIT Hamirpur',
         description: 'Technical quiz competition covering general science, space exploration, history of engineering, and current affairs with exciting prizes for winners.',
         category: 'Competition',
-        image: 'https://via.placeholder.com/400x250/8b00ff/ffffff?text=Quiz+Competition',
+        image: 'img/kuiz.png',
         status: 'completed',
         registrationLink: '#'
       },
@@ -138,7 +138,7 @@ const Events = () => {
         location: 'SAC, NIT Hamirpur',
         description: 'Thrilling fusion of innovation and competition featuring technical challenges, robotics demonstrations, and collaborative engineering projects.',
         category: 'Competition',
-        image: 'https://via.placeholder.com/400x250/a855f7/ffffff?text=Techletics',
+        image: 'img/techictics.png',
         status: 'completed',
         registrationLink: '#'
       }

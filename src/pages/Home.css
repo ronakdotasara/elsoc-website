@@ -1975,3 +1975,464 @@ body.light-theme .hero-icon::selection {
   background: transparent !important;
   -webkit-text-fill-color: currentColor !important;
 }
+.domain-image-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+  position: relative;
+}
+
+.domain-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.domain-card:hover .domain-image {
+  transform: scale(1.1);
+}
+
+.domain-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%);
+}
+
+.stat-icon-small {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+/* ==================== */
+/* FACULTY SECTION - NEW MODERN LAYOUT */
+/* ==================== */
+
+.faculty-section {
+  padding: 8rem 0;
+  position: relative;
+}
+
+.faculty-main-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 5rem;
+  letter-spacing: -0.02em;
+}
+
+.faculty-cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.faculty-card-modern {
+  background: rgba(10, 1, 24, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 30px;
+  padding: 3rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+body.light-theme .faculty-card-modern {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.faculty-card-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.faculty-card-modern:hover::before {
+  opacity: 1;
+}
+
+.faculty-image-container {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto 2rem;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid rgba(139, 92, 246, 0.5);
+  box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+  transition: all 0.4s ease;
+}
+
+body.light-theme .faculty-image-container {
+  border: 3px solid rgba(14, 165, 233, 0.5);
+  box-shadow: 0 10px 40px rgba(14, 165, 233, 0.2);
+}
+
+.faculty-card-modern:hover .faculty-image-container {
+  transform: scale(1.05);
+  box-shadow: 0 15px 60px rgba(139, 92, 246, 0.5);
+}
+
+body.light-theme .faculty-card-modern:hover .faculty-image-container {
+  box-shadow: 0 15px 60px rgba(14, 165, 233, 0.4);
+}
+
+.faculty-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.faculty-details {
+  text-align: center;
+}
+
+.faculty-name-large {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+body.light-theme .faculty-name-large {
+  color: #0c4a6e;
+}
+
+.faculty-position-badge {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #a855f7;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+body.light-theme .faculty-position-badge {
+  color: #0ea5e9;
+}
+
+.faculty-message-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+body.light-theme .faculty-message-text {
+  color: rgba(12, 74, 110, 0.8);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .faculty-cards-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .faculty-card-modern {
+    padding: 2rem;
+  }
+  
+  .faculty-image-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .faculty-name-large {
+    font-size: 1.5rem;
+  }
+  
+  .faculty-position-badge {
+    font-size: 0.9rem;
+  }
+  
+  .faculty-message-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faculty-image-container {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .faculty-name-large {
+    font-size: 1.3rem;
+  }
+}
+/* ==================== */
+/* FACULTY SECTION - MODERN LAYOUT */
+/* ==================== */
+
+.faculty-section {
+  padding: 8rem 0;
+  position: relative;
+}
+
+.faculty-main-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 5rem;
+  letter-spacing: -0.02em;
+}
+
+.faculty-cards-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.faculty-card-modern {
+  background: rgba(10, 1, 24, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 30px;
+  padding: 3rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+body.light-theme .faculty-card-modern {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+.faculty-card-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.faculty-card-modern:hover::before {
+  opacity: 1;
+}
+
+.faculty-image-container {
+  width: 250px;
+  height: 250px;
+  margin: 0 auto 2rem;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid rgba(139, 92, 246, 0.5);
+  box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+  transition: all 0.4s ease;
+}
+
+body.light-theme .faculty-image-container {
+  border: 3px solid rgba(14, 165, 233, 0.5);
+  box-shadow: 0 10px 40px rgba(14, 165, 233, 0.2);
+}
+
+.faculty-card-modern:hover .faculty-image-container {
+  transform: scale(1.05);
+  box-shadow: 0 15px 60px rgba(139, 92, 246, 0.5);
+}
+
+body.light-theme .faculty-card-modern:hover .faculty-image-container {
+  box-shadow: 0 15px 60px rgba(14, 165, 233, 0.4);
+}
+
+.faculty-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.faculty-details {
+  text-align: center;
+}
+
+.faculty-name-large {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+body.light-theme .faculty-name-large {
+  color: #0c4a6e;
+}
+
+.faculty-position-badge {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #a855f7;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+body.light-theme .faculty-position-badge {
+  color: #0ea5e9;
+}
+
+.faculty-message-text {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+body.light-theme .faculty-message-text {
+  color: rgba(12, 74, 110, 0.8);
+}
+
+/* Domain image styles */
+.domain-image-wrapper {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 15px 15px 0 0;
+  position: relative;
+}
+
+.domain-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.domain-card:hover .domain-image {
+  transform: scale(1.1);
+}
+
+.domain-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.7) 100%);
+}
+
+.stat-icon-small {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .faculty-cards-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .faculty-card-modern {
+    padding: 2rem;
+  }
+  
+  .faculty-image-container {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .faculty-name-large {
+    font-size: 1.5rem;
+  }
+  
+  .faculty-position-badge {
+    font-size: 0.9rem;
+  }
+  
+  .faculty-message-text {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faculty-image-container {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .faculty-name-large {
+    font-size: 1.3rem;
+  }
+}
+/* ==================== */
+/* FACULTY SECTION - 4 MEMBERS GRID */
+/* ==================== */
+
+.faculty-cards-wrapper-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .faculty-cards-wrapper-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .faculty-cards-wrapper-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .faculty-cards-wrapper-4 {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Smaller image for 4-card layout */
+.faculty-cards-wrapper-4 .faculty-image-container {
+  width: 180px;
+  height: 180px;
+}
+
+.faculty-cards-wrapper-4 .faculty-card-modern {
+  padding: 2rem;
+}
+
+.faculty-cards-wrapper-4 .faculty-name-large {
+  font-size: 1.3rem;
+}
+
+.faculty-cards-wrapper-4 .faculty-message-text {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .faculty-cards-wrapper-4 .faculty-image-container {
+    width: 200px;
+    height: 200px;
+  }
+}

@@ -12,6 +12,7 @@ import Team from './pages/Team';
 import Contact from './pages/Contact';
 import './App.css';
 
+
 // Enhanced Loader Component with Modern Theme
 const Loader = () => {
   return (
@@ -90,6 +91,7 @@ const Loader = () => {
   );
 };
 
+
 // Enhanced 404 Not Found Component
 const NotFound = () => {
   return (
@@ -161,6 +163,7 @@ const NotFound = () => {
   );
 };
 
+
 // Enhanced Back to Top Button
 const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -210,6 +213,7 @@ const BackToTop = () => {
   );
 };
 
+
 // Scroll Progress Bar Component
 const ScrollProgress = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -240,6 +244,7 @@ const ScrollProgress = () => {
   );
 };
 
+
 // Page transition variants
 const pageVariants = {
   initial: {
@@ -266,6 +271,7 @@ const pageVariants = {
     }
   }
 };
+
 
 // Animated Routes Wrapper
 const AnimatedRoutes = () => {
@@ -340,6 +346,7 @@ const AnimatedRoutes = () => {
   );
 };
 
+
 // Cursor Glow Effect Component
 const CursorGlow = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -383,6 +390,23 @@ const CursorGlow = () => {
   );
 };
 
+
+// ✅ NEW: Scroll to Top Component
+const ScrollToTop = () => {
+  const location = useLocation();
+  
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'instant' // Instant scroll, no animation
+    });
+  }, [location.pathname]);
+
+  return null;
+};
+
+
 function App() {
   const [loading, setLoading] = useState(true);
   const [theme, setTheme] = useState(() => {
@@ -390,7 +414,7 @@ function App() {
     return savedTheme || 'dark';
   });
   
-  // ✨ NEW: State management to prevent sidebar/chatbot overlap
+  // State management to prevent sidebar/chatbot overlap
   const [isChatBotOpen, setIsChatBotOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -421,7 +445,7 @@ function App() {
     }
   }, [theme]);
 
-  // ✨ NEW: Close one when other opens (prevent overlap)
+  // Close one when other opens (prevent overlap)
   useEffect(() => {
     if (isChatBotOpen && isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
@@ -492,8 +516,8 @@ function App() {
 
         <CursorGlow />
         <ScrollProgress />
+        <ScrollToTop /> {/* ✅ ADDED: Scroll to top on route change */}
 
-        {/* ✨ UPDATED: Pass state management props */}
         <Navbar 
           theme={theme} 
           toggleTheme={toggleTheme}
@@ -507,7 +531,6 @@ function App() {
         
         <Footer />
         
-        {/* ✨ UPDATED: Pass state management props */}
         <ChatBot 
           isOpen={isChatBotOpen}
           setIsOpen={setIsChatBotOpen}

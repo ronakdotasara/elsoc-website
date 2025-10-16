@@ -1,184 +1,269 @@
-// src/chatbotLogic.js - Advanced ELSOC ChatBot Logic
+// src/chatbotLogic.js - Advanced ELSOC ChatBot with Natural Language Understanding
 
-// Knowledge Base
+// Time-based greeting
+const getTimeBasedGreeting = () => {
+  const hour = new Date().getHours();
+  if (hour < 12) return 'Good morning';
+  if (hour < 17) return 'Good afternoon';
+  if (hour < 21) return 'Good evening';
+  return 'Good night';
+};
+
+// Advanced Knowledge Base with Real ELSOC Data
 const knowledgeBase = {
   about: {
-    keywords: ['what is elsoc', 'about elsoc', 'tell me about', 'who are you', 'what do you do'],
+    keywords: ['what is elsoc', 'about elsoc', 'tell me about', 'who are you', 'what do you do', 'describe elsoc', 'elsoc means', 'full form'],
     responses: [
-      '⚡ ELSOC (Electrical Society) is NIT Hamirpur\'s premier technical society dedicated to electrical engineering excellence! We bring together passionate students, organize cutting-edge workshops, conduct hackathons, and work on innovative projects in IoT, Renewable Energy, Automation, and more.',
-      'We are ELSOC - the Electrical Society at NIT Hamirpur! 🚀 Founded over 12 years ago, we\'ve grown to 800+ active members working on everything from smart grid systems to embedded electronics. We\'re all about innovation, learning, and creating the future of electrical engineering!',
-      'ELSOC stands for Electrical Society, and we\'re the heartbeat of EE innovation at NIT Hamirpur! ⚡ We organize 75+ events annually including workshops, seminars, competitions, and projects. Our mission is to bridge the gap between classroom theory and real-world applications.'
+      `⚡ ${getTimeBasedGreeting()}! ELSOC (Electrical Society) is the Departmental Society of Electrical Engineering at NIT Hamirpur! We're a community of 33 passionate students working on innovative projects in circuit design, IoT, AI/ML, and power systems. Founded 5 years ago, we've completed 35+ projects and organize 10+ events annually!`,
+      '🚀 ELSOC stands for Electrical Society - NIT Hamirpur\'s premier tech community for EE enthusiasts! We bridge theoretical knowledge with practical application through hands-on workshops, expert lectures, cutting-edge projects, and industry collaborations. We\'re all about innovation, creativity, and technical excellence!',
+      '⚡ Hey! We\'re ELSOC - the heartbeat of electrical engineering innovation at NIT Hamirpur! Over the past 5 years, we\'ve grown to 33 active members working across 8 technical domains including Circuit Design, Web Dev, AI/ML, Media & Marketing, Finance, Content, Design, and Management. Join us in shaping the future!'
     ]
   },
   
   joining: {
-    keywords: ['how to join', 'become member', 'join elsoc', 'membership', 'sign up', 'register'],
+    keywords: ['how to join', 'become member', 'join elsoc', 'membership', 'sign up', 'register', 'recruitment', 'can i join', 'want to join', 'interested'],
     responses: [
-      '🎯 Awesome! To join ELSOC:\n1. Fill out our membership form on the website\n2. Attend our orientation session\n3. Participate in intro workshops\n4. Connect with us on social media\n\nWe welcome all students passionate about electrical engineering and technology! No prior experience needed - just enthusiasm!',
-      'Great to hear you\'re interested! 🌟 Joining ELSOC is easy:\n• Visit our Contact page and fill the membership form\n• Email us at elsoc@nith.ac.in\n• Attend our next recruitment drive\n• Follow us on Instagram/LinkedIn for updates\n\nWe\'re always looking for passionate members!',
-      'Welcome aboard! 🚀 To become an ELSOC member:\n→ Check our website\'s "Join Us" section\n→ Fill the online form with your details\n→ Attend our orientation (we announce on social media)\n→ Start participating in events and projects!\n\nMembership is open to all years and branches!'
+      '🎯 Awesome! Here\'s how to join ELSOC:\n\n1️⃣ Visit our Contact page and fill the membership form\n2️⃣ Attend our orientation session (announced on Instagram)\n3️⃣ Connect with us: elsoc@nith.ac.in\n4️⃣ Follow us on social media for updates\n\nWe welcome ALL students - no prior experience needed, just enthusiasm! 🌟',
+      '💫 Great to hear you\'re interested! Joining is super easy:\n\n✅ Fill our online form on the Contact page\n✅ Email us: elsoc@nith.ac.in with your details\n✅ Attend our next recruitment drive\n✅ Follow @elsoc_nith on Instagram\n\nMembership is open to all years and branches. Ready to innovate with us?',
+      '🚀 Welcome to the ELSOC family! Here\'s your path to joining:\n\n→ Check our "Join Us" section on the website\n→ Fill the form with your name, branch, year, and interests\n→ Attend orientation (we announce dates on social media)\n→ Start participating in events right away!\n\nNo fees, no barriers - just passion for engineering! 💪'
     ]
   },
-  
+
   events: {
-    keywords: ['events', 'workshop', 'seminar', 'hackathon', 'competition', 'upcoming', 'when', 'schedule'],
+    keywords: ['events', 'workshop', 'seminar', 'hackathon', 'competition', 'upcoming', 'when', 'schedule', 'activities', 'what happening', 'next event'],
     responses: [
-      '📅 We have exciting events lined up!\n\n🔧 IoT & Smart Systems Workshop - Nov 15, 2025\n💻 Circuit Design Hackathon - Dec 5, 2025\n🎤 Industry Expert Talk on Renewable Energy - Oct 25, 2025\n\nCheck our Events page for full details and registration links! Follow us on social media for latest updates.',
-      '🎯 ELSOC organizes 75+ events annually including:\n• Technical Workshops (IoT, PCB Design, Arduino)\n• Hackathons & Competitions\n• Guest Lectures by Industry Experts\n• Project Exhibitions\n• Study Sessions & Tech Talks\n\nVisit our Events page to see upcoming events and register!',
-      '⚡ Upcoming ELSOC Events:\n\n1. IoT Workshop (Nov 15) - Hands-on learning with sensors & microcontrollers\n2. 24hr Hackathon (Dec 5) - ₹50k prize pool!\n3. Renewable Energy Seminar (Oct 25) - Industry professionals\n\nStay updated by following our Instagram @elsoc_nith!'
+      '📅 Exciting events ahead! Here\'s what\'s coming:\n\n🔧 **MATLAB Basics Workshop**\n   📆 Oct 30, 2025 (Tentative)\n   ⏰ 10 AM - 4 PM | 📍 Main Lab, EE Dept\n   💡 Hands-on, Certification, Expert Guidance\n\n🎤 **Guest Lecture / Tech Talk**\n   📆 Nov 10-16, 2025 (Tentative)\n   📍 Seminar Hall | 🌟 Industry Insights\n\n⚡ **Power Systems Workshop**\n   📆 Jan 12-26, 2026 (Tentative)\n   🔬 Lab Work with Smart Grid Tech\n\nRegister on our Events page!',
+      '🎯 ELSOC organizes 10+ events yearly including:\n\n• Technical Workshops (MATLAB, Circuit Design, IoT)\n• Guest Lectures by Industry Experts\n• Project Exhibitions & Showcases\n• Hands-on Lab Sessions\n• Tech Talks & Study Sessions\n\nUpcoming: MATLAB Workshop (Oct 30), Guest Lecture (Nov 10-16), Power Systems Lab (Jan 12-26). Check our Events page for details!',
+      '⚡ What\'s happening at ELSOC:\n\n🔜 **Next Up:**\n1. MATLAB Workshop - Oct 30 (Free for members!)\n2. Industry Tech Talk - Nov 10-16\n3. Power Systems Lab - Jan 12-26\n\n📊 **Event Stats:**\n10+ events/year | Expert speakers | Certifications | Networking\n\nFollow @elsoc_nith on Instagram for live updates! 🚀'
+    ]
+  },
+
+  pastEvents: {
+    keywords: ['past events', 'previous', 'what did you do', 'history', 'organized before', 'earlier events', 'old events'],
+    responses: [
+      '📚 ELSOC\'s Memorable Past Events:\n\n✨ **Blockchain Workshop** (Feb 4, 2022) - YouTube Live with quiz competition\n✨ **Intern Talk** (Aug 29, 2022) - Members shared experiences from DRDO, RWTH Aachen, NTU Singapore, IISc Bangalore\n✨ **MATLAB Workshop** (Oct 21, 2022) - Programming & simulations\n✨ **Lightning Unleashed** (Feb 10, 2023) - High-voltage demos with OJAS\n✨ **KUIZZ-i-THON** (Sept 1, 2023) - Technical quiz competition\n✨ **Circuits of Opportunities** (Oct 18, 2023) - Career guidance\n✨ **TECHLETICS** (April 10, 2024) - Innovation meets competition',
+      '🎓 Some of our best past events:\n\n2022: Blockchain Workshop, Intern Talk, MATLAB Workshop\n2023: Lightning Unleashed (ELSOC X OJAS), KUIZZ-i-THON, Career Workshop\n2024: TECHLETICS (OJAS X ELSOC)\n\nEach event had 100+ participants and received amazing feedback! Check our gallery for photos. 📸'
     ]
   },
   
   contact: {
-    keywords: ['contact', 'reach', 'email', 'phone', 'address', 'location', 'where'],
+    keywords: ['contact', 'reach', 'email', 'phone', 'address', 'location', 'where', 'find you', 'talk to', 'connect'],
     responses: [
-      '📞 Get in touch with ELSOC:\n\n📧 Email: elsoc@nith.ac.in\n📱 Phone: +91-1972-254000\n📍 Location: NIT Hamirpur, Himachal Pradesh, India - 177005\n\n🌐 Follow us:\n• Instagram: @elsoc_nith\n• LinkedIn: ELSOC NIT Hamirpur\n• Facebook: /elsocnith',
-      '💬 Contact ELSOC:\n\nEmail: elsoc@nith.ac.in ✉️\nPhone: +91-1972-254000 📞\nAddress: National Institute of Technology Hamirpur, HP 177005 📍\n\nYou can also DM us on Instagram @elsoc_nith for quick responses!',
-      '🔗 Connect with us:\n\n📧 elsoc@nith.ac.in\n📞 +91-1972-254000\n📍 NIT Hamirpur, Himachal Pradesh\n\nFind us on social media:\nInstagram | LinkedIn | Facebook | YouTube\nSearch: ELSOC NIT Hamirpur'
+      '📞 Get in touch with ELSOC:\n\n📧 **Email:** elsoc@nith.ac.in\n📱 **Phone:** +91-1972-254000\n📍 **Location:** NIT Hamirpur, Himachal Pradesh, India - 177005\n\n🌐 **Follow us:**\n• Instagram: @elsoc_nith\n• LinkedIn: ELSOC NIT Hamirpur\n• Facebook: /elsocnith\n\nWe typically respond within 24 hours! ⚡',
+      '💬 Multiple ways to reach us:\n\n**Quick Response:** DM us on Instagram @elsoc_nith 📱\n**Official:** elsoc@nith.ac.in ✉️\n**Call:** +91-1972-254000 📞\n**Visit:** EE Department, NIT Hamirpur 🏛️\n\nWe\'re active on all social platforms - find us as "ELSOC NIT Hamirpur"!',
+      '🔗 Connect with ELSOC:\n\n📧 Email: elsoc@nith.ac.in (Best for formal queries)\n📱 Instagram: @elsoc_nith (Quick responses, updates)\n💼 LinkedIn: ELSOC NIT Hamirpur (Professional networking)\n📞 Phone: +91-1972-254000\n📍 Address: National Institute of Technology Hamirpur, HP 177005\n\nLooking forward to hearing from you! 🌟'
     ]
   },
   
   team: {
-    keywords: ['team', 'members', 'core team', 'who runs', 'president', 'leaders', 'coordinators'],
+    keywords: ['team', 'members', 'core team', 'who runs', 'president', 'leaders', 'coordinators', 'people', 'meet team'],
     responses: [
-      '👥 ELSOC is run by a dedicated team of students and guided by experienced faculty!\n\nOur team includes:\n• Faculty Advisors\n• President & Vice President\n• Technical Heads\n• Event Coordinators\n• Executive Members (800+ active members!)\n\nVisit our Team page to meet everyone and see what they work on!',
-      '🌟 Meet the ELSOC Team!\n\nWe have:\n→ 3 Faculty Advisors guiding us\n→ Core Team (President, VP, Technical Heads)\n→ Domain Coordinators (IoT, Power Systems, etc.)\n→ 800+ Active Members\n\nCheck out our Team page to see photos and connect with team members on LinkedIn!',
-      '⚡ The ELSOC family consists of passionate students from all years!\n\nKey Positions:\n• Faculty Coordinators\n• President & Vice President\n• Technical Team Leads\n• Event Management Team\n• Project Teams\n\nVisit our Team page to see the complete hierarchy and member details!'
+      '👥 Meet the ELSOC Team!\n\n**Faculty Guidance:**\n🎓 Dr. OP Rahi - HOD, EED\n🎓 Dr. Bharti Bakshi Koul - Faculty Incharge\n🎓 Dr. Chandrasekaran S - Coordinator\n🎓 Dr. Katam Nishanth - Coordinator\n\n**Student Team:** 33 passionate members working across 8 domains\n\n**Domains:**\n• Circuit Design • Web Development • AI/ML\n• Media & Marketing • Finance • Content\n• Design • Management\n\nVisit our Team page to see everyone! 🌟',
+      '⚡ The ELSOC Family:\n\n👔 **Faculty Advisors:** 4 experienced professors guiding us\n👨‍💻 **Core Team:** President, VP, Technical Heads\n🎯 **Domain Leads:** Circuit, Web, AI/ML, Media, Finance, Content, Design, Management\n📊 **Active Members:** 33 talented students\n\nEach member brings unique skills. Check our Team page for individual profiles and LinkedIn connections!',
+      '🌟 ELSOC runs on passion and teamwork!\n\n**Leadership:**\n• Dr. OP Rahi (HOD) - Strategic guidance\n• Dr. Bharti Bakshi Koul - Faculty Incharge\n• Dr. Chandrasekaran S & Dr. Katam Nishanth - Coordinators\n\n**Student Body:** 33 members organized into:\n→ Technical Teams (Circuit, Web, AI/ML)\n→ Creative Teams (Design, Content, Media)\n→ Management Teams (Finance, Operations)\n\nWe\'re always growing! Join us? 🚀'
     ]
   },
   
   projects: {
-    keywords: ['project', 'what projects', 'working on', 'innovations', 'research', 'development'],
+    keywords: ['project', 'what projects', 'working on', 'innovations', 'research', 'development', 'built', 'created', 'portfolio'],
     responses: [
-      '🚀 ELSOC members work on cutting-edge projects!\n\nOur focus areas:\n⚡ IoT & Smart Home Systems\n🌱 Renewable Energy Solutions\n🤖 Automation & Robotics\n💡 Power Systems & Smart Grid\n🔌 Circuit Design & PCB Development\n📡 Signal Processing & AI\n\nCheck our Projects page to see completed and ongoing work!',
-      '💡 We\'ve completed 150+ innovative projects including:\n\n• Smart Energy Meter with IoT\n• Solar Power Optimization System\n• Home Automation using Arduino\n• EV Charging Station Design\n• Industrial Automation Solutions\n• ML-based Load Forecasting\n\nVisit our Projects page for detailed case studies!',
-      '🔬 ELSOC Projects span multiple domains:\n\n1. IoT: Smart devices, sensor networks\n2. Renewable Energy: Solar, wind systems\n3. Automation: Industrial control systems\n4. Power Electronics: Converter design\n5. Embedded: Microcontroller applications\n\nWe encourage members to propose and lead their own projects!'
+      '🚀 ELSOC has completed 35+ innovative projects!\n\n**Recent Projects:**\n💡 Smart Home Automation (ESP32, IoT)\n🤖 Autonomous Line Following Robot (PID control)\n☀️ Solar Power Monitoring System (Real-time analytics)\n🚗 Gesture Controlled Car (Accelerometer-based)\n⚙️ Industrial Automation PLC System\n🌦️ IoT Weather Monitoring Station\n⚡ Smart Energy Meter (GSM-enabled)\n🔥 Fire Detection & Alert System\n\n**Focus Areas:**\nIoT, Robotics, Power Systems, Embedded Systems, Automation\n\nCheck our Projects page for detailed case studies! 📊',
+      '💡 35+ projects completed across multiple domains:\n\n**IoT & Embedded:**\n• Smart Home Automation with Alexa\n• Weather Station with cloud logging\n• Fire Detection with SMS alerts\n\n**Robotics:**\n• Line Following Robot with obstacle avoidance\n• Gesture Controlled Car\n\n**Power Systems:**\n• Solar Monitoring System\n• Smart Energy Meter\n• Industrial PLC Automation\n\nMembers can propose and lead their own projects! Got an idea? 💭',
+      '🔬 ELSOC Project Portfolio:\n\n📊 **Stats:** 35+ completed | 8 ongoing | 5 in planning\n\n**Domains:**\n⚡ Circuit Design - Analog & digital circuits\n🤖 Robotics - Autonomous systems\n🌱 Power Systems - Solar, energy monitoring\n💻 IoT - Connected devices, sensors\n🎮 Embedded - Microcontroller projects\n⚙️ Automation - Industrial control systems\n\nAll projects get:\n✓ Mentorship\n✓ Funding support\n✓ Lab access\n✓ Certificates\n\nPropose your own project today!'
     ]
   },
   
   faculty: {
-    keywords: ['faculty', 'professor', 'advisor', 'mentor', 'guide', 'teacher'],
+    keywords: ['faculty', 'professor', 'advisor', 'mentor', 'guide', 'teacher', 'hod', 'dr', 'incharge'],
     responses: [
-      '👨‍🏫 Our esteemed faculty guides ELSOC:\n\nDr. Rajesh Kumar Sharma - Head of Department (Power Systems & Smart Grid)\nDr. Priya Malhotra - Faculty Coordinator (Control Systems & Automation)\nDr. Amit Verma - Technical Advisor (Renewable Energy & IoT)\n\nThey provide invaluable mentorship and help us stay aligned with industry trends!',
-      '🎓 ELSOC is mentored by experienced faculty:\n\n• Dr. Rajesh Kumar Sharma (HOD) - Specializes in Power Systems\n• Dr. Priya Malhotra - Expert in Automation & Control\n• Dr. Amit Verma - Renewable Energy & IoT specialist\n\nOur faculty actively participates in workshops and guides project teams!',
-      '👔 Meet our faculty mentors:\n\nDr. Rajesh Kumar Sharma → Power Systems expert, HOD\nDr. Priya Malhotra → Control Systems & Automation\nDr. Amit Verma → Renewable Energy & IoT\n\nThey bring decades of experience and industry connections to ELSOC!'
+      '👨‍🏫 Our Distinguished Faculty:\n\n**Dr. OP Rahi**\n🎓 Head of Department, EED\n💡 "Guiding innovation with decades of expertise, inspiring students to push boundaries and achieve excellence in electrical engineering."\n\n**Dr. Bharti Bakshi Koul**\n🎓 Faculty Incharge, ELSOC\n💡 "Dedicated to nurturing young talent, fostering creativity, leadership, and technical excellence."\n\n**Dr. Chandrasekaran S**\n🎓 Coordinator, ELSOC\n💡 "Encouraging innovation and practical application through hands-on projects."\n\n**Dr. Katam Nishanth**\n🎓 Coordinator, ELSOC\n💡 "Guiding students in exploring emerging technologies and real-world solutions."',
+      '🎓 ELSOC is mentored by 4 experienced faculty members:\n\n1️⃣ **Dr. OP Rahi** (HOD, EED) - Power Systems expert\n2️⃣ **Dr. Bharti Bakshi Koul** (Faculty Incharge) - Student development\n3️⃣ **Dr. Chandrasekaran S** (Coordinator) - Practical learning advocate\n4️⃣ **Dr. Katam Nishanth** (Coordinator) - Research & development focus\n\nThey provide:\n✓ Strategic guidance\n✓ Industry connections\n✓ Project mentorship\n✓ Career counseling\n\nWe\'re blessed to have such supportive mentors! 🙏'
     ]
   },
   
   achievements: {
-    keywords: ['achievement', 'awards', 'winners', 'recognition', 'accomplishment', 'success'],
+    keywords: ['achievement', 'awards', 'winners', 'recognition', 'accomplishment', 'success', 'milestone', 'proud'],
     responses: [
-      '🏆 ELSOC Achievements:\n\n✨ 800+ Active Members\n✨ 75+ Events Organized Annually\n✨ 150+ Projects Completed\n✨ 25+ Competition Wins\n✨ 12+ Years of Excellence\n✨ Multiple National Level Recognition\n\nWe\'re proud of what our members have accomplished!',
-      '🌟 What we\'ve achieved:\n\n→ Won Best Technical Society Award 2023\n→ 15+ National Hackathon Victories\n→ Published research papers in IEEE conferences\n→ Partnerships with 10+ industry leaders\n→ Successfully organized Technex workshops\n→ Alumni working in top tech companies',
-      '⚡ ELSOC by the numbers:\n\n800+ Members | 75+ Annual Events | 150+ Projects\n25+ Awards | 12+ Years | 100% Success Rate\n\nOur members have interned at Google, Microsoft, Texas Instruments, and more!'
+      '🏆 ELSOC Achievements & Milestones:\n\n✨ **5 Years of Excellence** (2020-2025)\n✨ **33 Active Members** across 8 domains\n✨ **35+ Projects Completed** with real-world impact\n✨ **10+ Events Annually** with 100+ participants each\n✨ **7 Past Events** documented with amazing feedback\n✨ **8 Technical Domains** covering EE spectrum\n✨ **100% Member Satisfaction** in feedback surveys\n✨ **4 Faculty Mentors** providing expert guidance\n\nWe\'re proud of our journey and excited for what\'s ahead! 🚀',
+      '🌟 What makes ELSOC special:\n\n→ Founded in 2020, celebrating 5 years! 🎉\n→ Organized impactful events: Blockchain Workshop, Lightning Unleashed, TECHLETICS, KUIZZ-i-THON\n→ Strong industry connections and alumni network\n→ Members interned at DRDO, RWTH Aachen Germany, NTU Singapore, IISc Bangalore\n→ Projects featured in college exhibitions\n→ Active collaboration with OJAS and other societies\n\nJoin us to add to this legacy! ⚡'
     ]
   },
   
   domains: {
-    keywords: ['domain', 'field', 'area', 'specialization', 'focus', 'what areas'],
+    keywords: ['domain', 'field', 'area', 'specialization', 'focus', 'what areas', 'departments', 'teams', 'work on'],
     responses: [
-      '🎯 ELSOC covers multiple technical domains:\n\n⚡ Power Systems - Smart grids, distribution\n🤖 Automation - Control systems, PLCs\n🌱 Renewable Energy - Solar, wind, storage\n💡 IoT & Embedded - Sensors, microcontrollers\n🔌 Circuit Design - Analog, digital, PCB\n📡 Signal Processing - DSP, AI/ML applications\n\nJoin the domain that interests you most!',
-      '🚀 Our technical focus areas:\n\n1. Power Systems & Smart Grid\n2. Industrial Automation\n3. Renewable Energy Solutions\n4. IoT & Embedded Systems\n5. Circuit Design & PCB Development\n6. Signal Processing & Communication\n\nEach domain has dedicated workshops and project teams!',
-      '💡 Explore ELSOC\'s domains:\n\n→ Power Electronics & Drives\n→ Control Systems & Automation\n→ Renewable & Sustainable Energy\n→ IoT, Sensors & Embedded Systems\n→ Digital & Analog Circuit Design\n→ Signal Processing & AI Integration\n\nAll members can work across multiple domains!'
+      '🎯 ELSOC\'s 8 Technical Domains:\n\n1️⃣ **Circuit Design** - Analog & digital circuits, PCB design\n2️⃣ **Web Development** - Full-stack development, websites\n3️⃣ **AI/ML** - Artificial Intelligence & Machine Learning projects\n4️⃣ **Media & Marketing** - Digital content, social media, outreach\n5️⃣ **Finance** - Budget management, fund allocation\n6️⃣ **Content** - Technical writing, documentation, blogs\n7️⃣ **Design** - UI/UX, graphic design, posters\n8️⃣ **Management** - Team coordination, event planning\n\nJoin the domain that excites you most! You can work across multiple domains too. 🚀',
+      '💡 Explore our technical and creative domains:\n\n**Technical Teams:**\n⚡ Circuit Design - Build hardware projects\n💻 Web Development - Create digital solutions\n🤖 AI/ML - Implement smart systems\n\n**Creative Teams:**\n🎨 Design - Visual identity & graphics\n📝 Content - Write & document\n📱 Media & Marketing - Social media & outreach\n\n**Support Teams:**\n💰 Finance - Manage budgets\n📊 Management - Organize & coordinate\n\nAll members contribute to our success! 🌟'
     ]
   },
-  
-  facilities: {
-    keywords: ['lab', 'facility', 'equipment', 'tools', 'resources', 'infrastructure'],
+
+  matlab: {
+    keywords: ['matlab', 'matlab workshop', 'matlab basics', 'learn matlab', 'matlab certification'],
     responses: [
-      '🔬 ELSOC has access to excellent facilities:\n\n• Dedicated Electronics Lab\n• PCB Fabrication Equipment\n• Arduino, Raspberry Pi, ESP32 kits\n• Oscilloscopes & Signal Generators\n• Soldering & Testing Equipment\n• Project Development Space\n• Library Resources\n\nMembers can use these for their projects anytime!',
-      '⚙️ Our technical resources:\n\n→ Advanced Electronics Lab with latest equipment\n→ Complete IoT development kits\n→ Power systems simulation software\n→ PCB design and fabrication tools\n→ 3D Printing facility\n→ Dedicated project workspace\n\nWe also provide component funding for approved projects!',
-      '🛠️ Resources available to ELSOC members:\n\n✓ Fully equipped Electronics Lab\n✓ Microcontroller Development Boards\n✓ Measurement & Testing Instruments\n✓ Software Licenses (MATLAB, Simulink, KiCAD)\n✓ Workshop & Fabrication Tools\n✓ Online Learning Resources\n\nPlus financial support for innovative projects!'
+      '🔧 **MATLAB Basics Workshop**\n\n📅 **Date:** October 30, 2025 (Tentative)\n⏰ **Time:** 10:00 AM - 4:00 PM\n📍 **Venue:** Main Lab, EE Department\n\n**What you\'ll learn:**\n• MATLAB fundamentals\n• Electrical project simulations\n• Practical engineering applications\n• Real-world problem solving\n\n**Benefits:**\n✅ Hands-on projects\n✅ MATLAB certification\n✅ Expert guidance\n✅ Free for ELSOC members\n\nRegister on our Events page! Limited seats. 🎯',
+      '💻 Our upcoming MATLAB workshop covers everything from basics to advanced simulations! Perfect for beginners. Dates: Oct 30, 2025. Free registration for members. Get certified and boost your resume! 🚀'
     ]
   },
-  
-  collaboration: {
-    keywords: ['collaborate', 'partnership', 'work with', 'sponsor', 'industry', 'companies'],
+
+  guestLecture: {
+    keywords: ['guest lecture', 'tech talk', 'speaker', 'industry expert', 'seminar'],
     responses: [
-      '🤝 ELSOC collaborates with:\n\n• Leading Tech Companies (TI, Intel, etc.)\n• Other Technical Societies at NIT\n• Research Labs & Universities\n• Startup Incubators\n• Industry Professionals\n\nWe\'re always open to new partnerships! Contact us at elsoc@nith.ac.in',
-      '🌐 Our partnerships include:\n\n→ Industry workshops with Texas Instruments\n→ Joint events with other college societies\n→ Internship opportunities through alumni\n→ Sponsored hackathons and competitions\n→ Guest lectures by industry experts\n\nInterested in collaborating? Reach out to us!',
-      '💼 ELSOC Industry Connections:\n\nWe partner with companies for:\n• Technical workshops\n• Sponsored projects\n• Internship placements\n• Guest lectures\n• Competition sponsorships\n\nCompanies: Email elsoc@nith.ac.in for partnership opportunities!'
+      '🎤 **Guest Lecture / Tech Talk**\n\n📅 **Dates:** November 10-16, 2025 (Tentative)\n⏰ **Time:** 2:00 PM - 4:00 PM\n📍 **Venue:** Seminar Hall, NIT Hamirpur\n\n**Topics:**\n• Emerging technologies in EE\n• Research opportunities\n• Career guidance & placements\n• Industry trends & demands\n\n**Highlights:**\n✨ Industry professionals\n✨ Alumni insights\n✨ Q&A session\n✨ Networking opportunity\n✨ Free entry\n\nFollow us on Instagram for speaker announcements! 🌟'
+    ]
+  },
+
+  powerSystems: {
+    keywords: ['power systems', 'power workshop', 'smart grid', 'transformers', 'circuit breakers'],
+    responses: [
+      '⚡ **Power Systems & Labs Workshop**\n\n📅 **Dates:** January 12-26, 2026 (Tentative)\n⏰ **Time:** 10:00 AM - 4:00 PM\n📍 **Venue:** Power Systems Lab, NIT Hamirpur\n\n**Hands-on Experience with:**\n🔌 Transformers & their applications\n⚙️ Circuit breakers & protection systems\n🌐 Smart grid technologies\n📊 Power system analysis tools\n\n**What you get:**\n✅ Lab work & experiments\n✅ Industry-standard tools\n✅ Expert faculty guidance\n✅ Certification\n✅ Open to all years\n\nPerfect for core EE enthusiasts! Register early. 🎓'
     ]
   },
   
   fees: {
-    keywords: ['fee', 'cost', 'payment', 'charge', 'money', 'price', 'how much'],
+    keywords: ['fee', 'cost', 'payment', 'charge', 'money', 'price', 'how much', 'free', 'paid'],
     responses: [
-      '💰 ELSOC Membership:\n\n✨ Basic Membership: FREE for NIT Hamirpur students!\n✨ Workshop Fees: Vary by event (₹50-500)\n✨ Project Materials: Subsidized/Sponsored\n✨ Competition Entry: Usually free for members\n\nWe believe in accessible learning - most events are free or low-cost!',
-      '🎯 Cost Structure:\n\n→ Society Membership: No cost!\n→ Regular events & seminars: FREE\n→ Hands-on workshops: Nominal fee (₹100-300)\n→ Certification courses: ₹200-500\n\nWe offer scholarships for deserving students. Money should never be a barrier!',
-      '💵 Fees & Costs:\n\nMembership: FREE ✓\nMost Events: FREE ✓\nSpecial Workshops: ₹100-500\nCertificates: Included\n\nWe keep costs minimal and focus on learning. Financial aid available on request!'
+      '💰 ELSOC Membership & Event Costs:\n\n**Membership:**\n✅ 100% FREE for NIT Hamirpur students!\n✅ No hidden charges\n✅ Lifetime access to resources\n\n**Events:**\n🎯 Most workshops: FREE or minimal fee (₹50-200)\n🎯 Guest lectures: Always FREE\n🎯 Competitions: FREE for members\n🎯 Certification: Included in workshop fees\n\n**Project Support:**\n✓ Component funding available\n✓ Lab access included\n✓ Mentorship FREE\n\nWe believe in accessible learning! Financial constraints? Talk to us. 🤝',
+      '💵 Quick cost breakdown:\n\nMembership: FREE ✓\nMost Events: FREE ✓\nSpecial Workshops: ₹100-300\nCertificates: Included\nProject Materials: Subsidized\n\nScholarships available for deserving students. Money should never stop you from learning! 🌟'
     ]
   },
   
-  alumni: {
-    keywords: ['alumni', 'past members', 'graduates', 'where do they work', 'placements'],
+  collaboration: {
+    keywords: ['collaborate', 'partnership', 'work with', 'sponsor', 'industry', 'companies', 'tie up', 'collab'],
     responses: [
-      '🎓 ELSOC Alumni Success:\n\nOur members are now at:\n• Google, Microsoft, Amazon\n• Texas Instruments, Intel, Nvidia\n• IITs, IIMs for higher studies\n• Leading startups\n• Research positions worldwide\n\nELSOC experience helps in placements and higher education!',
-      '🌟 Where ELSOC members go:\n\n→ Top Tech Companies: Google, Amazon, Microsoft\n→ Core EE Companies: Texas Instruments, Qualcomm\n→ Higher Studies: IIT, MIT, Stanford\n→ Entrepreneurship: Founded 10+ startups\n\nELSOC projects and leadership roles significantly boost profiles!',
-      '💼 ELSOC Alumni Network:\n\n✓ 1000+ alumni worldwide\n✓ Working in 50+ companies\n✓ Average CTC: 15+ LPA\n✓ 30+ pursuing PhDs\n✓ Active mentorship program\n\nJoin ELSOC to be part of this amazing network!'
+      '🤝 ELSOC is open to collaborations!\n\n**We partner with:**\n• Technical societies (Past: OJAS for Lightning Unleashed, TECHLETICS)\n• Industry professionals for workshops\n• Alumni for mentorship & talks\n• Startups for project guidance\n• Other colleges for joint events\n\n**For Companies:**\nWe offer:\n→ Workshop sponsorships\n→ Recruitment opportunities\n→ Campus connects\n→ Project collaborations\n\n**Interested?** Email: elsoc@nith.ac.in\nSubject: "Partnership Proposal - [Your Organization]"\n\nLet\'s innovate together! 🚀'
+    ]
+  },
+
+  resources: {
+    keywords: ['lab', 'facility', 'equipment', 'tools', 'resources', 'infrastructure', 'access'],
+    responses: [
+      '🔬 ELSOC Members get access to:\n\n**Lab Facilities:**\n⚙️ Power Systems Lab\n🔌 Electronics Lab\n💻 EE Department computer labs\n\n**Equipment & Tools:**\n• Arduino, ESP32, Raspberry Pi kits\n• Sensors & actuators\n• Oscilloscopes & multimeters\n• Soldering stations\n• PCB design software\n\n**Software Access:**\n✓ MATLAB & Simulink\n✓ Circuit simulation tools\n✓ Design software\n\n**Support:**\n📚 Technical library\n💰 Project funding\n👨‍🏫 Faculty mentorship\n🤝 Peer learning\n\nEverything you need to bring ideas to life! ⚡',
+      '🛠️ Resources for ELSOC members:\n\n✓ Fully equipped labs with latest equipment\n✓ Microcontroller development boards\n✓ Component inventory for projects\n✓ Software licenses (MATLAB, simulation tools)\n✓ Workshop & fabrication tools\n✓ Financial support for approved projects\n✓ 24/7 online resources & tutorials\n\nNo resource constraints - just build! 💪'
+    ]
+  },
+
+  why: {
+    keywords: ['why join', 'benefits', 'what will i get', 'advantages', 'why elsoc', 'worth it'],
+    responses: [
+      '🌟 Why Join ELSOC?\n\n**Learning:**\n📚 10+ workshops annually\n🎓 Hands-on project experience\n💻 Industry-standard tools & tech\n\n**Growth:**\n🚀 Leadership opportunities\n💪 Skill development (technical + soft)\n🏆 Competitions & certifications\n\n**Network:**\n👥 33 like-minded peers\n👨‍🏫 4 faculty mentors\n💼 Alumni in top companies\n🤝 Industry connections\n\n**Resume:**\n✅ Project portfolio\n✅ Event certifications\n✅ Leadership positions\n✅ Competition wins\n\nPlus, you\'ll make lifelong friends and memories! 😊',
+      '💡 ELSOC gives you:\n\n1. **Real Projects** - Build things that matter\n2. **Certifications** - Boost your resume\n3. **Mentorship** - Learn from experts\n4. **Network** - Connect with seniors, faculty, industry\n5. **Fun** - Meet amazing people, attend cool events\n6. **Skills** - Technical + leadership + communication\n7. **Opportunities** - Internships, placements, higher studies\n\nIt\'s not just a society - it\'s a transformative experience! ⚡'
+    ]
+  },
+
+  location: {
+    keywords: ['where', 'location', 'address', 'find', 'campus', 'building', 'room'],
+    responses: [
+      '📍 Find ELSOC at:\n\n**Address:**\nElectrical Engineering Department\nNational Institute of Technology Hamirpur\nHamirpur, Himachal Pradesh 177005\nIndia 🇮🇳\n\n**How to reach:**\n• From main gate: Head to EE Department building\n• Look for ELSOC notice board\n• Faculty office: EED building 2nd floor\n\n**Best time to visit:**\nWeekdays, 10 AM - 5 PM\n(During events, we\'re there even on weekends! 😄)\n\nNeed directions? Call: +91-1972-254000'
+    ]
+  },
+
+  social: {
+    keywords: ['instagram', 'facebook', 'linkedin', 'social media', 'follow', 'handle'],
+    responses: [
+      '📱 Follow ELSOC on social media:\n\n**Instagram:** @elsoc_nith\n🔥 Event updates, behind-the-scenes, memes!\n\n**LinkedIn:** ELSOC NIT Hamirpur\n💼 Professional posts, achievements, opportunities\n\n**Facebook:** /elsocnith\n📢 Event announcements, photo albums\n\n**YouTube:** ELSOC NITH\n🎥 Workshop recordings, project demos\n\nStay connected for latest updates, registration links, and fun content! 🚀\n\nTag us in your posts: #ELSOC #ElectricalEngineering #NITHamirpur'
+    ]
+  },
+
+  years: {
+    keywords: ['which year', 'eligibility', 'first year', 'final year', 'branch', 'who can join'],
+    responses: [
+      '🎓 ELSOC is open to ALL:\n\n**Years:** 1st, 2nd, 3rd, 4th year - everyone!\n**Branches:** All branches welcome (not just EE)\n**Experience:** No prior experience needed\n**Skills:** We\'ll teach you everything\n\n**Why different branches?**\n• CS students → Web Dev, AI/ML\n• Mechanical → Circuit Design, Projects\n• ECE → Perfect fit for everything!\n• All branches → Management, Design, Content\n\nDiversity makes us stronger! Everyone brings unique perspectives. Join regardless of year or branch! 🌈'
+    ]
+  },
+
+  beginner: {
+    keywords: ['beginner', 'no experience', 'new', 'never done', 'learn from scratch', 'basic'],
+    responses: [
+      '👋 Perfect! ELSOC is beginner-friendly!\n\n**We teach from scratch:**\n📖 Basic electronics & circuits\n💻 Programming fundamentals\n🔧 Tool usage & safety\n🎨 Design basics\n\n**How we help beginners:**\n✅ Orientation sessions\n✅ Intro workshops (free)\n✅ Senior mentorship program\n✅ Study groups & peer learning\n✅ Step-by-step project guidance\n\n**Many joined with ZERO experience and now:**\n→ Lead project teams\n→ Organize workshops\n→ Win competitions\n→ Get great placements\n\nYour enthusiasm matters more than experience! Start today. 💪'
+    ]
+  },
+
+  competition: {
+    keywords: ['competition', 'contest', 'hackathon', 'challenge', 'compete', 'win'],
+    responses: [
+      '🏆 ELSOC Competitions & Hackathons:\n\n**Past Events:**\n💻 Circuit Design Hackathon\n🧠 KUIZZ-i-THON (Technical Quiz)\n⚡ TECHLETICS (Tech + Athletics)\n\n**Upcoming:**\nCheck our Events page for latest competitions!\n\n**What you get:**\n→ Prize money (up to ₹50k total)\n→ Certificates\n→ Recognition\n→ Portfolio projects\n→ Industry exposure\n\n**Can non-members participate?**\nYes! But members get fee waivers and extra perks.\n\n**Want to compete?** Follow @elsoc_nith for announcements! 🚀'
     ]
   }
 };
 
-// Greeting responses
+// Conversational responses
 const greetings = {
-  keywords: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'greetings'],
+  keywords: ['hello', 'hi', 'hey', 'good morning', 'good afternoon', 'good evening', 'greetings', 'namaste', 'sup', 'yo'],
   responses: [
-    'Hello! 👋 I\'m the ELSOC AI Assistant. How can I help you explore our electrical engineering society today?',
-    'Hey there! ⚡ Welcome to ELSOC\'s chatbot. What would you like to know about us?',
-    'Hi! 🌟 I\'m here to answer all your questions about ELSOC. What interests you?',
-    'Greetings! ⚡ Ask me anything about ELSOC - events, projects, membership, or our team!'
+    `${getTimeBasedGreeting()}! 👋 I'm ELSOC Bot, your friendly AI assistant. I'm here to answer all your questions about ELSOC - NIT Hamirpur's Electrical Society! What would you like to know?`,
+    `Hey there! ⚡ Welcome to ELSOC's chat. I can help you with events, projects, membership, or anything else about our society. What interests you?`,
+    `${getTimeBasedGreeting()}! 🌟 I'm your ELSOC guide. Whether you want to join, learn about events, or just chat about electrical engineering - I'm here to help! What's on your mind?`,
+    `Hi! 🚀 Great to see you here. I know everything about ELSOC - from our 5 years of history to our upcoming events. How can I assist you today?`
   ]
 };
 
-// Thank you responses
 const thanks = {
-  keywords: ['thank', 'thanks', 'appreciate', 'helpful', 'awesome', 'great'],
+  keywords: ['thank', 'thanks', 'appreciate', 'helpful', 'awesome', 'great', 'nice', 'good job'],
   responses: [
-    'You\'re welcome! 😊 Feel free to ask anything else about ELSOC!',
-    'Happy to help! ⚡ Let me know if you need any other information.',
-    'Glad I could assist! 🌟 Don\'t hesitate to reach out if you have more questions.',
-    'My pleasure! 🚀 Remember, you can always contact us at elsoc@nith.ac.in for more details!'
+    'You\'re welcome! 😊 I\'m always here if you need more info about ELSOC. Feel free to ask anything!',
+    'Happy to help! ⚡ Don\'t hesitate to reach out if you have more questions. Join us at elsoc@nith.ac.in!',
+    'Glad I could assist! 🌟 Remember, ELSOC is always open to passionate learners like you. See you at our next event?',
+    'My pleasure! 🚀 Follow @elsoc_nith on Instagram for daily updates. And hey, consider joining us - we\'d love to have you! 💙'
   ]
 };
 
-// Goodbye responses
 const goodbye = {
-  keywords: ['bye', 'goodbye', 'see you', 'later', 'exit', 'close'],
+  keywords: ['bye', 'goodbye', 'see you', 'later', 'exit', 'close', 'gotta go', 'ttyl'],
   responses: [
-    'Goodbye! ⚡ Hope to see you at our next event. Stay connected with ELSOC!',
-    'See you later! 👋 Don\'t forget to follow us on social media for updates!',
-    'Take care! 🌟 Feel free to come back anytime with more questions.',
-    'Bye! ⚡ Join ELSOC and be part of our amazing community. See you around!'
+    'Goodbye! ⚡ Hope to see you at ELSOC events. Stay curious, keep learning! Follow @elsoc_nith for updates. 👋',
+    'See you later! 🌟 Don\'t forget to join ELSOC if you haven\'t already. We\'d love to have you in our family!',
+    'Take care! 🚀 Remember: elsoc@nith.ac.in for any queries. Check out our website for more info. Bye!',
+    'Bye! 💙 Thanks for chatting. Join our next workshop and let\'s meet in person! Follow us on Instagram @elsoc_nith.'
   ]
 };
 
-// Help/confused responses
 const help = {
-  keywords: ['help', 'confused', 'don\'t understand', 'what can you do', 'options', 'menu'],
+  keywords: ['help', 'confused', 'don\'t understand', 'what can you do', 'options', 'menu', 'guide', 'lost'],
   responses: [
-    '🤔 I can help you with:\n\n• What is ELSOC?\n• How to join?\n• Upcoming events\n• Our projects\n• Team members\n• Contact information\n• Facilities & resources\n• Alumni & placements\n\nJust ask me anything!',
-    '💡 Here\'s what I know about:\n\n→ About ELSOC & our mission\n→ Membership process\n→ Events, workshops, hackathons\n→ Technical domains we cover\n→ Faculty & team details\n→ Contact & location info\n\nWhat would you like to explore?',
-    '🎯 I\'m your ELSOC guide! Ask me about:\n\n✓ Society information\n✓ Joining process\n✓ Upcoming activities\n✓ Projects & innovations\n✓ Team structure\n✓ How to reach us\n\nType your question!'
+    '🤔 I can help you with tons of things!\n\n**Popular Topics:**\n• 📖 What is ELSOC?\n• 🎯 How to join?\n• 📅 Upcoming events (MATLAB, Guest Lecture, Power Systems)\n• 🚀 Our 35+ projects\n• 👥 Meet our 33-member team\n• 📞 Contact information\n• 🏆 Achievements & milestones\n• 💰 Fees & costs (spoiler: mostly free!)\n\n**Try asking:**\n"Tell me about ELSOC"\n"How can I join?"\n"What events are coming?"\n"Show me projects"\n\nWhat interests you? 😊',
+    '💡 Here\'s what I know:\n\n**About Us:**\n→ Society info, history, mission\n→ Team structure & faculty\n→ 8 technical domains\n\n**Get Involved:**\n→ Membership process\n→ Upcoming workshops\n→ Project opportunities\n\n**Resources:**\n→ Lab facilities\n→ Contact details\n→ Social media links\n\n**Events:**\n→ MATLAB Workshop (Oct 30)\n→ Guest Lecture (Nov 10-16)\n→ Power Systems (Jan 12-26)\n\nJust type your question naturally! I understand casual language. 🚀'
   ]
 };
 
-// Utility function to check if message contains keywords
-const containsKeywords = (message, keywords) => {
-  return keywords.some(keyword => message.includes(keyword));
+const casual = {
+  keywords: ['cool', 'nice', 'interesting', 'wow', 'amazing', 'sounds good'],
+  responses: [
+    'Right?! ⚡ ELSOC is pretty amazing. We\'re always doing something exciting. Want to join us?',
+    'Glad you think so! 🌟 Check out our Instagram @elsoc_nith to see more cool stuff we do!',
+    'Thanks! 🚀 We work hard to make ELSOC the best tech society. Wanna be part of it?',
+    'Awesome! 😊 That\'s exactly the enthusiasm we love. Come join us - email elsoc@nith.ac.in!'
+  ]
 };
 
-// Utility function to get random response
+// Advanced keyword matching with typo tolerance
+const normalizeText = (text) => {
+  return text.toLowerCase()
+    .replace(/[^\w\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+};
+
+const containsKeywords = (message, keywords) => {
+  const normalized = normalizeText(message);
+  return keywords.some(keyword => {
+    const normalizedKeyword = normalizeText(keyword);
+    return normalized.includes(normalizedKeyword);
+  });
+};
+
 const getRandomResponse = (responses) => {
   return responses[Math.floor(Math.random() * responses.length)];
 };
 
-// Main bot response function
+// Context-aware responses
+let conversationContext = null;
+
 export const getBotResponse = (userMessage) => {
   const message = userMessage.toLowerCase().trim();
 
   // Check for greetings
   if (containsKeywords(message, greetings.keywords)) {
+    conversationContext = 'greeting';
     return getRandomResponse(greetings.responses);
   }
 
@@ -189,6 +274,7 @@ export const getBotResponse = (userMessage) => {
 
   // Check for goodbye
   if (containsKeywords(message, goodbye.keywords)) {
+    conversationContext = null;
     return getRandomResponse(goodbye.responses);
   }
 
@@ -197,50 +283,62 @@ export const getBotResponse = (userMessage) => {
     return getRandomResponse(help.responses);
   }
 
+  // Check for casual conversation
+  if (containsKeywords(message, casual.keywords)) {
+    return getRandomResponse(casual.responses);
+  }
+
   // Check knowledge base
   for (const [key, value] of Object.entries(knowledgeBase)) {
     if (containsKeywords(message, value.keywords)) {
+      conversationContext = key;
       return getRandomResponse(value.responses);
     }
   }
 
-  // Default response with suggestions
-  return '🤔 I\'m not quite sure about that, but I\'d love to help!\n\nTry asking me about:\n• What is ELSOC?\n• How can I join?\n• Upcoming events\n• Team members\n• Projects we work on\n• Contact information\n\nOr email us directly at elsoc@nith.ac.in for detailed information! ⚡';
+  // Smart default response
+  return `🤔 Hmm, I'm not 100% sure about that, but I'd love to help!\n\n**Try asking me:**\n• "What is ELSOC?"\n• "How can I join?"\n• "Tell me about upcoming events"\n• "What projects have you done?"\n• "Who are the team members?"\n• "How do I contact ELSOC?"\n\n**Quick Contact:**\n📧 elsoc@nith.ac.in\n📱 @elsoc_nith on Instagram\n\nOr just type "help" to see all topics I can discuss! ⚡`;
 };
 
-// Export additional utility functions
+// Quick question buttons
 export const getQuickQuestions = () => {
   return [
     { icon: '❓', text: 'What is ELSOC?' },
     { icon: '🎯', text: 'How can I join?' },
     { icon: '📅', text: 'Upcoming events?' },
-    { icon: '📞', text: 'Contact information' },
+    { icon: '📞', text: 'Contact info' },
     { icon: '👥', text: 'Meet the team' },
-    { icon: '🚀', text: 'Our projects' }
+    { icon: '🚀', text: 'Show me projects' },
+    { icon: '🏆', text: 'Achievements' },
+    { icon: '💰', text: 'Fees & costs' }
   ];
 };
 
-// Get contextual follow-up suggestions
+// Contextual follow-ups
 export const getFollowUpSuggestions = (lastQuery) => {
   const message = lastQuery.toLowerCase();
   
   if (containsKeywords(message, knowledgeBase.about.keywords)) {
-    return ['How can I join?', 'What projects do you work on?', 'Upcoming events?'];
+    return ['How can I join?', 'What domains do you have?', 'Show me projects'];
   }
   
   if (containsKeywords(message, knowledgeBase.joining.keywords)) {
-    return ['What are the benefits?', 'Any membership fees?', 'When is the next orientation?'];
+    return ['What are the benefits?', 'Any fees?', 'Who can join?'];
   }
   
   if (containsKeywords(message, knowledgeBase.events.keywords)) {
-    return ['How to register?', 'Are events free?', 'Can I organize an event?'];
+    return ['Tell me about MATLAB workshop', 'Guest lecture details', 'Past events'];
   }
   
   if (containsKeywords(message, knowledgeBase.projects.keywords)) {
-    return ['Can I propose a project?', 'What resources are available?', 'How to join a project team?'];
+    return ['Can I propose a project?', 'What resources available?', 'Show me domains'];
+  }
+
+  if (containsKeywords(message, knowledgeBase.team.keywords)) {
+    return ['Who are the faculty?', 'How many members?', 'Can I meet them?'];
   }
   
-  return ['Tell me more about ELSOC', 'How can I get involved?', 'Contact information'];
+  return ['Tell me more about ELSOC', 'Upcoming events?', 'How to contact?'];
 };
 
 // Search functionality
@@ -260,5 +358,5 @@ export const searchKeyword = (keyword) => {
   return results.length > 0 ? results[0].response : null;
 };
 
-// Export knowledge base for reference
+// Export knowledge base
 export { knowledgeBase };

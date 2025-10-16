@@ -1,10 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { useNavigate } from 'react-router-dom'; // ADD THIS IMPORT
+import React, { useEffect, useState } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+import { FaUsers, FaCalendar, FaProjectDiagram, FaTrophy } from 'react-icons/fa';
 import './Home.css';
 
 const Home = () => {
-  const navigate = useNavigate(); // ADD THIS LINE
+  const navigate = useNavigate();
   const { scrollYProgress } = useScroll();
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.8]);
@@ -19,31 +20,32 @@ const Home = () => {
   }, []);
 
   const facultyMessages = [
-    {
-      name: 'Dr. Rajesh Kumar Sharma',
-      position: 'Head of Department',
-      department: 'Electrical Engineering',
-      message: 'ELSOC has been instrumental in bridging the gap between theoretical knowledge and practical application. Our students are not just learning; they are innovating and creating solutions for tomorrow.',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop',
-      expertise: 'Power Systems & Smart Grid'
-    },
-    {
-      name: 'Dr. Priya Malhotra',
-      position: 'Faculty Coordinator',
-      department: 'Electrical Engineering',
-      message: 'The dedication and passion I witness in ELSOC members is truly inspiring. They embody the spirit of continuous learning and collaboration, pushing boundaries in electrical engineering.',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop',
-      expertise: 'Control Systems & Automation'
-    },
-    {
-      name: 'Dr. Amit Verma',
-      position: 'Technical Advisor',
-      department: 'Electrical Engineering',
-      message: 'ELSOC represents the future of engineering excellence. The projects and initiatives undertaken here are preparing our students to be industry leaders and innovators.',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
-      expertise: 'Renewable Energy & IoT'
-    }
-  ];
+  {
+    name: 'Dr. OP Rahi',
+    position: 'HOD, EED',
+    message: 'Guiding innovation with decades of expertise, Dr. Rahi inspires students to push boundaries and achieve excellence in electrical engineering research and education.',
+    image: '/img/op sir.png'
+  },
+  {
+    name: 'Dr. Bharti Bakshi Koul',
+    position: 'Faculty Incharge, ELSOC',
+    message: 'Dedicated to nurturing young talent, Dr. Koul mentors ELSOC members with passion, fostering creativity, leadership, and technical excellence in every initiative.',
+    image: '/img/BHarti maam.jpg'
+  },
+  {
+    name: 'Dr. Chandrasekaran S',
+    position: 'Coordinator, ELSOC',
+    message: 'Committed to advancing student learning, Dr. Chandrasekaran encourages innovation and practical application of electrical engineering concepts through hands-on projects.',
+    image: 'img/chandru sir.jpg'
+  },
+  {
+    name: 'Dr. Katam Nishanth',
+    position: 'Coordinator, ELSOC',
+    message: 'With a focus on research and development, Dr. Nishanth guides students in exploring emerging technologies and developing solutions for real-world challenges.',
+    image: 'img/nishant sir.jpg'
+  }
+];
+
 
   const galleryImages = [
     '/img/3.jpeg',
@@ -51,71 +53,73 @@ const Home = () => {
     '/img/5.jpeg',
     '/img/6.jpeg',
     '/img/7.jpeg',
-    'img/11.jpeg',
-    'img/14.jpeg',
-    'img/15.jpeg',
-    'img/16.webp',
-    'img/17.webp',
-    'img/18.webp',      
-    'img/19.webp',
+    '/img/11.jpeg',
+    '/img/14.jpeg',
+    '/img/15.jpeg',
+    '/img/16.webp',
+    '/img/17.webp',
+    '/img/18.webp',      
+    '/img/19.webp',
   ];
 
   const upcomingEvents = [
     {
-      title: 'IoT & Smart Systems Workshop 2025',
-      date: 'November 15, 2025',
+      title: 'Workshop #1 - MATLAB Basics',
+      date: 'October 30, 2025 (Tentative)',
       time: '10:00 AM - 4:00 PM',
-      location: 'Main Auditorium, NIT Hamirpur',
-      description: 'Dive deep into the world of Internet of Things and Smart Systems. Learn to build connected devices, implement sensor networks, and create real-world IoT applications with hands-on experience.',
+      location: 'Main Lab, EE Department',
+      description: 'Comprehensive hands-on workshop covering MATLAB fundamentals, electrical project simulations, and practical applications for engineering students.',
       category: 'Workshop',
-      image: 'https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600&h=400&fit=crop',
+      image: '/img/16.webp',
       status: 'upcoming',
       registrationLink: '#',
-      participants: '150+ Expected',
-      highlights: ['Hands-on Projects', 'Industry Experts', 'Certification']
+      participants: 'Open to All',
+      highlights: ['Hands-on Projects', 'MATLAB Certification', 'Expert Guidance']
     },
     {
-      title: 'Circuit Design Hackathon 2025',
-      date: 'December 5, 2025',
-      time: '9:00 AM - 6:00 PM',
-      location: 'Electronics Lab, NIT Hamirpur',
-      description: 'Push your limits in this intensive 24-hour hackathon. Design innovative circuits, solve real-world problems, and compete for exciting prizes. Teams will work on cutting-edge analog and digital circuit challenges.',
-      category: 'Competition',
-      image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop',
-      status: 'upcoming',
-      registrationLink: '#',
-      participants: '200+ Teams',
-      highlights: ['₹50k Prize Pool', '24hr Challenge', 'Industry Mentors']
-    },
-    {
-      title: 'Future of Renewable Energy - Industry Expert Talk',
-      date: 'October 25, 2025',
+      title: 'Guest Lecture / Tech Talk',
+      date: 'November 10-16, 2025 (Tentative)',
       time: '2:00 PM - 4:00 PM',
       location: 'Seminar Hall, NIT Hamirpur',
-      description: 'Join us for an enlightening session with leading industry professionals discussing the future of renewable energy, sustainable power systems, and career opportunities in green technology.',
+      description: 'Interactive session with industry professionals and alumni discussing emerging technologies, research opportunities, and career guidance in electrical engineering.',
       category: 'Seminar',
-      image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&h=400&fit=crop',
+      image: '/img/guestlec.jpg',
       status: 'upcoming',
       registrationLink: '#',
       participants: 'Open to All',
       highlights: ['Industry Insights', 'Q&A Session', 'Networking']
+    },
+    {
+      title: 'Workshop - Power Systems & Labs',
+      date: 'January 12-26, 2026 (Tentative)',
+      time: '10:00 AM - 4:00 PM',
+      location: 'Power Systems Lab, NIT Hamirpur',
+      description: 'Advanced workshop on power systems engineering, including hands-on experience with transformers, circuit breakers, and smart grid technologies.',
+      category: 'Workshop',
+      image: '/img/6.jpeg',
+      status: 'upcoming',
+      registrationLink: '#',
+      participants: 'Open to All',
+      highlights: ['Hands-on Experience', 'Lab Work', 'Smart Grid Tech']
     }
   ];
 
   const achievements = [
-    { icon: '👥', number: '800+', label: 'Active Members', color: '#a855f7' },
-    { icon: '🎯', number: '75+', label: 'Events Organized', color: '#ec4899' },
-    { icon: '🚀', number: '150+', label: 'Projects Completed', color: '#8b5cf6' },
-    { icon: '🏆', number: '12+', label: 'Years of Excellence', color: '#f472b6' }
+    { Icon: FaProjectDiagram, number: '35+', label: 'Projects', color: '#a855f7' },
+    { Icon: FaCalendar, number: '10+', label: 'Events/Year', color: '#ec4899' },
+    { Icon: FaUsers, number: '33', label: 'Team Members', color: '#8b5cf6' },
+    { Icon: FaTrophy, number: '5', label: 'Years of Excellence', color: '#f472b6' }
   ];
 
   const domains = [
-    { icon: '⚡', title: 'Power Systems', desc: 'Advanced grid technologies' },
-    { icon: '🤖', title: 'Automation', desc: 'Smart control systems' },
-    { icon: '🌱', title: 'Renewable Energy', desc: 'Sustainable solutions' },
-    { icon: '💡', title: 'IoT & Embedded', desc: 'Connected devices' },
-    { icon: '🔌', title: 'Circuit Design', desc: 'Analog & digital circuits' },
-    { icon: '📡', title: 'Signal Processing', desc: 'Data analysis & AI' }
+    { image: '/img/circuit.jpeg', title: 'Circuit Design', desc: 'Analog & digital circuits' },
+    { image: '/img/wev dev.jpeg', title: 'Web Development', desc: 'Full-stack development' },
+    { image: '/img/aiml.jpeg', title: 'AI/ML', desc: 'Artificial Intelligence & Machine Learning' },
+    { image: '/img/media and marketing.jpg', title: 'Media & Marketing', desc: 'Digital content & outreach' },
+    { image: '/img/finence.jpg', title: 'Finance', desc: 'Budget & fund management' },
+    { image: '/img/content.webp', title: 'Content', desc: 'Technical writing & documentation' },
+    { image: '/img/design.jpg', title: 'Design', desc: 'UI/UX & graphic design' },
+    { image: '/img/management.jpg', title: 'Management', desc: 'Team coordination & planning' }
   ];
 
   return (
@@ -212,16 +216,16 @@ const Home = () => {
               transition={{ delay: 1.1 }}
             >
               <div className="stat-pill">
-                <span className="stat-icon">🎓</span>
-                <span>800+ Members</span>
+                <FaProjectDiagram className="stat-icon-small" />
+                <span>35+ Projects</span>
               </div>
               <div className="stat-pill">
-                <span className="stat-icon">🏆</span>
-                <span>75+ Events</span>
+                <FaCalendar className="stat-icon-small" />
+                <span>10+ Events/Year</span>
               </div>
               <div className="stat-pill">
-                <span className="stat-icon">🚀</span>
-                <span>150+ Projects</span>
+                <FaUsers className="stat-icon-small" />
+                <span>33 Members</span>
               </div>
             </motion.div>
           </motion.div>
@@ -247,61 +251,67 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             className="section-header"
           >
-            <span className="section-tag glass-morphism">Words of Wisdom</span>
-            <h2 className="section-title gradient-text">Messages from Our Faculty</h2>
-            <p className="section-subtitle">
-              Insights and guidance from our esteemed faculty members who mentor and inspire the next generation of electrical engineers
-            </p>
+            <h2 className="faculty-main-title gradient-text">What's Our Faculty Say?</h2>
           </motion.div>
 
-          <div className="faculty-grid">
+         <div className="faculty-cards-wrapper-4">
             {facultyMessages.map((faculty, index) => (
               <motion.div
                 key={index}
-                className="faculty-card glass-morphism"
+                className="faculty-card-modern glass-morphism"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                whileHover={{ y: -10, scale: 1.02 }}
+                whileHover={{ y: -10 }}
               >
-                <div className="faculty-card-glow"></div>
-                <div className="faculty-header">
-                  <div className="faculty-image-wrapper">
-                    <img src={faculty.image} alt={faculty.name} className="faculty-image" />
-                    <div className="faculty-image-ring"></div>
-                  </div>
-                  <div className="faculty-info">
-                    <h3 className="faculty-name">{faculty.name}</h3>
-                    <p className="faculty-position">{faculty.position}</p>
-                    <span className="faculty-expertise">{faculty.expertise}</span>
-                  </div>
+                <div className="faculty-image-container">
+                  <img src={faculty.image} alt={faculty.name} className="faculty-photo" />
                 </div>
-                <div className="faculty-quote-mark">"</div>
-                <p className="faculty-message">{faculty.message}</p>
-                <div className="faculty-footer">
-                  <span className="faculty-dept">{faculty.department}</span>
+                
+                <div className="faculty-details">
+                  <h3 className="faculty-name-large">{faculty.name}</h3>
+                  <p className="faculty-position-badge">{faculty.position}</p>
+                  <p className="faculty-message-text">{faculty.message}</p>
                 </div>
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
 
+      {/* Achievements Section */}
+      <section className="stats-section">
+        <div className="container">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.8 }}
-            className="view-team-container"
+            transition={{ duration: 0.8 }}
+            className="section-header"
           >
-            <button 
-              className="btn-view-team glass-morphism"
-              onClick={() => navigate('/team')}
-            >
-              <span className="team-icon">👥</span>
-              <span>View ELSOC Team</span>
-              <span className="btn-arrow">→</span>
-            </button>
+            <span className="section-tag glass-morphism">Our Impact</span>
+            <h2 className="section-title gradient-text">ELSOC by the Numbers</h2>
           </motion.div>
+
+          <div className="stats-grid">
+            {achievements.map((stat, index) => (
+              <motion.div
+                key={index}
+                className="stat-item glass-morphism"
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{ scale: 1.05, y: -5 }}
+              >
+                <div className="stat-glow" style={{ background: `radial-gradient(circle, ${stat.color}40 0%, transparent 70%)` }}></div>
+                <stat.Icon className="stat-icon-large" style={{ color: stat.color }} size={50} />
+                <h3 className="stat-number" style={{ color: stat.color }}>{stat.number}</h3>
+                <p className="stat-label">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -333,7 +343,10 @@ const Home = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -5 }}
               >
-                <div className="domain-icon">{domain.icon}</div>
+                <div className="domain-image-wrapper">
+                  <img src={domain.image} alt={domain.title} className="domain-image" />
+                  <div className="domain-image-overlay"></div>
+                </div>
                 <h3 className="domain-title">{domain.title}</h3>
                 <p className="domain-desc">{domain.desc}</p>
               </motion.div>
@@ -426,7 +439,7 @@ const Home = () => {
                   
                   <div className="event-meta">
                     <div className="event-meta-item">
-                      <span className="meta-icon">📅</span>
+                      <FaCalendar className="meta-icon" />
                       <span>{event.date}</span>
                     </div>
                     <div className="event-meta-item">
@@ -438,7 +451,7 @@ const Home = () => {
                       <span>{event.location}</span>
                     </div>
                     <div className="event-meta-item">
-                      <span className="meta-icon">👥</span>
+                      <FaUsers className="meta-icon" />
                       <span>{event.participants}</span>
                     </div>
                   </div>
@@ -475,41 +488,6 @@ const Home = () => {
               <span className="btn-arrow">→</span>
             </button>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Achievements Section */}
-      <section className="stats-section">
-        <div className="container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="section-header"
-          >
-            <span className="section-tag glass-morphism">Our Impact</span>
-            <h2 className="section-title gradient-text">ELSOC by the Numbers</h2>
-          </motion.div>
-
-          <div className="stats-grid">
-            {achievements.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="stat-item glass-morphism"
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ scale: 1.05, y: -5 }}
-              >
-                <div className="stat-glow" style={{ background: `radial-gradient(circle, ${stat.color}40 0%, transparent 70%)` }}></div>
-                <div className="stat-icon-large">{stat.icon}</div>
-                <h3 className="stat-number" style={{ color: stat.color }}>{stat.number}</h3>
-                <p className="stat-label">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 

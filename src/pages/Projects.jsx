@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaCalendar, FaUsers, FaCircle } from 'react-icons/fa';
 import './Projects.css';
 
 const Projects = () => {
@@ -13,9 +14,9 @@ const Projects = () => {
       id: 1,
       title: 'Smart Home Automation System',
       category: 'IoT',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. IoT-based home automation using ESP32, enabling voice control and mobile app integration for lights, fans, and appliances.',
-      image: 'https://via.placeholder.com/400x300/5b00b7/ffffff?text=Smart+Home',
-      technologies: ['ESP32', 'Arduino', 'MQTT', 'Node-RED'],
+      description: 'Advanced IoT-based home automation using ESP32 microcontroller, enabling voice control through Alexa and mobile app integration for controlling lights, fans, appliances, and monitoring energy consumption in real-time.',
+      image: 'img/home automation.png',
+      technologies: ['ESP32', 'Arduino IDE', 'MQTT Protocol', 'Node-RED', 'Alexa Integration'],
       team: ['Rohan Verma', 'Sneha Patel', 'Amit Kumar'],
       year: '2025',
       status: 'Completed'
@@ -24,9 +25,9 @@ const Projects = () => {
       id: 2,
       title: 'Autonomous Line Following Robot',
       category: 'Robotics',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Advanced robot with PID control algorithm, capable of detecting and following colored lines with obstacle avoidance.',
-      image: 'https://via.placeholder.com/400x300/8b00ff/ffffff?text=Robot',
-      technologies: ['Arduino', 'IR Sensors', 'Motor Drivers', 'PID'],
+      description: 'Intelligent autonomous robot with advanced PID control algorithm, capable of detecting and following colored lines with high precision. Features include obstacle avoidance using ultrasonic sensors and adaptive speed control.',
+      image: 'img/linefollowing robot.avif',
+      technologies: ['Arduino Uno', 'IR Sensors Array', 'L298N Motor Driver', 'PID Controller'],
       team: ['Priya Sharma', 'Karan Singh'],
       year: '2024',
       status: 'Completed'
@@ -35,20 +36,20 @@ const Projects = () => {
       id: 3,
       title: 'Solar Power Monitoring System',
       category: 'Power Systems',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Real-time monitoring and analysis of solar panel efficiency with cloud-based data logging and analytics.',
-      image: 'https://via.placeholder.com/400x300/a855f7/ffffff?text=Solar+Monitor',
-      technologies: ['Raspberry Pi', 'Current Sensors', 'Python', 'IoT'],
+      description: 'Comprehensive real-time monitoring and analysis system for solar panel efficiency with cloud-based data logging. Tracks voltage, current, power output, and environmental conditions with predictive analytics for maintenance.',
+      image: 'img/solor project.jpg',
+      technologies: ['Raspberry Pi', 'ACS712 Current Sensor', 'Python', 'ThingSpeak IoT', 'Data Analytics'],
       team: ['Anjali Gupta', 'Vikram Reddy', 'Sanjay Mehta'],
       year: '2025',
       status: 'In Progress'
     },
     {
       id: 4,
-      title: 'Gesture Controlled Wheelchair',
+      title: 'Gesture Controlled Car',
       category: 'Embedded',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Assistive technology enabling wheelchair control through hand gestures using accelerometer and gyroscope sensors.',
-      image: 'https://via.placeholder.com/400x300/5b00b7/ffffff?text=Wheelchair',
-      technologies: ['Arduino', 'Accelerometer', 'Bluetooth', 'DC Motors'],
+      description: 'Innovative gesture-controlled car using accelerometer and gyroscope sensors mounted on a glove. Hand movements control car direction wirelessly through RF communication, enabling intuitive hands-free operation.',
+      image: 'img/guesture control car.png',
+      technologies: ['Arduino Nano', 'MPU6050 Accelerometer', 'RF Transceiver', 'DC Motors', 'Motor Driver'],
       team: ['Neha Kapoor', 'Rahul Joshi'],
       year: '2024',
       status: 'Completed'
@@ -57,9 +58,9 @@ const Projects = () => {
       id: 5,
       title: 'Industrial Automation PLC System',
       category: 'Automation',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Programmable Logic Controller based automation for industrial processes with SCADA interface.',
-      image: 'https://via.placeholder.com/400x300/8b00ff/ffffff?text=PLC+System',
-      technologies: ['PLC', 'SCADA', 'Ladder Logic', 'HMI'],
+      description: 'Professional-grade Programmable Logic Controller based automation system for industrial manufacturing processes. Features SCADA interface for real-time monitoring, control, and data visualization with alarm management.',
+      image: 'public/img/plc project.webp',
+      technologies: ['Allen-Bradley PLC', 'SCADA Software', 'Ladder Logic Programming', 'HMI Touch Panel'],
       team: ['Arjun Malhotra', 'Pooja Nair', 'Deepak Kumar'],
       year: '2025',
       status: 'In Progress'
@@ -68,34 +69,34 @@ const Projects = () => {
       id: 6,
       title: 'Weather Monitoring Station',
       category: 'IoT',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Comprehensive weather station measuring temperature, humidity, pressure, and air quality with web dashboard.',
-      image: 'https://via.placeholder.com/400x300/a855f7/ffffff?text=Weather+Station',
-      technologies: ['ESP8266', 'DHT22', 'BMP180', 'ThingSpeak'],
+      description: 'Comprehensive IoT weather station measuring temperature, humidity, atmospheric pressure, and air quality index. Data is logged to cloud platform with web dashboard for visualization and historical analysis.',
+      image: 'img/wheater project.jpg',
+      technologies: ['ESP8266', 'DHT22 Sensor', 'BMP180 Barometer', 'MQ135 Air Quality', 'ThingSpeak'],
       team: ['Ritika Sharma', 'Varun Singh'],
       year: '2024',
       status: 'Completed'
     },
     {
       id: 7,
-      title: 'Drone for Agricultural Monitoring',
-      category: 'Robotics',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quadcopter drone equipped with cameras for crop health monitoring and pesticide spraying.',
-      image: 'https://via.placeholder.com/400x300/5b00b7/ffffff?text=Agri+Drone',
-      technologies: ['Arduino', 'GPS', 'Camera', 'RF Module'],
-      team: ['Aditya Raj', 'Meera Iyer', 'Suresh Kumar'],
-      year: '2025',
-      status: 'In Progress'
-    },
-    {
-      id: 8,
       title: 'Smart Energy Meter',
       category: 'Embedded',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Digital energy meter with GSM communication for remote monitoring and automated billing.',
-      image: 'https://via.placeholder.com/400x300/8b00ff/ffffff?text=Energy+Meter',
-      technologies: ['Arduino', 'GSM Module', 'Current Sensor', 'LCD'],
+      description: 'Digital energy meter with GSM/GPRS communication for remote monitoring and automated billing system. Measures real-time power consumption, detects theft, and sends SMS alerts for anomalies.',
+      image: 'img/smart meter .jpeg',
+      technologies: ['Arduino Mega', 'GSM SIM800L Module', 'ACS712 Current Sensor', '16x2 LCD Display'],
       team: ['Kavita Rao', 'Manish Tiwari'],
       year: '2024',
       status: 'Completed'
+    },
+    {
+      id: 8,
+      title: 'Fire Detection & Alert System',
+      category: 'IoT',
+      description: 'Intelligent fire detection system using multiple sensors (smoke, temperature, flame) with automatic fire extinguisher activation. Sends real-time alerts via SMS and mobile app with GPS location.',
+      image: 'img/fire alaram project.jpg',
+      technologies: ['ESP32', 'MQ-2 Smoke Sensor', 'Flame Sensor', 'GSM Module', 'Servo Motor'],
+      team: ['Aditya Raj', 'Meera Iyer'],
+      year: '2025',
+      status: 'In Progress'
     }
   ];
 
@@ -125,7 +126,7 @@ const Projects = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Innovation through hands-on learning
+            Innovative solutions through hands-on learning and collaborative engineering excellence
           </motion.p>
         </div>
       </section>
@@ -138,7 +139,7 @@ const Projects = () => {
             {categories.map((category) => (
               <motion.button
                 key={category}
-                className={`category-btn ${selectedCategory === category ? 'active' : ''}`}
+                className={`category-btn glass-morphism ${selectedCategory === category ? 'active' : ''}`}
                 onClick={() => setSelectedCategory(category)}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -161,7 +162,7 @@ const Projects = () => {
               {filteredProjects.map((project, index) => (
                 <motion.div
                   key={project.id}
-                  className="project-card"
+                  className="project-card glass-morphism"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -172,7 +173,7 @@ const Projects = () => {
                     <img src={project.image} alt={project.title} />
                     <div className="project-overlay">
                       <span className={`project-status ${project.status.toLowerCase().replace(' ', '-')}`}>
-                        {project.status}
+                        <FaCircle size={8} /> {project.status}
                       </span>
                     </div>
                   </div>
@@ -192,7 +193,9 @@ const Projects = () => {
                     </div>
 
                     <div className="project-footer">
-                      <span className="project-year">🗓️ {project.year}</span>
+                      <span className="project-year">
+                        <FaCalendar /> {project.year}
+                      </span>
                       <button className="view-details-btn">
                         View Details →
                       </button>
@@ -216,7 +219,7 @@ const Projects = () => {
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
-              className="project-modal"
+              className="project-modal glass-morphism"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
@@ -246,7 +249,9 @@ const Projects = () => {
                 </div>
 
                 <div className="modal-section">
-                  <h3>Team Members</h3>
+                  <h3>
+                    <FaUsers /> Team Members
+                  </h3>
                   <ul className="team-list">
                     {selectedProject.team.map((member, idx) => (
                       <li key={idx}>👤 {member}</li>
@@ -255,9 +260,11 @@ const Projects = () => {
                 </div>
 
                 <div className="modal-footer">
-                  <span className="modal-year">Year: {selectedProject.year}</span>
+                  <span className="modal-year">
+                    <FaCalendar /> Year: {selectedProject.year}
+                  </span>
                   <span className={`modal-status ${selectedProject.status.toLowerCase().replace(' ', '-')}`}>
-                    {selectedProject.status}
+                    <FaCircle size={8} /> {selectedProject.status}
                   </span>
                 </div>
               </div>

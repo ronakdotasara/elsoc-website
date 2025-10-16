@@ -514,3 +514,189 @@ body.light-theme .modal-category {
     height: 250px;
   }
 }
+/* ==================== */
+/* FIX STATUS TAGS ALIGNMENT */
+/* ==================== */
+
+/* Project Card Status */
+.project-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.project-status.completed {
+  background: rgba(34, 197, 94, 0.9);
+  color: white;
+}
+
+.project-status.in-progress {
+  background: rgba(251, 191, 36, 0.9);
+  color: white;
+}
+
+body.light-theme .project-status.completed {
+  background: rgba(34, 197, 94, 0.95);
+}
+
+body.light-theme .project-status.in-progress {
+  background: rgba(251, 191, 36, 0.95);
+}
+
+/* Modal Status */
+.modal-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.modal-status.completed {
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  border: 2px solid #22c55e;
+}
+
+.modal-status.in-progress {
+  background: rgba(251, 191, 36, 0.2);
+  color: #fbbf24;
+  border: 2px solid #fbbf24;
+}
+
+body.light-theme .modal-status.completed {
+  background: rgba(34, 197, 94, 0.15);
+  color: #16a34a;
+  border: 2px solid #16a34a;
+}
+
+body.light-theme .modal-status.in-progress {
+  background: rgba(251, 191, 36, 0.15);
+  color: #d97706;
+  border: 2px solid #d97706;
+}
+
+/* Project Footer Alignment */
+.project-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+body.light-theme .project-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.project-year {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Modal Footer Alignment */
+.modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+body.light-theme .modal-footer {
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.modal-year {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Icon alignment inside status */
+.project-status svg,
+.modal-status svg {
+  margin-right: 0;
+  vertical-align: middle;
+}
+
+/* View Details Button */
+.view-details-btn {
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, var(--bright-purple), var(--aurora-pink));
+  color: white;
+  border: none;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+body.light-theme .view-details-btn {
+  background: linear-gradient(135deg, #0ea5e9, #0284c7);
+}
+
+.view-details-btn:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4);
+}
+
+body.light-theme .view-details-btn:hover {
+  box-shadow: 0 5px 20px rgba(14, 165, 233, 0.4);
+}
+
+/* Project Overlay */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0,0,0,0.7) 0%, transparent 50%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1rem;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .project-footer,
+  .modal-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .view-details-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

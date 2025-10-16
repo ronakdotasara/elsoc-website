@@ -8,40 +8,36 @@ const Team = () => {
   const teamData = {
     faculty: [
       {
-        name: 'Dr. Rajesh Kumar',
-        position: 'Faculty Advisor',
-        department: 'Electrical Engineering',
-        image: 'https://via.placeholder.com/250/5b00b7/ffffff?text=RK',
-        bio: 'PhD in Power Systems with 15+ years of experience in renewable energy and smart grids.',
-        email: 'rajesh.kumar@nith.ac.in',
-        social: {
-          linkedin: '#',
-          github: '#'
-        }
+        name: 'Dr. OP Rahi',
+        position: 'HOD, EED',
+        department: 'Electrical Engineering Department',
+        image: '/img/op sir.png',
+        bio: 'Guiding innovation with decades of expertise, Dr. Rahi inspires students to push boundaries and achieve excellence in electrical engineering research and education.',
+        email: 'oprahi@nith.ac.in'
       },
       {
-        name: 'Prof. Anita Sharma',
-        position: 'Co-Advisor',
-        department: 'Electronics & Communication',
-        image: 'https://via.placeholder.com/250/8b00ff/ffffff?text=AS',
-        bio: 'Expert in VLSI Design and Embedded Systems with numerous research publications.',
-        email: 'anita.sharma@nith.ac.in',
-        social: {
-          linkedin: '#',
-          github: '#'
-        }
+        name: 'Dr. Bharti Bakshi Koul',
+        position: 'Faculty Incharge, ELSOC',
+        department: 'Electrical Engineering Department',
+        image: '/img/BHarti maam.jpg',
+        bio: 'Dedicated to nurturing young talent, Dr. Koul mentors ELSOC members with passion, fostering creativity, leadership, and technical excellence in every initiative.',
+        email: 'bhartibakshi@nith.ac.in'
       },
       {
-        name: 'Dr. Amit Verma',
-        position: 'Technical Mentor',
-        department: 'Computer Science',
-        image: 'https://via.placeholder.com/250/a855f7/ffffff?text=AV',
-        bio: 'Specializes in AI/ML and IoT applications with industry collaboration experience.',
-        email: 'amit.verma@nith.ac.in',
-        social: {
-          linkedin: '#',
-          github: '#'
-        }
+        name: 'Dr. Chandrasekaran S',
+        position: 'Coordinator, ELSOC',
+        department: 'Electrical Engineering Department',
+        image: '/img/chandru sir.jpg',
+        bio: 'Committed to advancing student learning, Dr. Chandrasekaran encourages innovation and practical application of electrical engineering concepts through hands-on projects.',
+        email: 'chandru@nith.ac.in'
+      },
+      {
+        name: 'Dr. Katam Nishanth',
+        position: 'Coordinator, ELSOC',
+        department: 'Electrical Engineering Department',
+        image: '/img/nishant sir.jpg',
+        bio: 'With a focus on research and development, Dr. Nishanth guides students in exploring emerging technologies and developing solutions for real-world challenges.',
+        email: 'katam@nith.ac.in'
       }
     ],
     core: [
@@ -300,8 +296,8 @@ const Team = () => {
               viewport={{ once: true }}
               className="section-header"
             >
-              <h2>Faculty Advisors</h2>
-              <p>Guiding us towards excellence</p>
+              <h2>Faculty Mentors</h2>
+              <p>Guiding us towards excellence with decades of expertise</p>
             </motion.div>
 
             <div className="faculty-grid">
@@ -326,14 +322,6 @@ const Team = () => {
                     <a href={`mailto:${faculty.email}`} className="email">
                       📧 {faculty.email}
                     </a>
-                    <div className="social-links">
-                      <a href={faculty.social.linkedin} className="social-icon linkedin" target="_blank" rel="noopener noreferrer">
-                        <LinkedInIcon />
-                      </a>
-                      <a href={faculty.social.github} className="social-icon github" target="_blank" rel="noopener noreferrer">
-                        <GitHubIcon />
-                      </a>
-                    </div>
                   </div>
                 </motion.div>
               ))}
