@@ -230,6 +230,69 @@ const Team = () => {
           github: '#'
         }
       },
+      {
+        name: 'Ruchil Meemrot',
+        year: 'Second Year',
+        image: 'img/1760534370479 - RUCHIL MEEMROT.jpg',
+        social: {
+          linkedin: 'https://www.linkedin.com/in/ruchil-meena-7a9b76340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+          github: 'https://github.com/ruchilmeena84'
+        }
+      },
+      {
+        name: 'Ayush Choudhary',
+        year: 'Second Year',
+        image: 'img/WhatsApp Image 2025-10-16 at 19.09.17_2026a07f - AYUSH CHOUDHARY.jpg',
+        social: {
+          linkedin: 'http://www.linkedin.com/in/ayush-choudhary-378104375',
+          github: 'https://github.com/ayushchoudhary3674-code'
+        }
+      },
+      {
+        name: 'Vikas Kumar',
+        year: 'Second Year',
+        image: 'img/1760622833357 - VIKAS KUMAR.jpg',
+        social: {
+          linkedin: 'https://www.linkedin.com/in/vikas-kumar-656798335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+          github: '#'
+        }
+      },
+      {
+        name: 'Akshit Vardhan',
+        year: 'Second Year',
+        image: 'img/IMG_20251018_000105 - AKSHIT VARDHAN (1).jpg',
+        social: {
+          linkedin: 'https://www.linkedin.com/in/akshit-vardhan-6b290a324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+          github: 'https://github.com/akshitvardhan'
+        }
+      },
+      {
+        name: 'Ashish Thakur',
+        year: 'Second Year',
+        image: 'img/IMG_3327 - ASHISH THAKUR.jpeg',
+        social: {
+          linkedin: 'https://www.linkedin.com/in/ashish-thakur-696567339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
+          github: 'https://github.com/ashish9202'
+        }
+      },
+      {
+        name: 'Priyank',
+        year: 'Second Year',
+        image: 'img/IMG_20251018_114540 - PRIYANK KUMAR BASHAK.jpg',
+        social: {
+          linkedin: 'https://www.linkedin.com/in/priyank-kumar-6946a5323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+          github: '#'
+        }
+      },
+      {
+        name: 'Sambhav Agarwal',
+        year: 'Second Year',
+        image: 'img/WhatsApp Image 2025-08-24 at 16.56.17 - SAMBHAV AGARWAL.jpeg',
+        social: {
+          linkedin: 'https://www.linkedin.com/in/sambhav-agarwal-ba7923324/',
+          github: 'https://github.com/A-sambhav'
+        }
+      },
     ]
   };
 
