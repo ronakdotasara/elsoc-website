@@ -9,60 +9,17 @@ const Events = () => {
   const eventsData = {
     upcoming: [
       {
-        title: 'Workshop #1 - MATLAB Basics',
-        date: 'October 30, 2025 (Tentative)',
-        time: '10:00 AM - 4:00 PM',
+        title: 'Workshop #1 - AI-emma Robot',
+        date: 'October 31, 2025 (Tentative)',
+        time: '2:00 PM - 4:00 PM',
         location: 'Main Lab, EE Department',
-        description: 'Comprehensive hands-on workshop covering MATLAB fundamentals, electrical project simulations, and practical applications for engineering students.',
+        description: 'Comprehensive hands-on workshop covering Robotics fundamentals, electrical project simulations, and practical applications for engineering students.',
         category: 'Workshop',
         image: 'img/16.webp',
         status: 'upcoming',
         registrationLink: '#'
       },
-      {
-        title: 'Guest Lecture / Tech Talk',
-        date: 'November 10-16, 2025 (Tentative)',
-        time: '2:00 PM - 4:00 PM',
-        location: 'Seminar Hall, NIT Hamirpur',
-        description: 'Interactive session with industry professionals and alumni discussing emerging technologies, research opportunities, and career guidance in electrical engineering.',
-        category: 'Seminar',
-        image: 'img/guestlec.jpg',
-        status: 'upcoming',
-        registrationLink: '#'
-      },
-      {
-        title: 'Workshop - Power Systems & Labs',
-        date: 'January 12-26, 2026 (Tentative)',
-        time: '10:00 AM - 4:00 PM',
-        location: 'Power Systems Lab, NIT Hamirpur',
-        description: 'Advanced workshop on power systems engineering, including hands-on experience with transformers, circuit breakers, and smart grid technologies.',
-        category: 'Workshop',
-        image: 'img/6.jpeg',
-        status: 'upcoming',
-        registrationLink: '#'
-      },
-      {
-        title: 'Circuit Debugging Challenge',
-        date: 'February 9, 2026 (Tentative)',
-        time: '9:00 AM - 5:00 PM',
-        location: 'Electronics Lab, NIT Hamirpur',
-        description: 'Technical collaboration event featuring circuit debugging challenges, team problem-solving, and exciting prizes for winners.',
-        category: 'Competition',
-        image: 'img/circuit.png',
-        status: 'upcoming',
-        registrationLink: '#'
-      },
-      {
-        title: 'Project Showcase',
-        date: 'March 9-16, 2026 (Tentative)',
-        time: '10:00 AM - 5:00 PM',
-        location: 'Tech Arena, NIT Hamirpur',
-        description: 'Final project presentations and showcase featuring student innovations in electrical engineering, IoT, robotics, and embedded systems.',
-        category: 'Exhibition',
-        image: 'img/DSC03741 (1).jpg',
-        status: 'upcoming',
-        registrationLink: '#'
-      }
+      
     ],
     past: [
       {

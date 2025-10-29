@@ -19,7 +19,7 @@ const Team = () => {
         name: 'Dr. Bharti Bakshi Koul',
         position: 'Coordinator, ELSOC',
         department: 'Electrical Engineering Department',
-        image: 'img/bharti maam.jpg',
+        image: '/img/bharti maam1.jpg',
         bio: 'Dedicated to nurturing young talent, Dr. Koul mentors ELSOC members with passion, fostering creativity, leadership, and technical excellence in every initiative.',
         email: 'bhartibakshi@nith.ac.in'
       },

@@ -29,7 +29,7 @@ const Home = () => {
   {
         name: 'Dr. Bharti Bakshi Koul',
         position: 'Coordinator, ELSOC',
-        image: '/img/bharti maam.jpg',
+        image: '/img/bharti maam1.jpg',
         message: 'Dedicated to nurturing young talent, Dr. Koul mentors ELSOC members with passion, fostering creativity, leadership, and technical excellence in every initiative.',
       
       },
