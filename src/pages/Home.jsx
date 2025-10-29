@@ -67,11 +67,11 @@ const Home = () => {
 
   const upcomingEvents = [
     {
-      title: 'Workshop #1 - MATLAB Basics',
+      title: 'Workshop #1 - AI emma-robot',
       date: 'October 30, 2025 (Tentative)',
-      time: '10:00 AM - 4:00 PM',
+      time: '2:00 PM - 4:00 PM',
       location: 'Main Lab, EE Department',
-      description: 'Comprehensive hands-on workshop covering MATLAB fundamentals, electrical project simulations, and practical applications for engineering students.',
+      description: 'Comprehensive hands-on workshop covering Robotics fundamentals, electrical project simulations, and practical applications for engineering students.',
       category: 'Workshop',
       image: '/img/16.webp',
       status: 'upcoming',
@@ -79,32 +79,6 @@ const Home = () => {
       participants: 'Open to All',
       highlights: ['Hands-on Projects', 'MATLAB Certification', 'Expert Guidance']
     },
-    {
-      title: 'Guest Lecture / Tech Talk',
-      date: 'November 10-16, 2025 (Tentative)',
-      time: '2:00 PM - 4:00 PM',
-      location: 'Seminar Hall, NIT Hamirpur',
-      description: 'Interactive session with industry professionals and alumni discussing emerging technologies, research opportunities, and career guidance in electrical engineering.',
-      category: 'Seminar',
-      image: '/img/guestlec.jpg',
-      status: 'upcoming',
-      registrationLink: '#',
-      participants: 'Open to All',
-      highlights: ['Industry Insights', 'Q&A Session', 'Networking']
-    },
-    {
-      title: 'Workshop - Power Systems & Labs',
-      date: 'January 12-26, 2026 (Tentative)',
-      time: '10:00 AM - 4:00 PM',
-      location: 'Power Systems Lab, NIT Hamirpur',
-      description: 'Advanced workshop on power systems engineering, including hands-on experience with transformers, circuit breakers, and smart grid technologies.',
-      category: 'Workshop',
-      image: '/img/6.jpeg',
-      status: 'upcoming',
-      registrationLink: '#',
-      participants: 'Open to All',
-      highlights: ['Hands-on Experience', 'Lab Work', 'Smart Grid Tech']
-    }
   ];
 
   const achievements = [
