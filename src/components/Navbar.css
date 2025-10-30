@@ -403,3 +403,58 @@ body.light-theme .navbar.scrolled {
     background: rgba(255, 255, 255, 0.95) !important;
   }
 }
+/* ==================== */
+/* NAVBAR LOGO IMAGE STYLES */
+/* ==================== */
+
+.navbar-logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(139, 92, 246, 0.4));
+}
+
+body.light-theme .navbar-logo-img {
+  filter: drop-shadow(0 2px 8px rgba(14, 165, 233, 0.4));
+}
+
+.navbar-logo:hover .navbar-logo-img {
+  transform: rotate(10deg);
+  filter: drop-shadow(0 4px 12px rgba(139, 92, 246, 0.6));
+}
+
+body.light-theme .navbar-logo:hover .navbar-logo-img {
+  filter: drop-shadow(0 4px 12px rgba(14, 165, 233, 0.6));
+}
+
+/* Adjust logo content alignment */
+.logo-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Remove old logo-icon styles if they exist */
+.logo-icon {
+  display: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .navbar-logo-img {
+    width: 35px;
+    height: 35px;
+    margin-right: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-logo-img {
+    width: 32px;
+    height: 32px;
+    margin-right: 6px;
+  }
+}

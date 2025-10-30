@@ -158,12 +158,12 @@ const Home = () => {
             </h1>
             
             <motion.p 
-              className="hero-tagline"
+              className="hero-department"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
             >
-              Electrical Society
+              Department of Electrical Engineering
             </motion.p>
             
             <motion.p 

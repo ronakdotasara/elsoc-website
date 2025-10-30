@@ -120,7 +120,11 @@ const Navbar = ({ theme, toggleTheme }) => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span className="logo-icon">⚡</span>
+              <img 
+                src="/img/elsoc logo-modified.png" 
+                alt="ELSOC Logo" 
+                className="navbar-logo-img" 
+              />
               <span className="logo-text">ELSOC</span>
             </motion.div>
           </Link>

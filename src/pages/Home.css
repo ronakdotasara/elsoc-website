@@ -2601,7 +2601,7 @@ body.light-theme .scroll-arrow {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/img/nith.jpg'); /* Replace with your image path */
+  background-image: url('/img/nithee-2.jpg'); /* Replace with your image path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -2742,4 +2742,192 @@ body.light-theme .stat-pill {
   background: rgba(255, 255, 255, 0.95);
   color: #1e293b;
   border: 1px solid rgba(14, 165, 233, 0.2);
+}
+/* ==================== */
+/* HERO DEPARTMENT TEXT - MASSIVE SIZE (6REM) */
+/* ==================== */
+
+/* Department Text - Massive and Bold */
+.hero-department {
+  font-size: 6rem;
+  font-weight: 900;
+  font-family: 'Poppins', sans-serif;
+  color: rgba(255, 255, 255, 0.98);
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 6px 40px rgba(139, 92, 246, 0.9),
+               0 0 60px rgba(139, 92, 246, 0.6),
+               0 10px 80px rgba(236, 72, 153, 0.5);
+  line-height: 1.2;
+  background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow-pulse 3s ease-in-out infinite;
+  position: relative;
+  z-index: 10;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    text-shadow: 0 6px 40px rgba(139, 92, 246, 0.9),
+                 0 0 60px rgba(139, 92, 246, 0.6),
+                 0 10px 80px rgba(236, 72, 153, 0.5);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 6px 50px rgba(139, 92, 246, 1),
+                 0 0 80px rgba(139, 92, 246, 0.8),
+                 0 10px 100px rgba(236, 72, 153, 0.7);
+    transform: scale(1.02);
+  }
+}
+
+body.light-theme .hero-department {
+  color: #1e293b;
+  text-shadow: 0 5px 35px rgba(14, 165, 233, 0.7),
+               0 0 50px rgba(14, 165, 233, 0.5),
+               0 8px 60px rgba(99, 102, 241, 0.4);
+  background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 50%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow-pulse-light 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse-light {
+  0%, 100% {
+    text-shadow: 0 5px 35px rgba(14, 165, 233, 0.7),
+                 0 0 50px rgba(14, 165, 233, 0.5),
+                 0 8px 60px rgba(99, 102, 241, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 0 5px 45px rgba(14, 165, 233, 0.9),
+                 0 0 70px rgba(14, 165, 233, 0.7),
+                 0 8px 80px rgba(99, 102, 241, 0.6);
+    transform: scale(1.02);
+  }
+}
+
+
+/* Mobile Responsive for Department Text */
+@media (max-width: 1600px) {
+  .hero-department {
+    font-size: 5rem;
+    letter-spacing: 2.5px;
+  }
+  
+  .hero-department::after {
+    width: 280px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .hero-department {
+    font-size: 4.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 2.5rem;
+  }
+  
+  .hero-department::after {
+    width: 250px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .hero-department {
+    font-size: 3.8rem;
+    letter-spacing: 1.8px;
+    margin-bottom: 2.2rem;
+  }
+  
+  .hero-department::after {
+    width: 220px;
+    height: 4px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-department {
+    font-size: 3.2rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1.5px;
+  }
+  
+  .hero-department::after {
+    width: 200px;
+    height: 4px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-department {
+    font-size: 2.8rem;
+    margin-bottom: 1.8rem;
+    letter-spacing: 1.2px;
+  }
+  
+  .hero-department::after {
+    width: 180px;
+    height: 3px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-department {
+    font-size: 2.3rem;
+    margin-bottom: 1.6rem;
+    letter-spacing: 1px;
+    line-height: 1.3;
+  }
+  
+  .hero-department::after {
+    width: 150px;
+    height: 3px;
+    bottom: -15px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-department {
+    font-size: 1.9rem;
+    margin-bottom: 1.4rem;
+    letter-spacing: 0.8px;
+  }
+  
+  .hero-department::after {
+    width: 120px;
+    height: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-department {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+  }
+  
+  .hero-department::after {
+    width: 100px;
+    height: 2px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-department {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.3px;
+  }
+  
+  .hero-department::after {
+    width: 80px;
+    height: 2px;
+  }
 }
