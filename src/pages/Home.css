@@ -2484,3 +2484,262 @@ body.light-theme .scroll-arrow {
     transform: translateY(-5px);
   }
 }
+/* Hero Background Image and Overlay */
+.hero-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/img/nith.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.hero-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* 50% opacity black overlay */
+  z-index: 2;
+}
+
+/* Corner Logos */
+.corner-logos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.corner-logo {
+  position: absolute;
+  top: 20px;
+  width: 80px;
+  height: 80px;
+}
+
+.corner-logo-left {
+  left: 20px;
+}
+
+.corner-logo-right {
+  right: 20px;
+}
+
+.corner-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Round Logo in Title */
+.hero-logo-circle {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+  vertical-align: middle;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 5px;
+}
+
+.hero-logo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Ensure content is above background */
+.hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+.hero-grid-overlay {
+  z-index: 2;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .corner-logo {
+    width: 50px;
+    height: 50px;
+    top: 10px;
+  }
+  
+  .corner-logo-left {
+    left: 10px;
+  }
+  
+  .corner-logo-right {
+    right: 10px;
+  }
+  
+  .hero-logo-circle {
+    width: 40px;
+    height: 40px;
+  }
+}
+/* ==================== */
+/* UPDATED CORNER LOGOS & BACKGROUND */
+/* ==================== */
+
+/* Hero Background Image and Overlay */
+.hero-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/img/nith.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+.hero-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65); /* Dark theme: 65% opacity */
+  z-index: 1;
+  transition: background-color 0.3s ease;
+}
+
+/* Light theme overlay adjustment */
+body.light-theme .hero-background-overlay {
+  background-color: rgba(255, 255, 255, 0.75); /* Light theme: 75% white overlay */
+}
+
+/* Corner Logos - Shifted Down to Avoid Header */
+.corner-logos {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.corner-logo {
+  position: absolute;
+  top: 100px; /* Shifted down from 20px to avoid header */
+  width: 80px;
+  height: 80px;
+  transition: all 0.3s ease;
+}
+
+.corner-logo-left {
+  left: 30px;
+}
+
+.corner-logo-right {
+  right: 30px;
+}
+
+.corner-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+/* Make ELSOC corner logo round */
+.elsoc-corner-round {
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px;
+  backdrop-filter: blur(10px);
+}
+
+body.light-theme .elsoc-corner-round {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Round Logo in Title */
+.hero-logo-circle {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+  vertical-align: middle;
+  background: rgba(139, 92, 246, 0.2);
+  padding: 8px;
+  border: 3px solid rgba(139, 92, 246, 0.5);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.6);
+  transition: all 0.3s ease;
+}
+
+body.light-theme .hero-logo-circle {
+  background: rgba(14, 165, 233, 0.15);
+  border: 3px solid rgba(14, 165, 233, 0.5);
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+}
+
+.hero-logo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Ensure hero content is above everything */
+.hero-content {
+  position: relative;
+  z-index: 5;
+}
+
+.hero-grid-overlay {
+  z-index: 3;
+}
+
+/* Text color adjustments for dark theme */
+body:not(.light-theme) .hero-badge {
+  color: rgba(255, 255, 255, 0.95);
+  background: rgba(139, 92, 246, 0.2);
+}
+
+body:not(.light-theme) .hero-tagline {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+body:not(.light-theme) .hero-mission {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Text color adjustments for light theme */
+body.light-theme .hero-badge {
+  color: #1e293b;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+}
+
+body.light-theme .hero-tagline {
+  color: #334155;
+}
+
+body.light-theme .hero-mission {
+  color: #475569;
+}
+
+body.light-theme .stat-pill {
+  background: rgba(255, 255, 255, 0.95);
+  color: #1e293b;
+  border: 1px solid rgba(14, 165, 233, 0.2);
+}

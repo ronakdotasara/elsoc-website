@@ -20,35 +20,31 @@ const Home = () => {
   }, []);
 
   const facultyMessages = [
-  {
-    name: 'Dr. OP Rahi',
-    position: 'HOD, EED',
-    message: 'Guiding innovation with decades of expertise, Dr. Rahi inspires students to push boundaries and achieve excellence in electrical engineering research and education.',
-    image: '/img/op sir.png'
-  },
-  {
-        name: 'Dr. Bharti Bakshi Koul',
-        position: 'Coordinator, ELSOC',
-        image: '/img/bharti maam1.jpg',
-        message: 'Dedicated to nurturing young talent, Dr. Koul mentors ELSOC members with passion, fostering creativity, leadership, and technical excellence in every initiative.',
-      
-      },
-      {
-        name: 'Dr. Katam Nishanth',
-        position: 'Coordinator, ELSOC',
-        image: '/img/nishant sir.jpg',
-        message: 'With a focus on research and development, Dr. Nishanth guides students in exploring emerging technologies and developing solutions for real-world challenges.',
-        
-      },
-      {
-        name: 'Dr. Chandrasekaran S',
-        position: 'Coordinator, ELSOC',
-        image: '/img/chandru sir.jpg',
-        message: 'Committed to advancing student learning, Dr. Chandrasekaran encourages innovation and practical application of electrical engineering concepts through hands-on projects.',
-        
-      }
-];
-
+    {
+      name: 'Dr. OP Rahi',
+      position: 'HOD, EED',
+      message: 'Guiding innovation with decades of expertise, Dr. Rahi inspires students to push boundaries and achieve excellence in electrical engineering research and education.',
+      image: '/img/op sir.png'
+    },
+    {
+      name: 'Dr. Bharti Bakshi Koul',
+      position: 'Coordinator, ELSOC',
+      image: '/img/bharti maam1.jpg',
+      message: 'Dedicated to nurturing young talent, Dr. Koul mentors ELSOC members with passion, fostering creativity, leadership, and technical excellence in every initiative.',
+    },
+    {
+      name: 'Dr. Katam Nishanth',
+      position: 'Coordinator, ELSOC',
+      image: '/img/nishant sir.jpg',
+      message: 'With a focus on research and development, Dr. Nishanth guides students in exploring emerging technologies and developing solutions for real-world challenges.',
+    },
+    {
+      name: 'Dr. Chandrasekaran S',
+      position: 'Coordinator, ELSOC',
+      image: '/img/chandru sir.jpg',
+      message: 'Committed to advancing student learning, Dr. Chandrasekaran encourages innovation and practical application of electrical engineering concepts through hands-on projects.',
+    }
+  ];
 
   const galleryImages = [
     '/img/3.jpeg',
@@ -117,8 +113,22 @@ const Home = () => {
         }}
       ></div>
 
-      {/* Hero Section */}
+      {/* Hero Section with Background Image */}
       <motion.section className="hero-section" style={{ opacity, scale }}>
+        {/* Background Image with Overlay */}
+        <div className="hero-background-image"></div>
+        <div className="hero-background-overlay"></div>
+
+        {/* Corner Logos */}
+        <div className="corner-logos">
+          <div className="corner-logo corner-logo-left">
+            <img src="/img/nithlogo.png" alt="NIT Hamirpur Logo" />
+          </div>
+          <div className="corner-logo corner-logo-right">
+            <img src="/img/elsoc logo-modified.png" alt="ELSOC Logo" className="elsoc-corner-round" />
+          </div>
+        </div>
+
         <div className="hero-grid-overlay"></div>
         <div className="hero-content">
           <motion.div
@@ -137,13 +147,13 @@ const Home = () => {
             </motion.div>
             
             <h1 className="hero-title">
-              <motion.span 
-                className="hero-icon"
+              <motion.div 
+                className="hero-logo-circle"
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
-                ⚡
-              </motion.span>
+                <img src="/img/elsoc logo-modified.png" alt="ELSOC Logo" />
+              </motion.div>
               <span className="gradient-text">ELSOC</span>
             </h1>
             
@@ -231,7 +241,7 @@ const Home = () => {
             <h2 className="faculty-main-title gradient-text">What's Our Faculty Say?</h2>
           </motion.div>
 
-         <div className="faculty-cards-wrapper-4">
+          <div className="faculty-cards-wrapper-4">
             {facultyMessages.map((faculty, index) => (
               <motion.div
                 key={index}
