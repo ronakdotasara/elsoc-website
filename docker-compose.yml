@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  elsoc-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    image: ronakdotasara/elsoc-nith:latest
+    container_name: elsoc-react-app
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    networks:
+      - elsoc-network
+    labels:
+      - "com.elsoc.description=ELSOC NIT Hamirpur Website"
+      - "com.elsoc.version=1.0"
+
+networks:
+  elsoc-network:
+    driver: bridge

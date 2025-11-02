@@ -1,13 +1,25 @@
 {
   "name": "elsoc-website",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docker:build": "docker build -t ronakdotasara/elsoc-nith:latest .",
+    "docker:run": "docker run -d -p 3000:80 --name elsoc-container ronakdotasara/elsoc-nith:latest",
+    "docker:stop": "docker stop elsoc-container && docker rm elsoc-container",
+    "docker:logs": "docker logs -f elsoc-container",
+    "docker:compose:up": "docker-compose up -d",
+    "docker:compose:down": "docker-compose down",
+    "docker:compose:logs": "docker-compose logs -f",
+    "docker:compose:dev": "docker-compose -f docker-compose.dev.yml up",
+    "docker:compose:dev:down": "docker-compose -f docker-compose.dev.yml down",
+    "docker:push": "docker push ronakdotasara/elsoc-nith:latest",
+    "docker:pull": "docker pull ronakdotasara/elsoc-nith:latest",
+    "docker:clean": "docker system prune -af"
   },
   "dependencies": {
     "framer-motion": "^12.23.24",

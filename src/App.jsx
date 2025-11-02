@@ -12,8 +12,7 @@ import Team from './pages/Team';
 import Contact from './pages/Contact';
 import './App.css';
 
-
-// Enhanced Loader Component with Modern Theme
+// Enhanced Loader Component with Modern Theme (No Logo)
 const Loader = () => {
   return (
     <motion.div 
@@ -29,21 +28,6 @@ const Loader = () => {
       </div>
       
       <div className="loader-content">
-        <motion.div
-          className="loader-icon"
-          animate={{ 
-            rotate: [0, 360],
-            scale: [1, 1.1, 1]
-          }}
-          transition={{ 
-            duration: 3, 
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          ⚡
-        </motion.div>
-        
         <motion.h1 
           className="loader-text gradient-text"
           initial={{ opacity: 0, y: 20 }}
@@ -59,7 +43,7 @@ const Loader = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          Electrical Society
+          Department of Electrical Engineering
         </motion.p>
         
         <div className="loader-spinner-wrapper">
@@ -90,7 +74,6 @@ const Loader = () => {
     </motion.div>
   );
 };
-
 
 // Enhanced 404 Not Found Component
 const NotFound = () => {
@@ -163,7 +146,6 @@ const NotFound = () => {
   );
 };
 
-
 // Enhanced Back to Top Button
 const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -213,7 +195,6 @@ const BackToTop = () => {
   );
 };
 
-
 // Scroll Progress Bar Component
 const ScrollProgress = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -244,7 +225,6 @@ const ScrollProgress = () => {
   );
 };
 
-
 // Page transition variants
 const pageVariants = {
   initial: {
@@ -271,7 +251,6 @@ const pageVariants = {
     }
   }
 };
-
 
 // Animated Routes Wrapper
 const AnimatedRoutes = () => {
@@ -346,7 +325,6 @@ const AnimatedRoutes = () => {
   );
 };
 
-
 // Cursor Glow Effect Component
 const CursorGlow = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -390,8 +368,7 @@ const CursorGlow = () => {
   );
 };
 
-
-// ✅ NEW: Scroll to Top Component
+// Scroll to Top Component
 const ScrollToTop = () => {
   const location = useLocation();
   
@@ -399,13 +376,12 @@ const ScrollToTop = () => {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: 'instant' // Instant scroll, no animation
+      behavior: 'instant'
     });
   }, [location.pathname]);
 
   return null;
 };
-
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -414,7 +390,6 @@ function App() {
     return savedTheme || 'dark';
   });
   
-  // State management to prevent sidebar/chatbot overlap
   const [isChatBotOpen, setIsChatBotOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -445,7 +420,6 @@ function App() {
     }
   }, [theme]);
 
-  // Close one when other opens (prevent overlap)
   useEffect(() => {
     if (isChatBotOpen && isMobileMenuOpen) {
       setIsMobileMenuOpen(false);
@@ -516,7 +490,7 @@ function App() {
 
         <CursorGlow />
         <ScrollProgress />
-        <ScrollToTop /> {/* ✅ ADDED: Scroll to top on route change */}
+        <ScrollToTop />
 
         <Navbar 
           theme={theme} 

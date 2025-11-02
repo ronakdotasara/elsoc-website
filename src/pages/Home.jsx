@@ -147,13 +147,6 @@ const Home = () => {
             </motion.div>
             
             <h1 className="hero-title">
-              <motion.div 
-                className="hero-logo-circle"
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                <img src="/img/elsoc logo-modified.png" alt="ELSOC Logo" />
-              </motion.div>
               <span className="gradient-text">ELSOC</span>
             </h1>
             
