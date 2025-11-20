@@ -1,39 +1,30 @@
-# Stage 1: Build the React app with Vite
+# ----- BUILD STAGE -----
 FROM node:20-alpine AS build
 
-# Set working directory
 WORKDIR /app
 
-# Set platform for proper native bindings
-ENV DOCKER_BUILDKIT=1
+# Copy only package files first
+COPY package*.json ./
 
-# Copy package files
-COPY package.json package-lock.json* ./
+# Clean install
+RUN npm install
 
-# Clean install with platform-specific bindings
-RUN npm ci --silent || npm install --silent
+# Copy full source
+COPY . .
 
-# Copy all source files
-COPY . ./
-
-# Build the production app with Vite
+# Build Vite project
 RUN npm run build
 
-# Stage 2: Production environment with Nginx
-FROM nginx:stable-alpine AS production
+# ----- SERVE WITH NGINX -----
+FROM nginx:alpine
 
-# Copy custom nginx configuration
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Remove default nginx content
+RUN rm -rf /usr/share/nginx/html/*
 
-# Copy built files from build stage (Vite outputs to 'dist' folder)
+# Copy build files
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Expose port 80
+# Copy custom NGINX config
+COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+
 EXPOSE 80
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:80 || exit 1
-
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]

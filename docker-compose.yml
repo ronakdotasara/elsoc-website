@@ -1,24 +1,26 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  elsoc-web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      target: production
+  elsoc-app:
     image: ronakdotasara/elsoc-nith:latest
-    container_name: elsoc-react-app
-    ports:
-      - "3000:80"
-    restart: unless-stopped
-    environment:
-      - NODE_ENV=production
+    container_name: elsoc-app
+    expose:
+      - "5173"
     networks:
-      - elsoc-network
-    labels:
-      - "com.elsoc.description=ELSOC NIT Hamirpur Website"
-      - "com.elsoc.version=1.0"
+      - web
+
+  nginx:
+    image: nginx:latest
+    container_name: elsoc-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - elsoc-app
+    networks:
+      - web
 
 networks:
-  elsoc-network:
+  web:
     driver: bridge
