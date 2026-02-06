@@ -79,6 +79,7 @@ const Navbar = ({ theme, toggleTheme }) => {
     { path: '/', label: 'Home' },
     { path: '/about', label: 'About' },
     { path: '/events', label: 'Events' },
+    { path: '/gallery', label: 'Gallery' },
     { path: '/projects', label: 'Projects' },
     { path: '/team', label: 'Team' },
     { path: '/contact', label: 'Contact' }

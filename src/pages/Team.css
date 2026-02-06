@@ -658,6 +658,76 @@ body.light-theme .executive-card:hover {
 body.light-theme .executive-card .year {
   color: #0052ff;
 }
+/* Volunteer Members */
+.volunteer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.volunteer-card {
+  background: var(--glass-white);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  border: 1px solid var(--glass-border);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+body.light-theme .volunteer-card {
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.volunteer-card:hover {
+  border-color: var(--bright-purple);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+body.light-theme .volunteer-card:hover {
+  border-color: #0052ff;
+  box-shadow: 0 10px 25px rgba(0, 82, 255, 0.2);
+}
+
+.volunteer-image {
+  width: 100%;
+  height: 10rem;
+  margin: 0 auto 0.75rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 2px solid var(--glass-border);
+  transition: border-color 0.3s ease;
+}
+
+.volunteer-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.volunteer-card h5 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.volunteer-card .year {
+  font-size: 0.875rem;
+  color: var(--aurora-purple);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+body.light-theme .volunteer-card .year {
+  color: #0052ff;
+}
+
 
 /* Social Links */
 .social-links {

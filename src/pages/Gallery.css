@@ -1,0 +1,143 @@
+/* ==================== */
+/* GALLERY PAGE */
+/* ==================== */
+
+.gallery-page {
+  width: 100%;
+}
+
+/* Hero */
+.gallery-hero {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--dark-purple), var(--bright-purple));
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-hero-content {
+  text-align: center;
+  padding: 40px 20px;
+  z-index: 2;
+}
+
+.gallery-hero h1 {
+  font-size: 64px;
+  color: var(--text-primary);
+  margin-bottom: 15px;
+}
+
+.gallery-hero p {
+  font-size: 22px;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Content */
+.gallery-content {
+  padding: 80px 20px 100px;
+  background: var(--bg-primary);
+}
+
+/* Event Filter */
+.event-filter {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.event-btn {
+  padding: 14px 30px;
+  border-radius: 50px;
+  background: var(--glass-white);
+  backdrop-filter: blur(10px);
+  border: 2px solid var(--glass-border);
+  color: var(--text-primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.event-btn:hover {
+  transform: translateY(-2px);
+  border-color: var(--bright-purple);
+}
+
+.event-btn.active {
+  background: linear-gradient(135deg, var(--bright-purple), var(--aurora-pink));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+}
+
+/* Grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+/* Card */
+.gallery-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  cursor: pointer;
+  background: var(--glass-white);
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay */
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.6),
+    transparent 60%
+  );
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 15px;
+}
+
+.gallery-overlay span {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .gallery-hero h1 {
+    font-size: 42px;
+  }
+
+  .gallery-hero p {
+    font-size: 18px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}

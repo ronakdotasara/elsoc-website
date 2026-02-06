@@ -7,6 +7,7 @@ import ChatBot from './components/ChatBot';
 import Home from './pages/Home';
 import About from './pages/About';
 import Events from './pages/Events';
+import Gallery from './pages/Gallery';
 import Projects from './pages/Projects';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
@@ -289,6 +290,17 @@ const AnimatedRoutes = () => {
             <Events />
           </motion.div>
         } />
+        <Route path="/gallery" element={
+         <motion.div
+           variants={pageVariants}
+           initial="initial"
+           animate="animate"
+           exit="exit"
+         >
+          <Gallery />
+          </motion.div>
+        } />
+
         <Route path="/projects" element={
           <motion.div
             variants={pageVariants}
