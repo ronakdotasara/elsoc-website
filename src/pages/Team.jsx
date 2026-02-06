@@ -267,32 +267,253 @@ const Team = () => {
         }
       },
       {
-        name: 'Ashish Thakur',
+        name: 'Puneet',
         year: 'Second Year',
-        image: 'img/IMG_3327 - ASHISH THAKUR.jpeg',
+        image: '',
         social: {
-          linkedin: 'https://www.linkedin.com/in/ashish-thakur-696567339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
-          github: 'https://github.com/ashish9202'
+          linkedin: '',
+          github: ''
         }
       },
       {
-        name: 'Priyank',
+        name: 'Prince Meena',
         year: 'Second Year',
-        image: 'img/IMG_20251018_114540 - PRIYANK KUMAR BASHAK.jpg',
+        image: 'img/IMG_1685 (2).jpeg',
         social: {
-          linkedin: 'https://www.linkedin.com/in/priyank-kumar-6946a5323?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+          linkedin: '',
+          github: ''
+        }
+      }
+      
+      
+    ],
+    volunteer: [
+      {
+        name: 'Akriti Mall',
+        year: 'First Year',
+        image: 'img/25BEE007_AKRITI MALL.jpg',
+        social: {
+          linkedin: '#',
           github: '#'
         }
       },
       {
-        name: 'Sambhav Agarwal',
-        year: 'Second Year',
-        image: 'img/WhatsApp Image 2025-08-24 at 16.56.17 - SAMBHAV AGARWAL.jpeg',
+        name: 'Ansh Bishnoi',
+        year: 'First Year',
+        image: 'img/Ansh.heic',
         social: {
-          linkedin: 'https://www.linkedin.com/in/sambhav-agarwal-ba7923324/',
-          github: 'https://github.com/A-sambhav'
+          linkedin: '#',
+          github: '#'
         }
       },
+      {
+        name: 'Anshul Kumar Jangir',
+        year: 'First Year',
+        image: 'img/ANSHUL KUMAR JANGIR 25BEC020.jpeg',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Aditya Jhajharia',
+        year: 'First Year',
+        image: 'img/ADITYA.jpg',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Aryan Singh',
+        year: 'First Year',
+        image: 'img/Aryan_Singh_25BEE023.jpg',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Aviral Gupta',
+        year: 'First Year',
+        image: 'img/25bee025.jpg',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Ayush Verma',
+        year: 'First Year',
+        image: 'img/25bee028.jpg',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Anushika',
+        year: 'First Year',
+        image: 'img/IMG-20251202-WA0142.jpg',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Bulesh Thakur',
+        year: 'First Year',
+        image: 'img/IMG-20251109-WA0032.jpg',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Bhavishay',
+        year: 'First Year',
+        image: 'img/BHAVISHAY 25BEC034.jpg',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Dharamveer Yadav',
+        year: 'First Year',
+        image: '',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Harshita',
+        year: 'First Year',
+        image: 'img/Harshita 25BEE045.jpg',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Jeet Jeedan Behera',
+        year: 'First Year',
+        image: 'img/Jeet25bee050.jpg',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Ketan',
+        year: 'First Year',
+        image: '',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Krishna Pratap Singh',
+        year: 'First Year',
+        image: 'img/Krishna thakur.jpg',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Kuldeep Bhakar',
+        year: 'First Year',
+        image: '',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Kush Sharma',
+        year: 'First Year',
+        image: '',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Khushboo',
+        year: 'First Year',
+        image: 'img/Khushboo_.jpg',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Kushagra Goel',
+        year: 'First Year',
+        image: 'img/Kushagra_25BEE060.jpg',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Neel Nalin Pathak',
+        year: 'First Year',
+        image: 'img/Nalin.jpg',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Om Gawai',
+        year: 'First Year',
+        image: '',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Priyanshu Saini',
+        year: 'First Year',
+        image: 'img/Priyanshu123.webp',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Rahul Sonkhla',
+        year: 'First Year',
+        image: 'img/Rahul Sonkhla.jpg',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Tanmay Rana',
+        year: 'First Year',
+        image: 'img/Tanmay.jpg',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      },
+      {
+        name: 'Taniya Jorwal',
+        year: 'First Year',
+        image: '',
+        social: {
+          linkedin: '#',
+          github: '#'
+        }
+      }
+    
     ]
   };
 
@@ -301,7 +522,8 @@ const Team = () => {
     { id: 'faculty', label: 'Faculty' },
     { id: 'core', label: 'Core Team' },
     { id: 'thirdYear', label: '3rd Year' },
-    { id: 'executive', label: 'Executive' }
+    { id: 'executive', label: 'Executive' },
+    { id: 'volunteer', label: 'Volunteer' }
   ];
 
   const LinkedInIcon = () => (
@@ -552,6 +774,47 @@ const Team = () => {
                   className="executive-card"
                 >
                   <div className="executive-image">
+                    <img src={member.image} alt={member.name} />
+                  </div>
+                  <h5>{member.name}</h5>
+                  <p className="year">{member.year}</p>
+                  <div className="social-links">
+                    <a href={member.social.linkedin} className="social-icon linkedin" target="_blank" rel="noopener noreferrer">
+                      <LinkedInIcon />
+                    </a>
+                    <a href={member.social.github} className="social-icon github" target="_blank" rel="noopener noreferrer">
+                      <GitHubIcon />
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </section>
+        )}
+        {(activeFilter === 'all' || activeFilter === 'volunteer') && (
+          <section className="team-section">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="section-header"
+            >
+              <h2>Volunteer Members</h2>
+              <p>The backbone of ELSOC</p>
+            </motion.div>
+
+            <div className="volunteer-grid">
+              {teamData.volunteer.map((member, idx) => (
+                <motion.div
+                  key={idx}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.02 }}
+                  whileHover={{ scale: 1.1 }}
+                  className="volunteer-card"
+                >
+                  <div className="volunteer-image">
                     <img src={member.image} alt={member.name} />
                   </div>
                   <h5>{member.name}</h5>

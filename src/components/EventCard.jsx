@@ -97,13 +97,11 @@ const EventCard = ({ event }) => {
         )}
 
         {status === 'completed' && (
-          <motion.button
-            className="event-completed-btn"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View Gallery
-          </motion.button>
+         <motion.button className="event-completed-btn">
+  View Gallery
+</motion.button>
+
+
         )}
       </div>
     </motion.div>

@@ -3,18 +3,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 import EventCard from '../components/EventCard';
 import './Events.css';
 
+
+
+
 const Events = () => {
   const [activeTab, setActiveTab] = useState('upcoming');
 
   const eventsData = {
     upcoming: [
       {
-        title: 'Workshop #1 - AI-emma Robot',
-        date: 'October 31, 2025 (Tentative)',
+        title: 'Guest Lecture',
+        date: 'February 18, 2026 (Tentative)',
         time: '2:00 PM - 4:00 PM',
-        location: 'Main Lab, EE Department',
-        description: 'Comprehensive hands-on workshop covering Robotics fundamentals, electrical project simulations, and practical applications for engineering students.',
-        category: 'Workshop',
+        location: ' Mini Auditorium',
+        description: 'An interactive guest lecture providing students with practical insights into modern engineering trends, applications, and industry expectations.',
+        category: 'Seminar',
         image: 'img/16.webp',
         status: 'upcoming',
         registrationLink: '#'
@@ -22,6 +25,17 @@ const Events = () => {
       
     ],
     past: [
+      {
+        title: 'Workshop #1 - AI-emma Robot',
+        date: 'November 12, 2025 ',
+        time: '4:00 PM - 7:00 PM',
+        location: ' Mini Auditorium',
+        description: 'Comprehensive hands-on workshop covering Robotics fundamentals, electrical project simulations, and practical applications for engineering students.',
+        category: 'Workshop',
+        image: 'img/20251112_164239.jpg',
+        status: 'completed',
+        registrationLink: '#'
+      },
       {
         title: 'Blockchain Workshop',
         date: 'February 4, 2022',
