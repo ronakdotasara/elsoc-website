@@ -300,9 +300,9 @@ const Team = () => {
       {
         name: 'Ansh Bishnoi',
         year: 'First Year',
-        image: 'img/Ansh.heic',
+        image: 'img/Ansh.webp',
         social: {
-          linkedin: '#',
+          linkedin: 'https://www.linkedin.com/in/ansh-bishnoi-4b5b77386?utm_source=share_via&utm_content=profile&utm_medium=member_android',
           github: '#'
         }
       },
@@ -329,8 +329,8 @@ const Team = () => {
         year: 'First Year',
         image: 'img/Aryan_Singh_25BEE023.jpg',
         social: {
-          linkedin: '#',
-          github: '#'
+          linkedin: 'https://www.linkedin.com/in/aryan-singh-b7b20a385?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+          github: 'https://github.com/AryanSSSSSS'
         }
       },
       {
@@ -338,8 +338,8 @@ const Team = () => {
         year: 'First Year',
         image: 'img/25bee025.jpg',
         social: {
-          linkedin: '#',
-          github: '#'
+          linkedin: 'https://www.linkedin.com/in/aviral-gupta-b9475a383?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+          github: 'https://github.com/aviralgupta4562-rgb'
         }
       },
       {
@@ -365,7 +365,7 @@ const Team = () => {
         year: 'First Year',
         image: 'img/IMG-20251109-WA0032.jpg',
         social: {
-          linkedin: '#',
+          linkedin: 'https://www.linkedin.com/in/bulesh-thakur-ab48793a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: '#'
         }
       },
@@ -374,17 +374,8 @@ const Team = () => {
         year: 'First Year',
         image: 'img/BHAVISHAY 25BEC034.jpg',
         social: {
-          linkedin: '#',
-          github: '#'
-        }
-      },
-      {
-        name: 'Dharamveer Yadav',
-        year: 'First Year',
-        image: '',
-        social: {
-          linkedin: '#',
-          github: '#'
+          linkedin: 'https://www.linkedin.com/in/bhavishay-bajoliya-05aa343a8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+          github: 'https://github.com/bhavishaybajoliya1109-sys'
         }
       },
       {
@@ -392,7 +383,7 @@ const Team = () => {
         year: 'First Year',
         image: 'img/Harshita 25BEE045.jpg',
         social: {
-          linkedin: '#',
+          linkedin: 'https://www.linkedin.com/in/ms-harshita-3b41a7387?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: '#'
         }
       },
@@ -408,9 +399,9 @@ const Team = () => {
       {
         name: 'Ketan',
         year: 'First Year',
-        image: '',
+        image: 'img/Ketan.png',
         social: {
-          linkedin: '#',
+          linkedin: 'https://www.linkedin.com/in/ketan-dadarwal-597583382?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app#',
           github: '#'
         }
       },
@@ -419,7 +410,7 @@ const Team = () => {
         year: 'First Year',
         image: 'img/Krishna thakur.jpg',
         social: {
-          linkedin: '#',
+          linkedin: 'https://www.linkedin.com/in/krishna-pratap-singh-8749983a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: '#'
         }
       },
@@ -428,8 +419,8 @@ const Team = () => {
         year: 'First Year',
         image: '',
         social: {
-          linkedin: '#',
-          github: '#'
+          linkedin: 'https://www.linkedin.com/in/kuldeep-bhakar-976b10382',
+          github: 'https://github.com/kuldeep804'
         }
       },
       {
@@ -455,8 +446,8 @@ const Team = () => {
         year: 'First Year',
         image: 'img/Kushagra_25BEE060.jpg',
         social: {
-          linkedin: '#',
-          github: '#'
+          linkedin: 'https://www.linkedin.com/in/kushagra-goel-6b8ab536a/',
+          github: 'https://github.com/kgoel17'
         }
       },
       {
@@ -482,8 +473,8 @@ const Team = () => {
         year: 'First Year',
         image: 'img/Priyanshu123.webp',
         social: {
-          linkedin: '#',
-          github: '#'
+          linkedin: 'https://www.linkedin.com/in/priyanshu-saini-4a13a0383/',
+          github: 'https://github.com/pr1y4nshusaini06-creator'
         }
       },
       {
@@ -491,7 +482,7 @@ const Team = () => {
         year: 'First Year',
         image: 'img/Rahul Sonkhla.jpg',
         social: {
-          linkedin: '#',
+          linkedin: 'https://www.linkedin.com/in/rahul-sonkhla-b7a939379?utm_source=share_via&utm_content=profile&utm_medium=member_android',
           github: '#'
         }
       },
@@ -507,9 +498,9 @@ const Team = () => {
       {
         name: 'Taniya Jorwal',
         year: 'First Year',
-        image: '',
+        image: 'img/Taniya1.webp',
         social: {
-          linkedin: '#',
+          linkedin: 'https://www.linkedin.com/in/taniya-jorwal-036004387',
           github: '#'
         }
       }

@@ -52,8 +52,8 @@ const Contact = () => {
     {
       icon: '📞',
       title: 'Phone',
-      content: '+91-1972-254000',
-      link: 'tel:+911972254000'
+      content: 'General Secretary: +91 82331 08540',
+      link: 'tel:+918233108540'
     },
     {
       icon: '📍',
