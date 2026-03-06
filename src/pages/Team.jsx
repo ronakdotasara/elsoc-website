@@ -471,7 +471,7 @@ const Team = () => {
       {
         name: 'Priyanshu Saini',
         year: 'First Year',
-        image: 'img/Priyanshu123.webp',
+        image: 'img/Priyanshu webp.webp',
         social: {
           linkedin: 'https://www.linkedin.com/in/priyanshu-saini-4a13a0383/',
           github: 'https://github.com/pr1y4nshusaini06-creator'
