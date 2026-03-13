@@ -9,20 +9,8 @@ const Events = () => {
   const eventsData = {
     upcoming: [
       {
-        title: "Guest Lecture",
-        date: "February 18, 2026 (Tentative)",
-        time: "2:00 PM - 4:00 PM",
-        location: "Mini Auditorium",
-        description:
-          "An interactive guest lecture providing students with practical insights into modern engineering trends, applications, and industry expectations.",
-        category: "Seminar",
-        image: "img/16.webp",
-        status: "upcoming",
-        registrationLink: "#"
-      },
-      {
         title: "Sparkathon",
-        date: "March 21-22, 2026 (Tentative)",
+        date: "March 28-29, 2026",
         time: "10:00 AM - 6:00 PM (Tentative)",
         location: "Mini Auditorium",
         description:
