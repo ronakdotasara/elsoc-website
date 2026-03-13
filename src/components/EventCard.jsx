@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import './EventCard.css';
 
 const EventCard = ({ event }) => {
@@ -12,25 +13,20 @@ const EventCard = ({ event }) => {
     category = 'Workshop',
     image = 'https://via.placeholder.com/400x250/5b00b7/ffffff?text=Event+Image',
     status = 'upcoming',
-    registrationLink = '#'
+    registrationLink = '#',
+    problemStatementLink = null
   } = event || {};
 
   const getStatusColor = () => {
     switch (status) {
-      case 'upcoming':
-        return '#00ff00';
-      case 'ongoing':
-        return '#ffd700';
-      case 'completed':
-        return '#888888';
-      default:
-        return '#5b00b7';
+      case 'upcoming':  return '#00ff00';
+      case 'ongoing':   return '#ffd700';
+      case 'completed': return '#888888';
+      default:          return '#5b00b7';
     }
   };
 
-  const getStatusLabel = () => {
-    return status.charAt(0).toUpperCase() + status.slice(1);
-  };
+  const getStatusLabel = () => status.charAt(0).toUpperCase() + status.slice(1);
 
   return (
     <motion.div
@@ -45,10 +41,7 @@ const EventCard = ({ event }) => {
         <img src={image} alt={title} loading="lazy" />
         <div className="event-card-overlay">
           <span className="event-category">{category}</span>
-          <span 
-            className="event-status"
-            style={{ background: getStatusColor() }}
-          >
+          <span className="event-status" style={{ background: getStatusColor() }}>
             {getStatusLabel()}
           </span>
         </div>
@@ -61,7 +54,7 @@ const EventCard = ({ event }) => {
         </div>
 
         <h3 className="event-title">{title}</h3>
-        
+
         <div className="event-details">
           <div className="event-detail-item">
             <span className="event-icon">🕒</span>
@@ -75,34 +68,42 @@ const EventCard = ({ event }) => {
 
         <p className="event-description">{description}</p>
 
-        {status === 'upcoming' && (
-          <motion.a
-            href={registrationLink}
-            className="event-register-btn"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Register Now →
-          </motion.a>
-        )}
+        <div className="event-card-actions">
+          {status === 'upcoming' && (
+            <motion.a
+              href={registrationLink}
+              className="event-register-btn"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Register Now →
+            </motion.a>
+          )}
 
-        {status === 'ongoing' && (
-          <motion.button
-            className="event-ongoing-btn"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View Details
-          </motion.button>
-        )}
+          {status === 'ongoing' && (
+            <motion.button
+              className="event-ongoing-btn"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              View Details
+            </motion.button>
+          )}
 
-        {status === 'completed' && (
-         <motion.button className="event-completed-btn">
-  View Gallery
-</motion.button>
+          {status === 'completed' && (
+            <motion.button className="event-completed-btn">
+              View Gallery
+            </motion.button>
+          )}
 
-
-        )}
+          {problemStatementLink && (
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link to={problemStatementLink} className="event-ps-btn">
+                📋 Problem Statements
+              </Link>
+            </motion.div>
+          )}
+        </div>
       </div>
     </motion.div>
   );

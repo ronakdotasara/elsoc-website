@@ -72,7 +72,7 @@ const Home = () => {
       location: 'Mini Auditorium',
       description: 'Technical quiz competition covering general science, environment, and current affairs with exciting prizes for winners.',
       category: 'Competition',
-      image: '/img/emma/emma8.jpeg',
+      image: '/img/Sparkathon Banner.jpeg',
       status: 'upcoming',
       registrationLink: '#',
       participants: 'Open to All',

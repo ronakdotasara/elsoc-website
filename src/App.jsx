@@ -11,9 +11,9 @@ import Gallery from './pages/Gallery';
 import Projects from './pages/Projects';
 import Team from './pages/Team';
 import Contact from './pages/Contact';
+import SparkathonProblemStatements from "./pages/SparkathonProblemStatements";
 import './App.css';
 
-// Enhanced Loader Component with Modern Theme (No Logo)
 const Loader = () => {
   return (
     <motion.div 
@@ -76,7 +76,6 @@ const Loader = () => {
   );
 };
 
-// Enhanced 404 Not Found Component
 const NotFound = () => {
   return (
     <motion.div 
@@ -147,7 +146,6 @@ const NotFound = () => {
   );
 };
 
-// Enhanced Back to Top Button
 const BackToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -165,10 +163,7 @@ const BackToTop = () => {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -183,11 +178,7 @@ const BackToTop = () => {
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           whileHover={{ scale: 1.1, y: -3 }}
           whileTap={{ scale: 0.95 }}
-          transition={{ 
-            type: "spring",
-            stiffness: 300,
-            damping: 20
-          }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
         >
           <span className="back-to-top-icon">↑</span>
         </motion.button>
@@ -196,7 +187,6 @@ const BackToTop = () => {
   );
 };
 
-// Scroll Progress Bar Component
 const ScrollProgress = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
 
@@ -207,7 +197,6 @@ const ScrollProgress = () => {
         document.documentElement.scrollHeight - 
         document.documentElement.clientHeight;
       const scrolled = (scrollPx / winHeightPx) * 100;
-      
       setScrollProgress(scrolled);
     };
 
@@ -218,42 +207,24 @@ const ScrollProgress = () => {
   return (
     <motion.div 
       className="scroll-progress"
-      style={{
-        scaleX: scrollProgress / 100,
-      }}
+      style={{ scaleX: scrollProgress / 100 }}
       initial={{ scaleX: 0 }}
     />
   );
 };
 
-// Page transition variants
 const pageVariants = {
-  initial: {
-    opacity: 0,
-    y: 20,
-    scale: 0.98
-  },
+  initial: { opacity: 0, y: 20, scale: 0.98 },
   animate: {
-    opacity: 1,
-    y: 0,
-    scale: 1,
-    transition: {
-      duration: 0.4,
-      ease: [0.4, 0, 0.2, 1]
-    }
+    opacity: 1, y: 0, scale: 1,
+    transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] }
   },
   exit: {
-    opacity: 0,
-    y: -20,
-    scale: 0.98,
-    transition: {
-      duration: 0.3,
-      ease: [0.4, 0, 1, 1]
-    }
+    opacity: 0, y: -20, scale: 0.98,
+    transition: { duration: 0.3, ease: [0.4, 0, 1, 1] }
   }
 };
 
-// Animated Routes Wrapper
 const AnimatedRoutes = () => {
   const location = useLocation();
 
@@ -261,74 +232,43 @@ const AnimatedRoutes = () => {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={
-          <motion.div
-            variants={pageVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-          >
+          <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
             <Home />
           </motion.div>
         } />
         <Route path="/about" element={
-          <motion.div
-            variants={pageVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-          >
+          <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
             <About />
           </motion.div>
         } />
         <Route path="/events" element={
-          <motion.div
-            variants={pageVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-          >
+          <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
             <Events />
           </motion.div>
         } />
         <Route path="/gallery" element={
-         <motion.div
-           variants={pageVariants}
-           initial="initial"
-           animate="animate"
-           exit="exit"
-         >
-          <Gallery />
+          <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
+            <Gallery />
           </motion.div>
         } />
-
         <Route path="/projects" element={
-          <motion.div
-            variants={pageVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-          >
+          <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
             <Projects />
           </motion.div>
         } />
         <Route path="/team" element={
-          <motion.div
-            variants={pageVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-          >
+          <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
             <Team />
           </motion.div>
         } />
         <Route path="/contact" element={
-          <motion.div
-            variants={pageVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-          >
+          <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
             <Contact />
+          </motion.div>
+        } />
+        <Route path="/sparkathon/problemstatements" element={
+          <motion.div variants={pageVariants} initial="initial" animate="animate" exit="exit">
+            <SparkathonProblemStatements />
           </motion.div>
         } />
         <Route path="*" element={<NotFound />} />
@@ -337,22 +277,17 @@ const AnimatedRoutes = () => {
   );
 };
 
-// Cursor Glow Effect Component
 const CursorGlow = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMoving, setIsMoving] = useState(false);
 
   useEffect(() => {
     let timeoutId;
-
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
       setIsMoving(true);
-
       clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        setIsMoving(false);
-      }, 100);
+      timeoutId = setTimeout(() => setIsMoving(false), 100);
     };
 
     window.addEventListener('mousemove', handleMouseMove);
@@ -370,26 +305,16 @@ const CursorGlow = () => {
         top: mousePosition.y,
         opacity: isMoving ? 0.15 : 0.08
       }}
-      transition={{
-        type: "spring",
-        damping: 30,
-        stiffness: 200,
-        mass: 0.5
-      }}
+      transition={{ type: "spring", damping: 30, stiffness: 200, mass: 0.5 }}
     />
   );
 };
 
-// Scroll to Top Component
 const ScrollToTop = () => {
   const location = useLocation();
   
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'instant'
-    });
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [location.pathname]);
 
   return null;
@@ -401,15 +326,11 @@ function App() {
     const savedTheme = localStorage.getItem('theme');
     return savedTheme || 'dark';
   });
-  
   const [isChatBotOpen, setIsChatBotOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-
+    const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -419,29 +340,20 @@ function App() {
     } else {
       document.body.classList.remove('light-theme');
     }
-    
     localStorage.setItem('theme', theme);
     document.documentElement.style.scrollBehavior = 'smooth';
-    
     const metaThemeColor = document.querySelector('meta[name="theme-color"]');
     if (metaThemeColor) {
-      metaThemeColor.setAttribute(
-        'content', 
-        theme === 'dark' ? '#0a0118' : '#f8f9fa'
-      );
+      metaThemeColor.setAttribute('content', theme === 'dark' ? '#0a0118' : '#f8f9fa');
     }
   }, [theme]);
 
   useEffect(() => {
-    if (isChatBotOpen && isMobileMenuOpen) {
-      setIsMobileMenuOpen(false);
-    }
+    if (isChatBotOpen && isMobileMenuOpen) setIsMobileMenuOpen(false);
   }, [isChatBotOpen]);
 
   useEffect(() => {
-    if (isMobileMenuOpen && isChatBotOpen) {
-      setIsChatBotOpen(false);
-    }
+    if (isMobileMenuOpen && isChatBotOpen) setIsChatBotOpen(false);
   }, [isMobileMenuOpen]);
 
   const toggleTheme = () => {
@@ -462,41 +374,18 @@ function App() {
         <div className="app-aurora-bg">
           <motion.div 
             className="aurora-blob aurora-blob-1"
-            animate={{
-              x: [0, 30, -30, 0],
-              y: [0, 50, 25, 0],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
+            animate={{ x: [0, 30, -30, 0], y: [0, 50, 25, 0] }}
+            transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }}
           />
           <motion.div 
             className="aurora-blob aurora-blob-2"
-            animate={{
-              x: [0, -40, 40, 0],
-              y: [0, 30, -30, 0],
-            }}
-            transition={{
-              duration: 25,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 2
-            }}
+            animate={{ x: [0, -40, 40, 0], y: [0, 30, -30, 0] }}
+            transition={{ duration: 25, repeat: Infinity, ease: "easeInOut", delay: 2 }}
           />
           <motion.div 
             className="aurora-blob aurora-blob-3"
-            animate={{
-              x: [0, 50, -25, 0],
-              y: [0, -40, 40, 0],
-            }}
-            transition={{
-              duration: 22,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay: 4
-            }}
+            animate={{ x: [0, 50, -25, 0], y: [0, -40, 40, 0] }}
+            transition={{ duration: 22, repeat: Infinity, ease: "easeInOut", delay: 4 }}
           />
         </div>
 
