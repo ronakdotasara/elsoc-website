@@ -23,9 +23,22 @@ const images = [
   "/img/ProbStatement/18.png",
 ];
 
+const STORAGE_KEY = "sparkathon_community_ideas";
+
 const SparkathonProblemStatements = () => {
   const [current, setCurrent] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [ideaTitle, setIdeaTitle] = useState("");
+  const [ideaDesc, setIdeaDesc] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [ideas, setIdeas] = useState(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY);
+      return stored ? JSON.parse(stored) : [];
+    } catch {
+      return [];
+    }
+  });
 
   const goNext = () => {
     if (current < images.length - 1) {
@@ -41,6 +54,30 @@ const SparkathonProblemStatements = () => {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!ideaTitle.trim() || !ideaDesc.trim()) return;
+
+    const newIdea = {
+      id: Date.now(),
+      title: ideaTitle.trim(),
+      description: ideaDesc.trim(),
+      timestamp: new Date().toLocaleDateString("en-IN", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+      }),
+    };
+
+    const updated = [newIdea, ...ideas];
+    setIdeas(updated);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(updated));
+    setIdeaTitle("");
+    setIdeaDesc("");
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 3000);
+  };
+
   const variants = {
     enter: (dir) => ({ opacity: 0, x: dir > 0 ? 80 : -80 }),
     center: { opacity: 1, x: 0, transition: { duration: 0.35, ease: [0.4, 0, 0.2, 1] } },
@@ -49,16 +86,15 @@ const SparkathonProblemStatements = () => {
 
   return (
     <div className="ps-page">
+
       {/* Header */}
       <div className="ps-header">
         <h1 className="ps-title">Sparkathon Problem Statements</h1>
         <p className="ps-counter">{current + 1} / {images.length}</p>
       </div>
 
-      {/* Viewer */}
+      {/* Image Viewer */}
       <div className="ps-viewer">
-
-        {/* Prev Button */}
         <motion.button
           className={`ps-arrow ps-arrow-left ${current === 0 ? "ps-arrow-disabled" : ""}`}
           onClick={goPrev}
@@ -69,7 +105,6 @@ const SparkathonProblemStatements = () => {
           ‹
         </motion.button>
 
-        {/* Image */}
         <div className="ps-image-wrapper">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.img
@@ -86,7 +121,6 @@ const SparkathonProblemStatements = () => {
           </AnimatePresence>
         </div>
 
-        {/* Next Button */}
         <motion.button
           className={`ps-arrow ps-arrow-right ${current === images.length - 1 ? "ps-arrow-disabled" : ""}`}
           onClick={goNext}
@@ -111,6 +145,87 @@ const SparkathonProblemStatements = () => {
           />
         ))}
       </div>
+
+      {/* Divider */}
+      <div className="ps-divider" />
+
+      {/* Submit Your Idea */}
+      <div className="ps-idea-section">
+        <h2 className="ps-idea-heading">💡 Got a Smart Energy Idea?</h2>
+        <p className="ps-idea-subtext">
+          Have your own problem statement related to smart energy? Share it with the community!
+        </p>
+
+        <form className="ps-idea-form" onSubmit={handleSubmit}>
+          <input
+            type="text"
+            className="ps-idea-input"
+            placeholder="Idea title..."
+            value={ideaTitle}
+            onChange={(e) => setIdeaTitle(e.target.value)}
+            maxLength={120}
+          />
+          <textarea
+            className="ps-idea-input ps-idea-textarea"
+            placeholder="Describe your idea briefly..."
+            value={ideaDesc}
+            onChange={(e) => setIdeaDesc(e.target.value)}
+            maxLength={500}
+            rows={4}
+          />
+          <motion.button
+            type="submit"
+            className="ps-idea-submit"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            disabled={!ideaTitle.trim() || !ideaDesc.trim()}
+          >
+            Submit Idea
+          </motion.button>
+        </form>
+
+        <AnimatePresence>
+          {submitted && (
+            <motion.p
+              className="ps-success"
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0 }}
+            >
+              ✅ Your idea has been shared!
+            </motion.p>
+          )}
+        </AnimatePresence>
+      </div>
+
+      {/* Community Ideas List */}
+      {ideas.length > 0 && (
+        <div className="ps-ideas-list">
+          <h3 className="ps-ideas-list-title">🌐 Community Ideas</h3>
+          <div className="ps-ideas-grid">
+            <AnimatePresence>
+              {ideas.map((idea) => (
+                <motion.div
+                  key={idea.id}
+                  className="ps-idea-card"
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <span className="ps-idea-card-icon">⚡</span>
+                  <div className="ps-idea-card-body">
+                    <p className="ps-idea-card-title">{idea.title}</p>
+                    <p className="ps-idea-card-desc">{idea.description}</p>
+                    <p className="ps-idea-card-date">{idea.timestamp}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </AnimatePresence>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };
