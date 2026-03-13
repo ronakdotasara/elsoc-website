@@ -22,7 +22,17 @@ const Events = () => {
         status: 'upcoming',
         registrationLink: '#'
       },
-      
+      {
+        title: 'Sparkathon',
+        date: 'March 21-22, 2026 (Tentative)',
+        time: '10:00 AM - 6:00 PM (Tentative)',
+        location: ' Mini Auditorium',
+        description: 'Technical quiz competition covering general science, environment, and current affairs with exciting prizes for winners.',
+        category: 'Competition',
+        image: 'img/emma/emma8.jpeg',
+        status: 'upcoming',
+        registrationLink: '#'
+      },
     ],
     past: [
       {

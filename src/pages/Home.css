@@ -870,6 +870,13 @@ body.light-theme .highlight-badge {
   border: 1px solid rgba(0, 82, 255, 0.2);
 }
 
+.event-buttons{
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
 .event-register-btn {
   width: 100%;
   padding: 1rem;
@@ -900,6 +907,116 @@ body.light-theme .event-register-btn {
 
 body.light-theme .event-register-btn:hover {
   box-shadow: 0 8px 30px rgba(0, 82, 255, 0.5);
+}
+
+.event-probstat-btn {
+  width: 100%;
+  padding: 1rem;
+  background: transparent;
+  border: 2px solid;
+  border-radius: 12px;
+  color: var(--aurora-purple);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  transition: all 0.4s;
+}
+
+body.light-theme .event-probstat-btn {
+  border: 2px solid #0052ff;
+  color: #0052ff;
+  background: transparent;
+}
+
+.event-probstat-btn:hover {
+  background: var(--aurora-purple);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4);
+}
+
+body.light-theme .event-probstat-btn:hover {
+  background: #0052ff;
+  color: white;
+}
+
+.problem-modal{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.8);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+.problem-modal-content{
+  background:#111;
+  padding:30px;
+  border-radius:12px;
+  max-width:900px;
+  max-height:80vh;
+  overflow:auto;
+}
+
+.problem-images{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.problem-images img{
+  width:100%;
+  border-radius:10px;
+}
+
+.close-btn{
+  background:none;
+  border:none;
+  color:white;
+  font-size:24px;
+  cursor:pointer;
+  float:right;
+}
+
+.slider-container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:20px;
+}
+
+.problem-slider-image{
+  max-width:700px;
+  max-height:70vh;
+  border-radius:10px;
+}
+
+.slider-btn{
+  background:#6d28d9;
+  border:none;
+  color:white;
+  font-size:22px;
+  padding:10px 15px;
+  cursor:pointer;
+  border-radius:8px;
+}
+
+.slider-btn:hover{
+  background:#7c3aed;
+}
+
+.image-counter{
+  text-align:center;
+  margin-top:10px;
+  color:white;
 }
 
 .view-all-container {

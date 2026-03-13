@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { FaUsers, FaCalendar, FaProjectDiagram, FaTrophy } from 'react-icons/fa';
+import { FaUsers, FaCalendar, FaProjectDiagram, FaTrophy, FaFileAlt } from 'react-icons/fa';
 import './Home.css';
 
 const Home = () => {
@@ -10,6 +10,9 @@ const Home = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.8]);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [showProblemModal, setShowProblemModal] = useState(false);
+  const [problemImages, setProblemImages] = useState([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -63,17 +66,37 @@ const Home = () => {
 
   const upcomingEvents = [
     {
-      title: 'Guest Lecture',
-      date: 'February 18, 2026 (Tentative)',
-      time: '2:00 PM - 4:00 PM',
+      title: 'Sparkathon',
+      date: 'March 21-22, 2026 (Tentative)',
+      time: '10:00 AM - 6:00 PM (Tentative)',
       location: 'Mini Auditorium',
-      description: 'An interactive guest lecture providing students with practical insights into modern engineering trends, applications, and industry expectations.',
-      category: 'Seminar',
-      image: '/img/16.webp',
+      description: 'Technical quiz competition covering general science, environment, and current affairs with exciting prizes for winners.',
+      category: 'Competition',
+      image: '/img/emma/emma8.jpeg',
       status: 'upcoming',
       registrationLink: '#',
       participants: 'Open to All',
-      highlights: ['Expert Guidance']
+      problemStatements: [
+        '/img/ProbStatement/1.png',
+        '/img/ProbStatement/2.png',
+        '/img/ProbStatement/3.png',
+        '/img/ProbStatement/4.png',
+        '/img/ProbStatement/5.png',
+        '/img/ProbStatement/6.png',
+        '/img/ProbStatement/7.png',
+        '/img/ProbStatement/8.png',
+        '/img/ProbStatement/9.png',
+        '/img/ProbStatement/10.png',
+        '/img/ProbStatement/11.png',
+        '/img/ProbStatement/12.png',
+        '/img/ProbStatement/13.png',
+        '/img/ProbStatement/14.png',
+        '/img/ProbStatement/15.png',
+        '/img/ProbStatement/16.png',
+        '/img/ProbStatement/17.png',
+        '/img/ProbStatement/18.png',
+      ],
+      highlights: ['Exciting Prizes', 'Networking Opportunities', 'Skill Development']
     },
   ];
 
@@ -444,14 +467,82 @@ const Home = () => {
                     ))}
                   </div>
 
-                  <button className="event-register-btn">
-                    <span>Register Now</span>
-                    <span className="btn-arrow">→</span>
-                  </button>
+                  <div className="event-buttons">
+                    <button className="event-register-btn">
+                      <span>Register Now</span>
+                      <span className="btn-arrow">→</span>
+                    </button>
+
+                    <button className="event-probstat-btn"
+                      onClick={() => {
+                        setProblemImages(event.problemStatements);
+                        setCurrentImageIndex(0);
+                        setShowProblemModal(true);
+                      }}
+                    >
+                      <FaFileAlt />
+                      <span>Problem Statements</span>
+                      <span className="btn-arrow">→</span>
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {showProblemModal && (
+            <div className="problem-modal" onClick={() => setShowProblemModal(false)}>
+              <div
+                className="problem-modal-content"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="close-btn"
+                  onClick={() => setShowProblemModal(false)}
+                >
+                  ✕
+                </button>
+
+                <div className="slider-container">
+
+                  <button
+                    className="slider-btn"
+                    onClick={() =>
+                      setCurrentImageIndex(
+                        (currentImageIndex - 1 + problemImages.length) %
+                        problemImages.length
+                      )
+                    }
+                  >
+                    ◀
+                  </button>
+
+                  <img
+                    src={problemImages[currentImageIndex]}
+                    alt="Problem Statement"
+                    className="problem-slider-image"
+                  />
+
+                  <button
+                    className="slider-btn"
+                    onClick={() =>
+                      setCurrentImageIndex(
+                        (currentImageIndex + 1) % problemImages.length
+                      )
+                    }
+                  >
+                    ▶
+                  </button>
+
+                </div>
+
+                <p className="image-counter">
+                  {currentImageIndex + 1} / {problemImages.length}
+                </p>
+
+              </div>
+            </div>
+          )}
 
           <motion.div
             className="view-all-container"
