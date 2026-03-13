@@ -99,9 +99,9 @@ const Footer = () => {
                 <FaEnvelope size={16} />
                 <span>elsoc@nith.ac.in</span>
               </a>
-              <a href="tel:+911972254000" className="contact-item">
+              <a href="tel:+918233108540" className="contact-item">
                 <FaPhone size={16} />
-                <span>+91-1972-254000</span>
+                <span>General Secretary: +91 82331 08540</span>
               </a>
               <div className="contact-item">
                 <FaMapMarkerAlt size={16} />

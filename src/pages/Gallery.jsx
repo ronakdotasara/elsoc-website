@@ -28,6 +28,8 @@ const Gallery = () => {
   // ✅ DEFAULT = FIRST EVENT (IMPORTANT FIX)
   const [activeEvent, setActiveEvent] = useState(galleryEvents[0]);
 
+  const [selectedImage, setSelectedImage] = useState(null);
+
   return (
     <div className="gallery-page">
       {/* Hero */}
@@ -45,9 +47,8 @@ const Gallery = () => {
           {galleryEvents.map((event) => (
             <button
               key={event.id}
-              className={`event-btn ${
-                activeEvent.id === event.id ? "active" : ""
-              }`}
+              className={`event-btn ${activeEvent.id === event.id ? "active" : ""
+                }`}
               onClick={() => setActiveEvent(event)}
             >
               {event.title}
@@ -70,6 +71,7 @@ const Gallery = () => {
                 key={index}
                 className="gallery-card"
                 whileHover={{ y: -8 }}
+                onClick={() => setSelectedImage(img)}
               >
                 <img src={img} alt={`${activeEvent.title} ${index + 1}`} />
                 <div className="gallery-overlay">
@@ -80,6 +82,29 @@ const Gallery = () => {
           </motion.div>
         </AnimatePresence>
       </section>
+
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            className="fullscreen-overlay"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.img
+              src={selectedImage}
+              className="fullscreen-image"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              onClick={(e) => e.stopPropagation()}
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+
     </div>
   );
 };

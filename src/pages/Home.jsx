@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { FaUsers, FaCalendar, FaProjectDiagram, FaTrophy } from 'react-icons/fa';
+import { FaUsers, FaCalendar, FaProjectDiagram, FaTrophy, FaFileAlt } from 'react-icons/fa';
 import './Home.css';
 
 const Home = () => {
@@ -10,6 +10,9 @@ const Home = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.3], [1, 0.8]);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [showProblemModal, setShowProblemModal] = useState(false);
+  const [problemImages, setProblemImages] = useState([]);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -47,33 +50,53 @@ const Home = () => {
   ];
 
   const galleryImages = [
-    '/img/3.jpeg',
-    '/img/4.jpeg',
-    '/img/5.jpeg',
-    '/img/6.jpeg',
-    '/img/7.jpeg',
-    '/img/11.jpeg',
-    '/img/14.jpeg',
-    '/img/15.jpeg',
-    '/img/16.webp',
-    '/img/17.webp',
-    '/img/18.webp',      
-    '/img/19.webp',
+    "/img/emma/emma1.jpeg",
+    "/img/emma/emma2.jpeg",
+    "/img/emma/emma3.jpeg",
+    "/img/emma/emma4.jpeg",
+    "/img/emma/emma5.jpeg",
+    "/img/emma/emma6.jpeg",
+    "/img/emma/emma7.jpeg",
+    "/img/emma/emma8.jpeg",
+    "/img/emma/emma9.jpeg",
+    "/img/emma/emma10.jpeg",
+    "/img/emma/emma11.jpeg",
+    "/img/emma/emma12.jpeg",
   ];
 
   const upcomingEvents = [
     {
-      title: 'Workshop #1 - AI emma-robot',
-      date: 'October 30, 2025 (Tentative)',
-      time: '2:00 PM - 4:00 PM',
-      location: 'Main Lab, EE Department',
-      description: 'Comprehensive hands-on workshop covering Robotics fundamentals, electrical project simulations, and practical applications for engineering students.',
-      category: 'Workshop',
-      image: '/img/16.webp',
+      title: 'Sparkathon',
+      date: 'March 21-22, 2026 (Tentative)',
+      time: '10:00 AM - 6:00 PM (Tentative)',
+      location: 'Mini Auditorium',
+      description: 'Technical quiz competition covering general science, environment, and current affairs with exciting prizes for winners.',
+      category: 'Competition',
+      image: '/img/Sparkathon Banner.jpeg',
       status: 'upcoming',
       registrationLink: '#',
       participants: 'Open to All',
-      highlights: ['Hands-on Projects', 'MATLAB Certification', 'Expert Guidance']
+      problemStatements: [
+        '/img/ProbStatement/1.png',
+        '/img/ProbStatement/2.png',
+        '/img/ProbStatement/3.png',
+        '/img/ProbStatement/4.png',
+        '/img/ProbStatement/5.png',
+        '/img/ProbStatement/6.png',
+        '/img/ProbStatement/7.png',
+        '/img/ProbStatement/8.png',
+        '/img/ProbStatement/9.png',
+        '/img/ProbStatement/10.png',
+        '/img/ProbStatement/11.png',
+        '/img/ProbStatement/12.png',
+        '/img/ProbStatement/13.png',
+        '/img/ProbStatement/14.png',
+        '/img/ProbStatement/15.png',
+        '/img/ProbStatement/16.png',
+        '/img/ProbStatement/17.png',
+        '/img/ProbStatement/18.png',
+      ],
+      highlights: ['Exciting Prizes', 'Networking Opportunities', 'Skill Development']
     },
   ];
 
@@ -105,11 +128,11 @@ const Home = () => {
       </div>
 
       {/* Cursor Glow Effect */}
-      <div 
-        className="cursor-glow" 
-        style={{ 
-          left: `${mousePosition.x}px`, 
-          top: `${mousePosition.y}px` 
+      <div
+        className="cursor-glow"
+        style={{
+          left: `${mousePosition.x}px`,
+          top: `${mousePosition.y}px`
         }}
       ></div>
 
@@ -136,7 +159,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <motion.div 
+            <motion.div
               className="hero-badge"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -145,12 +168,12 @@ const Home = () => {
               <span className="badge-pulse"></span>
               NIT Hamirpur's Premier Tech Society
             </motion.div>
-            
+
             <h1 className="hero-title">
               <span className="gradient-text">ELSOC</span>
             </h1>
-            
-            <motion.p 
+
+            <motion.p
               className="hero-department"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -158,8 +181,8 @@ const Home = () => {
             >
               Department of Electrical Engineering
             </motion.p>
-            
-            <motion.p 
+
+            <motion.p
               className="hero-mission"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -167,21 +190,21 @@ const Home = () => {
             >
               ELSOC, the Departmental Society of Electrical Engineering at NIT Hamirpur, empowers aspiring engineers through innovation, collaboration, and excellence. We bridge theoretical knowledge with practical application through hands-on workshops, expert lectures, cutting-edge projects, and industry collaborations. Our community fosters creativity, technical expertise, and problem-solving skills, preparing students to lead in the rapidly evolving field of electrical engineering and make meaningful contributions to technology and society.
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               className="hero-buttons"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 }}
             >
-              <button 
+              <button
                 className="btn-primary glass-morphism"
                 onClick={() => navigate('/contact')}
               >
                 <span>Join Our Community</span>
                 <span className="btn-arrow">→</span>
               </button>
-              <button 
+              <button
                 className="btn-secondary glass-morphism"
                 onClick={() => navigate('/about')}
               >
@@ -189,7 +212,7 @@ const Home = () => {
               </button>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="hero-stats"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -210,8 +233,8 @@ const Home = () => {
             </motion.div>
           </motion.div>
         </div>
-        
-        <motion.div 
+
+        <motion.div
           className="hero-scroll-indicator"
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
@@ -248,7 +271,7 @@ const Home = () => {
                 <div className="faculty-image-container">
                   <img src={faculty.image} alt={faculty.name} className="faculty-photo" />
                 </div>
-                
+
                 <div className="faculty-details">
                   <h3 className="faculty-name-large">{faculty.name}</h3>
                   <p className="faculty-position-badge">{faculty.position}</p>
@@ -353,7 +376,7 @@ const Home = () => {
           </motion.div>
 
           <div className="gallery-wrapper">
-            <motion.div 
+            <motion.div
               className="gallery-scroll"
               animate={{ x: ['0%', '-50%'] }}
               transition={{
@@ -363,8 +386,8 @@ const Home = () => {
               }}
             >
               {[...galleryImages, ...galleryImages].map((img, index) => (
-                <motion.div 
-                  key={index} 
+                <motion.div
+                  key={index}
                   className="gallery-item"
                   whileHover={{ scale: 1.05, zIndex: 10 }}
                 >
@@ -413,10 +436,10 @@ const Home = () => {
                   <div className="event-category">{event.category}</div>
                   <div className="event-image-overlay"></div>
                 </div>
-                
+
                 <div className="event-content">
                   <h3 className="event-title">{event.title}</h3>
-                  
+
                   <div className="event-meta">
                     <div className="event-meta-item">
                       <FaCalendar className="meta-icon" />
@@ -444,23 +467,91 @@ const Home = () => {
                     ))}
                   </div>
 
-                  <button className="event-register-btn">
-                    <span>Register Now</span>
-                    <span className="btn-arrow">→</span>
-                  </button>
+                  <div className="event-buttons">
+                    <button className="event-register-btn">
+                      <span>Register Now</span>
+                      <span className="btn-arrow">→</span>
+                    </button>
+
+                    <button className="event-probstat-btn"
+                      onClick={() => {
+                        setProblemImages(event.problemStatements);
+                        setCurrentImageIndex(0);
+                        setShowProblemModal(true);
+                      }}
+                    >
+                      <FaFileAlt />
+                      <span>Problem Statements</span>
+                      <span className="btn-arrow">→</span>
+                    </button>
+                  </div>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          <motion.div 
+          {showProblemModal && (
+            <div className="problem-modal" onClick={() => setShowProblemModal(false)}>
+              <div
+                className="problem-modal-content"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="close-btn"
+                  onClick={() => setShowProblemModal(false)}
+                >
+                  ✕
+                </button>
+
+                <div className="slider-container">
+
+                  <button
+                    className="slider-btn"
+                    onClick={() =>
+                      setCurrentImageIndex(
+                        (currentImageIndex - 1 + problemImages.length) %
+                        problemImages.length
+                      )
+                    }
+                  >
+                    ◀
+                  </button>
+
+                  <img
+                    src={problemImages[currentImageIndex]}
+                    alt="Problem Statement"
+                    className="problem-slider-image"
+                  />
+
+                  <button
+                    className="slider-btn"
+                    onClick={() =>
+                      setCurrentImageIndex(
+                        (currentImageIndex + 1) % problemImages.length
+                      )
+                    }
+                  >
+                    ▶
+                  </button>
+
+                </div>
+
+                <p className="image-counter">
+                  {currentImageIndex + 1} / {problemImages.length}
+                </p>
+
+              </div>
+            </div>
+          )}
+
+          <motion.div
             className="view-all-container"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.8 }}
           >
-            <button 
+            <button
               className="btn-view-all glass-morphism"
               onClick={() => navigate('/events')}
             >
@@ -484,18 +575,18 @@ const Home = () => {
             <div className="cta-glow"></div>
             <h2 className="cta-title gradient-text">Ready to Innovate?</h2>
             <p className="cta-text">
-              Join ELSOC and be part of a community that's shaping the future of electrical engineering. 
+              Join ELSOC and be part of a community that's shaping the future of electrical engineering.
               Access exclusive workshops, collaborate on cutting-edge projects, and network with industry leaders.
             </p>
             <div className="cta-buttons">
-              <button 
+              <button
                 className="btn-primary glass-morphism"
                 onClick={() => navigate('/contact')}
               >
                 <span>Become a Member</span>
                 <span className="btn-arrow">→</span>
               </button>
-              <button 
+              <button
                 className="btn-secondary glass-morphism"
                 onClick={() => navigate('/contact')}
               >

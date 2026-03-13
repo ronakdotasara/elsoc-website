@@ -337,14 +337,16 @@ body.light-theme .newsletter-btn:hover {
 
 .copyright {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary);
   margin: 0;
+  transition: color 0.3s ease;
 }
 
 .credits {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--text-tertiary);
   margin: 0;
+  transition: color 0.3s ease;
 }
 
 /* ==================== */
