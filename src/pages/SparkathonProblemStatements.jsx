@@ -58,7 +58,7 @@ const SparkathonProblemStatements = () => {
   const [passwordError,       setPasswordError]       = useState(false);
   const [adminTab,            setAdminTab]            = useState("pending"); // "pending" | "approved"
 
-  // Ctrl + Shift + A
+  // Shift + A
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.shiftKey && e.key === "A") {
