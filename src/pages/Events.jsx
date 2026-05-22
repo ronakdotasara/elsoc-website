@@ -10,7 +10,7 @@ const Events = () => {
     upcoming: [
       {
         title: "Sparkathon",
-        date: "March 28-29, 2026",
+        date: "Sept, 2026 (Tentative)",
         time: "10:00 AM - 6:00 PM (Tentative)",
         location: "Mini Auditorium",
         description:

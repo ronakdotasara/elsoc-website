@@ -67,7 +67,7 @@ const Home = () => {
   const upcomingEvents = [
     {
       title: 'Sparkathon',
-      date: 'March 28-29, 2026',
+      date: 'Sept, 2026 (Tentative)',
       time: '10:00 AM - 6:00 PM (Tentative)',
       location: 'Mini Auditorium',
       description: 'Technical quiz competition covering general science, environment, and current affairs with exciting prizes for winners.',

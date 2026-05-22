@@ -42,125 +42,66 @@ const Team = () => {
     ],
     core: [
       {
-        name: 'Rinku',
+        name: 'Pratibha Bajia',
         position: 'President',
         year: 'Final Year',
-        image: 'img/beee26bc-fde7-40bf-8bda-f10662152132 - Rinku Kumar.jpeg',
-        bio: 'Leading ELSOC with a vision for innovation and technical excellence.',
-        social: {
-          linkedin: 'https://www.linkedin.com/in/rinku-kumar-12b11b24b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
-          github: '#'
-        }
-      },
-      {
-        name: 'Vikash Kumar Jakhar',
-        position: 'Vice-President and Finance Secretary',
-        year: 'Final Year',
-        image: 'img/IMG-20250703-WA0002 - VIKASH KUMAR JAKHAR.jpg',
-        bio: 'Driving technical initiatives and fostering collaborative learning.',
-        social: {
-          linkedin: 'https://www.linkedin.com/in/vikash-kumar-jakhar-81ab60258',
-          github: '#'
-        }
-      },
-      {
-        name: 'Tanvi',
-        position: 'Content and Technical head',
-        year: 'Final Year',
-        image: 'img/Tanvi maam-2.jpg',
-        bio: 'Organizing and managing the society\'s functions and communications.',
-        social: {
-          linkedin: 'https://www.linkedin.com/in/tanvi-batta-a85aa726a/',
-          github: 'https://github.com/Pratibha100'
-        }
-      }
-    ],
-    thirdYear: [
-      {
-        name: 'Pratibha Bajia',
-        position: 'General Secretary',
-        year: '3rd Year',
         image: 'img/Pratibha Bajia~2 - PRATIBHA BAJIA-2.jpg',
+        bio: 'Leading ELSOC with a vision for innovation and technical excellence.',
         social: {
           linkedin: 'https://www.linkedin.com/in/pratibha-bajia-62b3a12b1?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: 'https://github.com/Pratibha100'
         }
       },
       {
-        name: 'NITIN',
-        position: 'Joint Secretary',
-        year: '3rd Year',
+        name: 'Nitin',
+        position: 'Vice-President',
+        year: 'Final Year',
         image: 'img/IMG_5164 - NITIN K-2.jpg',
+        bio: 'Driving technical initiatives and fostering collaborative learning.',
         social: {
           linkedin: 'https://www.linkedin.com/in/nitin-21767a2a7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app',
           github: '#'
         }
       },
       {
-        name: 'Suhani Dhiman',
-        position: 'Coordinator- Event Organisation',
-        year: '3rd Year',
-        image: 'img/IMG-20250913-WA0009 - SUHANI DHIMAN.jpg',
+        name: 'Mohit Kumar',
+        position: 'Finance Secretary',
+        year: 'Final Year',
+        image: 'img/IMG-20250912-WA0017 - MOHIT KUMAR.jpg',
+        bio: 'Finance Secretary, managing ELSOC\'s resources and budgeting for impactful projects and events.',
         social: {
-          linkedin: 'https://www.linkedin.com/in/suhani-dhiman-036b9a291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+          linkedin: '#',
           github: '#'
-        }
-      },
-      {
-        name: 'Sahil Dhiman',
-        position: 'Technical Coordinator',
-        year: '3rd Year',
-        image: 'img/IMG-20241110-WA0114 - SAHIL DHIMAN.jpg',
-        social: {
-          linkedin: 'https://www.linkedin.com/in/sahil-dhiman-1a6b922aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-          github: '#'
-        }
-      },
-      {
-        name: 'SAHIL JASWAL',
-        position: 'Content Coordinator',
-        year: '3rd Year',
-        image: 'img/Screenshot_20230309-002153~5 - SAHIL JASWAL.png',
-        social: {
-          linkedin: 'https://www.linkedin.com/in/sahil-jaswal-250a51318?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-          github: 'https://github.com/SahilJaswal709'
         }
       },
       {
         name: 'Kriti Benjwal',
         position: 'Media and Marketing Head',
-        year: '3rd Year',
-        image: 'img/WhatsApp Image 2025-10-14 at 22.32.14.jpeg',
+        year: 'Final Year',
+        image: 'img/IMG_20260416_224726.jpg_11zon.webp',
+        bio: 'Media and Marketing Head, promoting ELSOC\'s initiatives and engaging with the student community.',
         social: {
           linkedin: 'https://www.linkedin.com/in/kriti-benjwal-b82864290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: '#'
         }
       },
       {
-        name: 'Vaani Chona',
-        position: 'Project and Design Coordinator',
-        year: '3rd Year',
-        image: 'img/IMG_20250913_105245 - VAANI CHONA.jpg',
+        name: 'Sahil Jaswal',
+        position: 'Technical and Event Organisation Head',
+        year: 'Final Year',
+        image: 'img/Screenshot_20230309-002153~5 - SAHIL JASWAL.png',
+        bio: 'Organizing and managing the society\'s functions and communications.',
         social: {
-          linkedin: 'https://www.linkedin.com/in/vaani-chona-6b69322b3',
-          github: '#'
-        }
-      },
-      {
-        name: 'Mohit Kumar',
-        position: 'Finance Coordinator',
-        year: '3rd Year',
-        image: 'img/IMG-20250912-WA0017 - MOHIT KUMAR.jpg',
-        social: {
-          linkedin: 'https://www.linkedin.com/public-profile/settings',
-          github: '#'
+          linkedin: 'https://www.linkedin.com/in/sahil-jaswal-250a51318?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+          github: 'https://github.com/SahilJaswal709'
         }
       }
     ],
-    executive: [
+    thirdYear: [
       {
         name: 'Ronak Dotasara',
-        year: 'Second Year',
+        position: 'General Secretary',
+        year: '3rd Year',
         image: 'img/ronak.webp',
         social: {
           linkedin: '#',
@@ -168,53 +109,9 @@ const Team = () => {
         }
       },
       {
-        name: 'Aryan Dhaka',
-        year: 'Second Year',
-        image: 'img/IMG_5294 - ARYAN DHAKA.jpg',
-        social: {
-          linkedin: 'https://www.linkedin.com/in/aryan-dhaka-20635b324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-          github: '#'
-        }
-      },
-      {
-        name: 'Sanyam Vats',
-        year: 'Second Year',
-        image: 'img/image - SANYAM VATS(1).jpg',
-        social: {
-          linkedin: 'https://www.linkedin.com/in/sanyam-vats-5899b4270?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-          github: 'https://github.com/sanyamvats'
-        }
-      },
-      {
-        name: 'Ritesh Maurya',
-        year: 'Second Year',
-        image: 'img/IMG_20250923_104509 - RITESH MAURYA-2.jpg',
-        social: {
-          linkedin: 'https://www.linkedin.com/in/ritesh-maurya-953385335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-          github: '#'
-        }
-      },
-      {
-        name: 'Skandh Nagar',
-        year: 'Second Year',
-        image: 'img/IMG_20251014_135252 - SKANDH NAGAR.jpg',
-        social: {
-          linkedin: 'https://www.linkedin.com/in/skandh-nagar-73b18a312/',
-          github: '#'
-        }
-      },
-      {
-        name: 'Riya Choudhary',
-        year: 'Second Year',
-        image: 'img/DSC03412 - RIYA CHOUDHARY.jpg',
-        social: {
-          linkedin: 'https://www.linkedin.com/in/riya-choudhary-0882a230b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-          github: 'https://github.com/riyachoudhary06'
-        }
-      },
-      {
-        name: 'Vikalp chaudhary ',
-        year: 'Second Year',
+        name: 'Vikalp Chaudhary',
+        position: 'Joint Secretary',
+        year: '3rd Year',
         image: 'img/vikalp.jpg',
         social: {
           linkedin: 'https://www.linkedin.com/in/vikalp-chaudhary-581287345?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
@@ -223,7 +120,8 @@ const Team = () => {
       },
       {
         name: 'Priya',
-        year: 'Second Year',
+        position: 'Media and Marketing Coordinator',
+        year: '3rd Year',
         image: 'img/priya.png',
         social: {
           linkedin: 'https://www.linkedin.com/in/priya-ghangas-54a95338a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
@@ -231,26 +129,19 @@ const Team = () => {
         }
       },
       {
-        name: 'Ruchil Meemrot',
-        year: 'Second Year',
-        image: 'img/1760534370479 - RUCHIL MEEMROT.jpg',
+        name: 'Sanyam Vats',
+        position: 'Project Coordinator',
+        year: '3rd Year',
+        image: 'img/image - SANYAM VATS(1).jpg',
         social: {
-          linkedin: 'https://www.linkedin.com/in/ruchil-meena-7a9b76340?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-          github: 'https://github.com/ruchilmeena84'
-        }
-      },
-      {
-        name: 'Ayush Choudhary',
-        year: 'Second Year',
-        image: 'img/WhatsApp Image 2025-10-16 at 19.09.17_2026a07f - AYUSH CHOUDHARY.jpg',
-        social: {
-          linkedin: 'http://www.linkedin.com/in/ayush-choudhary-378104375',
-          github: 'https://github.com/ayushchoudhary3674-code'
+          linkedin: 'https://www.linkedin.com/in/sanyam-vats-5899b4270?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+          github: 'https://github.com/sanyamvats'
         }
       },
       {
         name: 'Vikas Kumar',
-        year: 'Second Year',
+        position: 'Design Coordinator',
+        year: '3rd Year',
         image: 'img/1760622833357 - VIKAS KUMAR.jpg',
         social: {
           linkedin: 'https://www.linkedin.com/in/vikas-kumar-656798335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
@@ -258,36 +149,48 @@ const Team = () => {
         }
       },
       {
+        name: 'Aryan Dhaka',
+        position: 'Technical Coordinator',
+        year: '3rd Year',
+        image: 'img/IMG_5294 - ARYAN DHAKA.jpg',
+        social: {
+          linkedin: 'https://www.linkedin.com/in/aryan-dhaka-20635b324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+          github: '#'
+        }
+      },
+      {
+        name: 'Riya Choudhary',
+        position: 'Content Coordinator',
+        year: '3rd Year',
+        image: 'img/DSC03412 - RIYA CHOUDHARY.jpg',
+        social: {
+          linkedin: 'https://www.linkedin.com/in/riya-choudhary-0882a230b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+          github: 'https://github.com/riyachoudhary06'
+        }
+      },
+      {
+        name: 'Skand Nagar',
+        position: 'Event Organisation Coordinator',
+        year: '3rd Year',
+        image: 'img/IMG_20251014_135252 - SKANDH NAGAR.jpg',
+        social: {
+          linkedin: 'https://www.linkedin.com/in/skandh-nagar-73b18a312/',
+          github: '#'
+        }
+      },
+      {
         name: 'Akshit Vardhan',
-        year: 'Second Year',
+        position: 'Finance Coordinator',
+        year: '3rd Year',
         image: 'img/IMG_20251018_000105 - AKSHIT VARDHAN (1).jpg',
         social: {
           linkedin: 'https://www.linkedin.com/in/akshit-vardhan-6b290a324?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: 'https://github.com/akshitvardhan'
         }
-      },
-      {
-        name: 'Puneet',
-        year: 'Second Year',
-        image: '',
-        social: {
-          linkedin: '',
-          github: ''
-        }
-      },
-      {
-        name: 'Prince Meena',
-        year: 'Second Year',
-        image: 'img/IMG_1685 (2).jpeg',
-        social: {
-          linkedin: '',
-          github: ''
-        }
       }
-      
-      
     ],
-    volunteer: [
+
+    executive: [
       {
         name: 'Akriti Mall',
         year: 'First Year',
@@ -303,15 +206,6 @@ const Team = () => {
         image: 'img/Ansh.webp',
         social: {
           linkedin: 'https://www.linkedin.com/in/ansh-bishnoi-4b5b77386?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-          github: '#'
-        }
-      },
-      {
-        name: 'Anshul Kumar Jangir',
-        year: 'First Year',
-        image: 'img/ANSHUL KUMAR JANGIR 25BEC020.jpeg',
-        social: {
-          linkedin: '#',
           github: '#'
         }
       },
@@ -352,30 +246,12 @@ const Team = () => {
         }
       },
       {
-        name: 'Anushika',
-        year: 'First Year',
-        image: 'img/IMG-20251202-WA0142.jpg',
-        social: {
-          linkedin: '#',
-          github: '#'
-        }
-      },
-      {
         name: 'Bulesh Thakur',
         year: 'First Year',
         image: 'img/IMG-20251109-WA0032.jpg',
         social: {
           linkedin: 'https://www.linkedin.com/in/bulesh-thakur-ab48793a6?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
           github: '#'
-        }
-      },
-      {
-        name: 'Bhavishay',
-        year: 'First Year',
-        image: 'img/BHAVISHAY 25BEC034.jpg',
-        social: {
-          linkedin: 'https://www.linkedin.com/in/bhavishay-bajoliya-05aa343a8?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
-          github: 'https://github.com/bhavishaybajoliya1109-sys'
         }
       },
       {
@@ -433,15 +309,6 @@ const Team = () => {
         }
       },
       {
-        name: 'Khushboo',
-        year: 'First Year',
-        image: 'img/Khushboo_.jpg',
-        social: {
-          linkedin: '#',
-          github: '#'
-        }
-      },
-      {
         name: 'Kushagra Goel',
         year: 'First Year',
         image: 'img/Kushagra_25BEE060.jpg',
@@ -454,15 +321,6 @@ const Team = () => {
         name: 'Neel Nalin Pathak',
         year: 'First Year',
         image: 'img/Nalin.jpg',
-        social: {
-          linkedin: '#',
-          github: '#'
-        }
-      },
-      {
-        name: 'Om Gawai',
-        year: 'First Year',
-        image: '',
         social: {
           linkedin: '#',
           github: '#'
@@ -504,8 +362,8 @@ const Team = () => {
           github: '#'
         }
       }
-    
-    ]
+    ],
+    volunteer: []
   };
 
   const filters = [
