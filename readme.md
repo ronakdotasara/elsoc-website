@@ -115,8 +115,18 @@ npm run db:studio    # Prisma Studio
 **Vercel**: set the env vars, add Neon/Supabase `DATABASE_URL`, done — CI
 covers type/lint/test/build/E2E/Lighthouse on every PR.
 
-**Self-hosted (institute server)**: `docker compose up -d` behind nginx;
-volumes persist Postgres data and uploads.
+**NITH server (current production path)**: same Docker Hub → SSH → Apache
+reverse-proxy flow as the old site
+(`ronakdotasara/elsoc-nith:latest`, Apache proxies `:443 → 127.0.0.1:8080`,
+no Apache changes needed), pointed at a managed Postgres (Neon/Supabase) so
+the server itself stays stateless. Key differences from the old static-site
+SOP: the container listens on `3000` internally (map `-p 8080:3000`, not
+`8080:80`), needs `--env-file .env` on every `docker run` for
+`DATABASE_URL`/`AUTH_SECRET`/etc., and `prisma db seed` must be run once
+from a dev machine against the production `DATABASE_URL` — the deployed
+image doesn't carry the seed script. Self-hosting Postgres alongside the app
+via `docker compose up -d` (this repo's `docker-compose.yml`) remains fully
+supported if you'd rather keep everything on one box.
 
 ## Legacy redirects
 
