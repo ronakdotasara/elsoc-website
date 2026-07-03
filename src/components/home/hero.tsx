@@ -14,10 +14,11 @@ const heroStats = [
   { icon: Users, label: "33 Members" },
 ];
 
+// Calm entrance: pure cross-fade, no vertical "flying" movement.
 const fadeUp = (delay: number) => ({
-  initial: { opacity: 0, y: 26 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.75, delay, ease: [0.16, 1, 0.3, 1] as const },
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] as const },
 });
 
 export function Hero() {
@@ -42,7 +43,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-bg/60 via-transparent to-bg/70" />
       </div>
 
-      <HeroVisual />
+      <HeroVisual still />
 
       {/* readability scrim over the WebGL field */}
       <div
@@ -145,7 +146,7 @@ export function Hero() {
       >
         <span className="flex flex-col items-center gap-1.5 text-fg-subtle transition-colors hover:text-volt">
           <span className="mono-label !text-[0.6rem]">Discover More</span>
-          <ChevronDown className="size-4 motion-safe:animate-bounce" aria-hidden />
+          <ChevronDown className="size-4" aria-hidden />
         </span>
       </motion.a>
     </section>

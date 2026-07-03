@@ -13,8 +13,11 @@ const HeroCanvas = dynamic(() => import("@/components/three/hero-canvas"), {
  * Decides between the WebGL electric-field and the 2D fallback.
  * The fallback is a hand-drawn SVG oscilloscope sweep: animated via CSS for
  * low-end devices, perfectly still under prefers-reduced-motion.
+ *
+ * `still` freezes the field at a fixed phase — no travelling wave, no
+ * dissolve-in, nothing "flying". Pointer parallax stays subtle.
  */
-export function HeroVisual() {
+export function HeroVisual({ still = false }: { still?: boolean }) {
   const [mode, setMode] = useState<"pending" | "webgl" | "fallback">("pending");
 
   useEffect(() => {
@@ -26,11 +29,11 @@ export function HeroVisual() {
     setMode(supportsWebGL() && !saveData ? "webgl" : "fallback");
   }, []);
 
-  if (mode === "webgl") return <HeroCanvas />;
-  return <HeroFallback pulse={mode === "pending"} />;
+  if (mode === "webgl") return <HeroCanvas still={still} />;
+  return <HeroFallback pulse={mode === "pending"} still={still} />;
 }
 
-function HeroFallback({ pulse = false }: { pulse?: boolean }) {
+function HeroFallback({ pulse = false, still = false }: { pulse?: boolean; still?: boolean }) {
   return (
     <div
       aria-hidden
@@ -51,7 +54,7 @@ function HeroFallback({ pulse = false }: { pulse?: boolean }) {
           strokeLinejoin="round"
           strokeLinecap="round"
           strokeDasharray="2400"
-          className={pulse ? "opacity-40" : "motion-safe:animate-trace"}
+          className={pulse ? "opacity-40" : still ? "" : "motion-safe:animate-trace"}
           style={{ filter: "drop-shadow(0 0 12px var(--glow-volt))" }}
         />
         <path

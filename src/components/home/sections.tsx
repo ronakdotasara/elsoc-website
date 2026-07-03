@@ -25,29 +25,32 @@ export function FacultySection({ faculty }: { faculty: TeamMember[] }) {
       <div data-animate="stagger" className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {faculty.map((member) => (
           <div data-animate-child key={member.id}>
-            <SpotlightCard as="article" className="flex h-full flex-col p-6">
-              <div className="mb-4 flex items-center gap-4">
-                <span className="relative size-16 shrink-0 overflow-hidden rounded-full ring-2 ring-line">
-                  {member.photo ? (
-                    <Image
-                      src={member.photo}
-                      alt={member.name}
-                      fill
-                      sizes="64px"
-                      className="object-cover"
-                    />
-                  ) : (
-                    <GraduationCap className="m-auto size-7 text-fg-subtle" />
-                  )}
-                </span>
-                <div>
-                  <h3 className="font-display font-semibold leading-tight text-fg">
-                    {member.name}
-                  </h3>
-                  <p className="mt-0.5 text-xs text-volt">{member.position}</p>
-                </div>
+            <SpotlightCard as="article" className="flex h-full flex-col">
+              <div className="relative aspect-[4/4.3] overflow-hidden border-b border-line">
+                {member.photo ? (
+                  <Image
+                    src={member.photo}
+                    alt={member.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                    className="object-cover object-top transition-transform duration-500 group-hover/spot:scale-[1.03]"
+                  />
+                ) : (
+                  <span className="flex size-full items-center justify-center bg-surface">
+                    <GraduationCap className="size-12 text-fg-subtle" aria-hidden />
+                  </span>
+                )}
+                <div className="absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-bg/80 to-transparent" />
               </div>
-              <p className="text-sm leading-relaxed text-fg-muted">{member.bio}</p>
+              <div className="flex flex-1 flex-col p-5">
+                <h3 className="font-display text-lg font-semibold leading-tight text-fg">
+                  {member.name}
+                </h3>
+                <p className="mt-1 text-xs font-medium uppercase tracking-wider text-volt">
+                  {member.position}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-fg-muted">{member.bio}</p>
+              </div>
             </SpotlightCard>
           </div>
         ))}

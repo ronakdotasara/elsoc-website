@@ -17,12 +17,12 @@ gsap.registerPlugin(ScrollTrigger);
  * PerformanceMonitor that drops post-processing on weak GPUs, and demand-less
  * frameloop only while the hero is on screen.
  */
-export default function HeroCanvas() {
+export default function HeroCanvas({ still = false }: { still?: boolean }) {
   const wrapper = useRef<HTMLDivElement>(null);
   const scrollProgress = useRef(0);
   const [degraded, setDegraded] = useState(false);
   const [dpr, setDpr] = useState<[number, number]>([1, 1.75]);
-  const reduceMotion = prefersReducedMotion();
+  const reduceMotion = prefersReducedMotion() || still;
 
   // Scroll-linked morph: uScroll follows the hero's exit progress.
   useEffect(() => {

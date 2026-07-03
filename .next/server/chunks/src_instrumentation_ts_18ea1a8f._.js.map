@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///Users/ronak/Documents/GitHub/elsoc-website/src/instrumentation.ts"],"sourcesContent":["/**\n * Next.js instrumentation hook — runs once per server boot.\n *\n * Error monitoring: this is the single wiring point for Sentry. To enable it:\n *   1. npm i @sentry/nextjs\n *   2. set SENTRY_DSN in the environment\n *   3. uncomment the block below (client config goes in instrumentation-client.ts)\n * Kept as an opt-in so the default install has zero external telemetry.\n */\nexport async function register() {\n  if (process.env.SENTRY_DSN) {\n    // const Sentry = await import(\"@sentry/nextjs\");\n    // Sentry.init({ dsn: process.env.SENTRY_DSN, tracesSampleRate: 0.1 });\n    console.warn(\n      \"[instrumentation] SENTRY_DSN is set but @sentry/nextjs is not installed — see src/instrumentation.ts\",\n    );\n  }\n}\n"],"names":[],"mappings":"AAAA;;;;;;;;CAQC;;;;AACM,eAAe;IACpB,IAAI,QAAQ,GAAG,CAAC,UAAU,EAAE;QAC1B,iDAAiD;QACjD,uEAAuE;QACvE,QAAQ,IAAI,CACV;IAEJ;AACF","debugId":null}}]
+}

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Activity,
@@ -80,6 +81,27 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
+
+        {/* The society, in one frame */}
+        <figure data-animate="rise" className="mt-16">
+          <div className="relative aspect-[16/8] overflow-hidden rounded-2xl border border-line sm:aspect-[16/6.5]">
+            <Image
+              src="/img/gallery/emma-workshop/emma-workshop-12.jpeg"
+              alt="ELSOC members and faculty coordinators gathered in the Mini Auditorium after the AI-emma Workshop"
+              fill
+              sizes="(max-width: 1280px) 100vw, 1200px"
+              className="object-cover"
+            />
+            <div
+              aria-hidden
+              className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-bg/80 to-transparent"
+            />
+          </div>
+          <figcaption className="mt-3 flex items-center justify-between gap-3 text-xs text-fg-subtle">
+            <span>Team ELSOC with our faculty coordinators — Mini Auditorium, NIT Hamirpur</span>
+            <span className="mono-label hidden sm:block">AI-emma Workshop · 2025</span>
+          </figcaption>
+        </figure>
       </section>
 
       {/* Vision / mission / values / approach */}
