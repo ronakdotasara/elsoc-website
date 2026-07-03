@@ -45,3 +45,6 @@ yarn-error.log*
 
 # local admin uploads (use object storage in production)
 /public/uploads
+
+# any nested node_modules (e.g. the preserved legacy site)
+node_modules/
