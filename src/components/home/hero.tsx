@@ -6,7 +6,6 @@ import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Calendar, ChevronDown, FolderKanban, Users } from "lucide-react";
 import { site } from "@/content/site";
 import { Button } from "@/components/ui/button";
-import { HeroVisual } from "@/components/site/hero-visual";
 
 const heroStats = [
   { icon: FolderKanban, label: "35+ Projects" },
@@ -30,7 +29,7 @@ export function Hero() {
       className="relative flex min-h-dvh flex-col justify-center overflow-hidden pt-[var(--nav-height)]"
       aria-label="ELSOC introduction"
     >
-      {/* Electrical Engineering Department building, faded under the field */}
+      {/* Electrical Engineering Department building as the hero backdrop */}
       <div aria-hidden className="absolute inset-0">
         <Image
           src="/img/campus/nith-02.jpg"
@@ -38,14 +37,12 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-[0.16] saturate-[0.75]"
+          className="object-cover object-center opacity-[0.28] saturate-[0.8]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-bg/60 via-transparent to-bg/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg/60 via-transparent to-bg/75" />
       </div>
 
-      <HeroVisual still />
-
-      {/* readability scrim over the WebGL field */}
+      {/* readability scrim */}
       <div
         aria-hidden
         className="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_38%,transparent_0%,var(--bg)_100%)]"
@@ -85,7 +82,7 @@ export function Hero() {
 
         <motion.h1
           {...anim(0.15)}
-          className="text-display-2xl font-display font-bold text-gradient"
+          className="text-display-2xl font-display font-bold text-gradient-brand drop-shadow-[0_2px_24px_rgba(245,166,35,0.25)]"
         >
           ELSOC
         </motion.h1>

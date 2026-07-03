@@ -259,6 +259,31 @@
   color: transparent;
 }
 
+/* Sunset gold of the ELSOC logo — cream wordmark into amber/orange sky */
+@utility text-gradient-brand {
+  background: linear-gradient(
+    180deg,
+    #fdf3c0 0%,
+    #f8d66b 34%,
+    #f5a623 66%,
+    #e2580e 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* deeper golds on light backgrounds so the wordmark keeps its contrast */
+.light .text-gradient-brand {
+  background-image: linear-gradient(
+    180deg,
+    #eab308 0%,
+    #d97706 45%,
+    #ea580c 78%,
+    #b91c1c 100%
+  );
+}
+
 /* engineering-drawing dot grid */
 @utility bg-blueprint {
   background-image: radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0);
