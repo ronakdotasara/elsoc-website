@@ -10,7 +10,10 @@ services:
       POSTGRES_PASSWORD: elsoc
       POSTGRES_DB: elsoc
     ports:
-      - "5432:5432"
+      # Bound to loopback only — never expose Postgres on a public interface.
+      # Reach it from the host (psql, Prisma Studio) or via an SSH tunnel:
+      #   ssh -L 5432:localhost:5432 elsoc@nith.ac.in
+      - "127.0.0.1:5432:5432"
     volumes:
       - elsoc-pgdata:/var/lib/postgresql/data
     healthcheck:
