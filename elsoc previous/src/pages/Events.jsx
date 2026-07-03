@@ -1,0 +1,193 @@
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import EventCard from "../components/EventCard";
+import "./Events.css";
+
+const Events = () => {
+  const [activeTab, setActiveTab] = useState("upcoming");
+
+  const eventsData = {
+    upcoming: [
+      {
+        title: "Sparkathon",
+        date: "Sept, 2026 (Tentative)",
+        time: "10:00 AM - 6:00 PM (Tentative)",
+        location: "Mini Auditorium",
+        description:
+          "A hackathon-style technical competition where participants solve real-world engineering problems and build innovative solutions.",
+        category: "Competition",
+        image: "/img/Sparkathon Banner.jpeg",
+        status: "upcoming",
+        registrationLink: "#",
+        participants: "Open to All",
+        problemStatementLink: "/sparkathon/problemstatements"
+      }
+    ],
+
+    past: [
+      {
+        title: "Workshop #1 - AI-emma Robot",
+        date: "November 12, 2025",
+        time: "4:00 PM - 7:00 PM",
+        location: "Mini Auditorium",
+        description:
+          "Comprehensive hands-on workshop covering Robotics fundamentals, electrical project simulations, and practical applications for engineering students.",
+        category: "Workshop",
+        image: "img/20251112_164239.jpg",
+        status: "completed",
+        registrationLink: "#"
+      },
+      {
+        title: "Blockchain Workshop",
+        date: "February 4, 2022",
+        time: "3:00 PM",
+        location: "YouTube Live",
+        description:
+          "Interactive online workshop on blockchain technology and cryptocurrency fundamentals, featuring a live quiz competition.",
+        category: "Workshop",
+        image: "img/blockchain.png",
+        status: "completed",
+        registrationLink: "#"
+      },
+      {
+        title: "Intern Talk - Research Internships",
+        date: "August 29, 2022",
+        time: "6:00 PM",
+        location: "Auditorium, NIT Hamirpur",
+        description:
+          "Inspiring session with ELSOC members sharing their research internship experiences at DRDO, RWTH Aachen Germany, NTU Singapore, TU Darmstadt, and IISc Bangalore.",
+        category: "Seminar",
+        image:
+          "https://via.placeholder.com/400x250/8b00ff/ffffff?text=Intern+Talk",
+        status: "completed",
+        registrationLink: "#"
+      },
+      {
+        title: "MATLAB Workshop",
+        date: "October 21, 2022",
+        time: "4:00 PM - 6:00 PM",
+        location: "NEW-LH, NIT Hamirpur",
+        description:
+          "Programming platform workshop designed for engineers and scientists to analyze systems, design products, and create solutions using MATLAB simulations.",
+        category: "Workshop",
+        image: "img/15.jpeg",
+        status: "completed",
+        registrationLink: "#"
+      },
+      {
+        title: "Lightning Unleashed (ELSOC X OJAS)",
+        date: "February 10, 2023",
+        time: "5:00 PM",
+        location: "Electrical Department, NIT Hamirpur",
+        description:
+          "Collaborative event showcasing high-voltage demonstrations including insulation breakdown, corona discharge, power transformers, earth testing, and transformer limbs.",
+        category: "Exhibition",
+        image: "img/corona.jpeg",
+        status: "completed",
+        registrationLink: "#"
+      },
+      {
+        title: "KUIZZ-i-THON",
+        date: "September 1, 2023",
+        time: "5:30 PM",
+        location: "LH G2, NIT Hamirpur",
+        description:
+          "Technical quiz competition covering general science, space exploration, history of engineering, and current affairs.",
+        category: "Competition",
+        image: "img/kuiz.png",
+        status: "completed",
+        registrationLink: "#"
+      },
+      {
+        title: "Circuits of Opportunities Workshop",
+        date: "October 18, 2023",
+        time: "5:00 PM",
+        location: "LH G2, NIT Hamirpur",
+        description:
+          "Career guidance workshop exploring diverse opportunities in finance, civil services, IT, core engineering, and defence sectors.",
+        category: "Workshop",
+        image:
+          "https://via.placeholder.com/400x250/5b00b7/ffffff?text=Career+Workshop",
+        status: "completed",
+        registrationLink: "#"
+      },
+      {
+        title: "TECHLETICS (OJAS X ELSOC)",
+        date: "April 10, 2024",
+        time: "5:00 PM",
+        location: "SAC, NIT Hamirpur",
+        description:
+          "Thrilling fusion of innovation and competition featuring technical challenges, robotics demonstrations, and collaborative engineering projects.",
+        category: "Competition",
+        image: "img/techictics.png",
+        status: "completed",
+        registrationLink: "#"
+      }
+    ]
+  };
+
+  const filteredEvents = eventsData[activeTab];
+
+  return (
+    <motion.div
+      className="events-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      {/* Hero Section */}
+      <section className="events-hero">
+        <div className="events-hero-content">
+          <h1>Events & Workshops</h1>
+          <p>
+            Discover ELSOC's technical events, workshops, and learning
+            opportunities designed to empower aspiring electrical engineers.
+          </p>
+        </div>
+      </section>
+
+      {/* Events Section */}
+      <section className="events-content">
+        <div className="container">
+
+          {/* Tabs */}
+          <div className="events-tabs">
+            <button
+              className={"tab-button " + (activeTab === "upcoming" ? "active" : "")}
+              onClick={() => setActiveTab("upcoming")}
+            >
+              📅 Upcoming Events
+              <span className="tab-count">{eventsData.upcoming.length}</span>
+            </button>
+
+            <button
+              className={"tab-button " + (activeTab === "past" ? "active" : "")}
+              onClick={() => setActiveTab("past")}
+            >
+              📚 Past Events
+              <span className="tab-count">{eventsData.past.length}</span>
+            </button>
+          </div>
+
+          {/* Events Grid */}
+          <AnimatePresence>
+            <motion.div
+              key={activeTab}
+              className="events-grid"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              {filteredEvents.map((event, index) => (
+                <EventCard key={index} event={event} />
+              ))}
+            </motion.div>
+          </AnimatePresence>
+
+        </div>
+      </section>
+    </motion.div>
+  );
+};
+
+export default Events;

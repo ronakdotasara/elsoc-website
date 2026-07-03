@@ -1,0 +1,249 @@
+// ELSOC — system of record.
+// Postgres (Neon/Supabase/docker) with the pgvector extension for chatbot RAG.
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [vector]
+}
+
+// ──────────────────────────────────────────────────────────────── projects ──
+
+enum PublishStatus {
+  DRAFT
+  PUBLISHED
+}
+
+model Project {
+  id                 String        @id @default(cuid())
+  slug               String        @unique
+  title              String
+  summary            String // one-liner used on cards
+  abstract           String        @db.Text // flowing paragraphs, rendered on /projects/[slug]
+  category           String // IoT | Robotics | Power Systems | Embedded | Automation | ...
+  coverImage         String?
+  technologies       String[]
+  team               String[] // member names
+  facultyCoordinator String?
+  year               String
+  workStatus         String        @default("Completed") // Completed | In Progress | Proposed
+  status             PublishStatus @default(PUBLISHED)
+  featured           Boolean       @default(false)
+  draft              Boolean       @default(false) // true = filler copy awaiting ELSOC review
+  sortOrder          Int           @default(0)
+  createdAt          DateTime      @default(now())
+  updatedAt          DateTime      @updatedAt
+
+  @@index([status, sortOrder])
+}
+
+// ────────────────────────────────────────────────────────────────── events ──
+
+enum EventStatus {
+  UPCOMING
+  ONGOING
+  COMPLETED
+}
+
+enum Recurrence {
+  NONE
+  WEEKLY
+}
+
+enum DayOfWeek {
+  MONDAY
+  TUESDAY
+  WEDNESDAY
+  THURSDAY
+  FRIDAY
+  SATURDAY
+  SUNDAY
+}
+
+model Event {
+  id               String      @id @default(cuid())
+  slug             String      @unique
+  title            String
+  description      String      @db.Text
+  category         String // Workshop | Competition | Seminar | Exhibition | Discussion
+  location         String
+  coverImage       String?
+  // Concrete schedule (nullable while a date is TBD)…
+  startAt          DateTime?
+  endAt            DateTime?
+  // …plus the human-readable labels shown on cards (preserves legacy copy like
+  // "Sept, 2026 (Tentative)").
+  dateLabel        String?
+  timeLabel        String?
+  // Recurring events are modelled properly instead of duplicated rows.
+  recurrence       Recurrence  @default(NONE)
+  dayOfWeek        DayOfWeek?
+  status           EventStatus @default(UPCOMING)
+  registrationLink String?
+  participants     String?
+  highlights       String[]
+  featured         Boolean     @default(false)
+  draft            Boolean     @default(false)
+  sortOrder        Int         @default(0)
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  @@index([status, sortOrder])
+}
+
+// ──────────────────────────────────────────────────────────────────── team ──
+
+enum TeamGroup {
+  FACULTY
+  CORE
+  THIRD_YEAR
+  EXECUTIVE
+  VOLUNTEER
+}
+
+model TeamMember {
+  id         String    @id @default(cuid())
+  name       String
+  position   String?
+  group      TeamGroup
+  department String?
+  yearLabel  String? // "Final Year" | "3rd Year" | "First Year"
+  bio        String?   @db.Text
+  email      String?
+  photo      String?
+  linkedin   String?
+  github     String?
+  committee  Boolean   @default(false) // member of the Sparkathon organizing committee
+  draft      Boolean   @default(false)
+  sortOrder  Int       @default(0)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+
+  @@index([group, sortOrder])
+}
+
+// ────────────────────────────────────────────────────────────── sparkathon ──
+
+model PrizeTier {
+  id        String   @id @default(cuid())
+  place     Int // 1, 2, 3…
+  label     String // "Winner", "1st Runner-up"…
+  amountInr Int
+  extras    String? // "+ goodies & certificates"
+  sortOrder Int      @default(0)
+  updatedAt DateTime @updatedAt
+}
+
+model ProblemStatement {
+  id          String   @id @default(cuid())
+  code        String   @unique // "PS-101"
+  title       String
+  description String   @db.Text
+  category    String // SOFTWARE | HARDWARE | HARDWARE AND SOFTWARE
+  theme       String // "Smart Energy / AI"
+  imageUrl    String? // original poster scan, for reference
+  sortOrder   Int      @default(0)
+  updatedAt   DateTime @updatedAt
+}
+
+enum SubmissionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+model SparkathonSubmission {
+  id             String           @id @default(cuid())
+  title          String
+  description    String           @db.Text
+  submitterName  String?
+  submitterEmail String?
+  status         SubmissionStatus @default(PENDING)
+  createdAt      DateTime         @default(now())
+}
+
+// ───────────────────────────────────────────────────────────────── gallery ──
+
+model GalleryAlbum {
+  id        String         @id @default(cuid())
+  slug      String         @unique
+  title     String
+  year      String?
+  sortOrder Int            @default(0)
+  images    GalleryImage[]
+}
+
+model GalleryImage {
+  id        String       @id @default(cuid())
+  albumId   String
+  album     GalleryAlbum @relation(fields: [albumId], references: [id], onDelete: Cascade)
+  url       String
+  alt       String
+  sortOrder Int          @default(0)
+
+  @@index([albumId, sortOrder])
+}
+
+// ──────────────────────────────────────────────────────── inbound messages ──
+
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String   @db.Text
+  createdAt DateTime @default(now())
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}
+
+// ─────────────────────────────────────────────────────────── admin & audit ──
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  username     String   @unique
+  passwordHash String // bcrypt — plaintext never stored
+  createdAt    DateTime @default(now())
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  action    String // create | update | delete | login | reorder
+  entity    String // project | event | teamMember | …
+  entityId  String?
+  summary   String
+  actor     String // admin username
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+}
+
+// Key-value settings editable from the admin panel (Sparkathon date, links…).
+model Setting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt
+}
+
+// ─────────────────────────────────────────────────────────────── chat / RAG ──
+
+model ChatChunk {
+  id        String                       @id @default(cuid())
+  source    String // "project:slug" | "event:slug" | "faq:0" | "page:about"
+  title     String
+  content   String                       @db.Text
+  embedding Unsupported("vector(1536)")?
+  updatedAt DateTime                     @updatedAt
+
+  @@index([source])
+}

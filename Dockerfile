@@ -1,30 +1,43 @@
-# ----- BUILD STAGE -----
-FROM node:20-alpine AS build
-
+# ── deps ──────────────────────────────────────────────────────────────────────
+FROM node:22-alpine AS deps
 WORKDIR /app
+COPY package.json package-lock.json ./
+COPY prisma ./prisma
+RUN npm ci
 
-# Copy only package files first
-COPY package*.json ./
-
-# Clean install
-RUN npm install
-
-# Copy full source
+# ── build ─────────────────────────────────────────────────────────────────────
+FROM node:22-alpine AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
+ENV DOCKER_BUILD=1 \
+    NEXT_TELEMETRY_DISABLED=1
+# Build without requiring a live database (data layer falls back to seed content)
+RUN npx prisma generate && npm run build
 
-# Build Vite project
-RUN npm run build
+# ── runtime ───────────────────────────────────────────────────────────────────
+FROM node:22-alpine AS runner
+WORKDIR /app
+ENV NODE_ENV=production \
+    NEXT_TELEMETRY_DISABLED=1 \
+    PORT=3000 \
+    HOSTNAME=0.0.0.0
 
-# ----- SERVE WITH NGINX -----
-FROM nginx:alpine
+RUN addgroup -S nodejs && adduser -S nextjs -G nodejs
 
-# Remove default nginx content
-RUN rm -rf /usr/share/nginx/html/*
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+# prisma schema + engines for `db push` / `db seed` from inside the container
+COPY --from=builder /app/prisma ./prisma
+COPY --from=builder /app/node_modules/prisma ./node_modules/prisma
+COPY --from=builder /app/node_modules/@prisma ./node_modules/@prisma
+COPY --from=builder /app/node_modules/.bin/prisma ./node_modules/.bin/prisma
+COPY docker-entrypoint.sh ./
+RUN chmod +x docker-entrypoint.sh && mkdir -p public/uploads && chown nextjs:nodejs public/uploads
 
-# Copy build files
-COPY --from=build /app/dist /usr/share/nginx/html
+USER nextjs
+EXPOSE 3000
 
-# Copy custom NGINX config
-COPY nginx/default.conf /etc/nginx/conf.d/default.conf
-
-EXPOSE 80
+ENTRYPOINT ["./docker-entrypoint.sh"]
+CMD ["node", "server.js"]

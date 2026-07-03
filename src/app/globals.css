@@ -1,0 +1,315 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* class-based theming (next-themes sets .dark / .light on <html>) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   ELSOC design system — "Electric Blueprint"
+   Deep-navy oscilloscope base, volt-cyan primary, pulse-violet secondary,
+   signal-amber sparingly. Dark-first; `.light` flips the semantic layer.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+  color-scheme: dark;
+
+  /* semantic surfaces */
+  --bg: #04070f;
+  --bg-raised: #070c18;
+  --surface: rgba(148, 184, 255, 0.045);
+  --surface-strong: rgba(148, 184, 255, 0.09);
+  --card: #0a1120;
+  --border: rgba(148, 184, 255, 0.14);
+  --border-strong: rgba(148, 184, 255, 0.28);
+
+  /* semantic text */
+  --fg: #e8eefb;
+  --fg-muted: rgba(214, 226, 248, 0.72);
+  --fg-subtle: rgba(214, 226, 248, 0.45);
+
+  /* brand */
+  --volt: #22d3ee;
+  --volt-strong: #67e8f9;
+  --pulse: #8b5cf6;
+  --pulse-strong: #a78bfa;
+  --signal: #fbbf24;
+  --danger: #f87171;
+  --success: #34d399;
+
+  --glow-volt: rgba(34, 211, 238, 0.35);
+  --glow-pulse: rgba(139, 92, 246, 0.35);
+
+  --nav-height: 4.5rem;
+}
+
+.light {
+  color-scheme: light;
+
+  --bg: #f4f7fd;
+  --bg-raised: #ffffff;
+  --surface: rgba(23, 48, 102, 0.05);
+  --surface-strong: rgba(23, 48, 102, 0.09);
+  --card: #ffffff;
+  --border: rgba(23, 48, 102, 0.14);
+  --border-strong: rgba(23, 48, 102, 0.3);
+
+  --fg: #0b1526;
+  --fg-muted: rgba(15, 30, 58, 0.74);
+  --fg-subtle: rgba(15, 30, 58, 0.5);
+
+  --volt: #0891b2;
+  --volt-strong: #0e7490;
+  --pulse: #7c3aed;
+  --pulse-strong: #6d28d9;
+  --signal: #b45309;
+  --danger: #dc2626;
+  --success: #059669;
+
+  --glow-volt: rgba(8, 145, 178, 0.22);
+  --glow-pulse: rgba(124, 58, 237, 0.2);
+}
+
+@theme inline {
+  /* colors → tailwind utilities (bg-bg, text-fg, border-line, text-volt …) */
+  --color-bg: var(--bg);
+  --color-bg-raised: var(--bg-raised);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --color-card: var(--card);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-fg-subtle: var(--fg-subtle);
+  --color-volt: var(--volt);
+  --color-volt-strong: var(--volt-strong);
+  --color-pulse: var(--pulse);
+  --color-pulse-strong: var(--pulse-strong);
+  --color-signal: var(--signal);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+
+  /* typography */
+  --font-display: var(--font-space-grotesk), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, "SF Mono", monospace;
+
+  --text-display-2xl: clamp(3.25rem, 9vw, 8rem);
+  --text-display-2xl--line-height: 0.95;
+  --text-display-2xl--letter-spacing: -0.03em;
+  --text-display-xl: clamp(2.5rem, 6vw, 4.75rem);
+  --text-display-xl--line-height: 1.02;
+  --text-display-xl--letter-spacing: -0.025em;
+  --text-display-lg: clamp(2rem, 4.5vw, 3.25rem);
+  --text-display-lg--line-height: 1.08;
+  --text-display-lg--letter-spacing: -0.02em;
+  --text-display-md: clamp(1.5rem, 3vw, 2.125rem);
+  --text-display-md--line-height: 1.15;
+  --text-display-md--letter-spacing: -0.015em;
+
+  /* motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-circ: cubic-bezier(0.85, 0, 0.15, 1);
+
+  --animate-marquee: marquee 42s linear infinite;
+  --animate-pulse-dot: pulse-dot 2s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.2s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-trace: trace 3.2s var(--ease-in-out-circ) infinite;
+
+  /* radii */
+  --radius-xs: 0.375rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* shadows */
+  --shadow-card: 0 1px 0 0 rgba(255, 255, 255, 0.03) inset, 0 8px 32px rgba(2, 6, 16, 0.45);
+  --shadow-volt: 0 0 0 1px rgba(34, 211, 238, 0.25), 0 8px 40px var(--glow-volt);
+  --shadow-pulse: 0 0 0 1px rgba(139, 92, 246, 0.25), 0 8px 40px var(--glow-pulse);
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.85); }
+}
+@keyframes shimmer {
+  from { background-position: -200% 0; }
+  to { background-position: 200% 0; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes trace {
+  0% { stroke-dashoffset: 240; opacity: 0.2; }
+  50% { opacity: 1; }
+  100% { stroke-dashoffset: -240; opacity: 0.2; }
+}
+
+/* ── base ────────────────────────────────────────────────────────────────── */
+
+@layer base {
+  * {
+    border-color: var(--border);
+    min-width: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv05";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: var(--volt);
+    color: #04070f;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--volt);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Scrollbar tuned to theme */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: color-mix(in oklab, var(--volt) 35%, var(--bg));
+    border-radius: 999px;
+    border: 2px solid var(--bg);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: color-mix(in oklab, var(--volt) 55%, var(--bg));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ── project-specific utilities ─────────────────────────────────────────── */
+
+@utility container-site {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 80rem;
+  padding-inline: 1.25rem;
+  @media (width >= 40rem) {
+    padding-inline: 2rem;
+  }
+  @media (width >= 64rem) {
+    padding-inline: 2.5rem;
+  }
+}
+
+@utility glass {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+@utility card-raised {
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+
+@utility text-gradient {
+  background: linear-gradient(100deg, var(--fg) 10%, var(--volt-strong) 55%, var(--pulse-strong) 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-gradient-volt {
+  background: linear-gradient(100deg, var(--volt-strong), var(--pulse-strong));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* engineering-drawing dot grid */
+@utility bg-blueprint {
+  background-image: radial-gradient(circle at 1px 1px, var(--border) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* horizontal ruled lines, like graph paper */
+@utility bg-scanlines {
+  background-image: linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 100% 56px;
+}
+
+@utility mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg-subtle);
+}
+
+@utility shimmer-surface {
+  background: linear-gradient(
+    100deg,
+    var(--surface) 40%,
+    var(--surface-strong) 50%,
+    var(--surface) 60%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.2s linear infinite;
+}
+
+/* Hide scrollbars for horizontal snap rails while keeping scrollability */
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Lenis smooth-scroll integration (see SmoothScrollProvider) */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}

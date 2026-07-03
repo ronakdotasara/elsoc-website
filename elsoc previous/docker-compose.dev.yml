@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  elsoc-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: ronakdotasara/elsoc-nith:dev
+    container_name: elsoc-react-dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - VITE_PORT=5173
+    stdin_open: true
+    tty: true
+    networks:
+      - elsoc-network
+
+networks:
+  elsoc-network:
+    driver: bridge
